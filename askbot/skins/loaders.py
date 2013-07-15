@@ -63,7 +63,7 @@ class SkinEnvironment(CoffinEnvironment):
         """
         url = None
 
-        if django_settings.ASKBOT_CSS_DEVEL is True:
+        if getattr(django_settings, 'ASKBOT_CSS_DEVEL', False) is True:
             url = utils.get_media_url('style/extra.less', ignore_missing=True)
             rel = "stylesheet/less"
 
