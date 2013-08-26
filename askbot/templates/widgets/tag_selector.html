@@ -81,7 +81,7 @@
                 <a 
                     href="{% 
                         url user_profile 
-                        request.user.id, request.user.username|slugify 
+                        request.user.id, request.user.userprofile.username|slugify 
                     %}?sort=email_subscriptions"
                 >{% trans %}Change frequency of emails{% endtrans %}</a>
             </p>

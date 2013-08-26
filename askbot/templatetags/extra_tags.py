@@ -30,7 +30,7 @@ def gravatar(user, size):
     """
     #todo: rewrite using get_from_dict_or_object
     user_id = functions.get_from_dict_or_object(user, 'id')
-    slug = slugify(user.username)
+    slug = slugify(user.userprofile.username)
     user_profile_url = reverse(
                         'user_profile',
                         kwargs={'id':user_id, 'slug':slug}
@@ -41,7 +41,7 @@ def gravatar(user, size):
         'size': size,
         'gravatar_hash': functions.get_from_dict_or_object(user, 'gravatar'),
         'gravatar_type': askbot_settings.GRAVATAR_TYPE,
-        'alt_text': _('%(username)s gravatar image') % {'username': user.username},
+        'alt_text': _('%(username)s gravatar image') % {'username': user.userprofile.username},
         'username': functions.get_from_dict_or_object(user, 'username'),
     })
     

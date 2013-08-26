@@ -2407,7 +2407,7 @@ def user_get_profile_url(self, profile_section=None):
     """Returns the URL for this User's profile."""
     url = reverse(
             'user_profile',
-            kwargs={'id':self.id, 'slug':slugify(self.username)}
+            kwargs={'id':self.id, 'slug':slugify(self.userprofile.username)}
         )
     if profile_section:
         url += "?sort=" + profile_section
@@ -2418,7 +2418,7 @@ def user_get_absolute_url(self):
 
 def get_profile_link(self):
     profile_link = u'<a href="%s">%s</a>' \
-        % (self.get_profile_url(), escape(self.username))
+        % (self.get_profile_url(), escape(self.userprofile.username))
 
     return mark_safe(profile_link)
 

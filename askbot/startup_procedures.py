@@ -957,7 +957,7 @@ def run_startup_tests():
     test_secret_key()
     test_service_url_prefix()
     test_staticfiles()
-    test_template_loader()
+    # test_template_loader()
     test_template_context_processors()
     test_tinymce()
     settings_tester = SettingsTester({
