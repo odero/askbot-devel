@@ -13,7 +13,7 @@ VERSION = (0, 7, 48)
 #values - the package qualifier to use for pip
 REQUIREMENTS = {
     'akismet': 'akismet',
-    'django': 'django>=1.3.1,<1.5',
+    'django': 'django>=1.3.1,<=1.5',
     'compressor': 'django-compressor==1.2',
     'jinja2': 'Jinja2',
     'coffin': 'Coffin>=0.3',
@@ -24,7 +24,7 @@ REQUIREMENTS = {
     'keyedcache': 'django-keyedcache',
     'threaded_multihost': 'django-threaded-multihost',
     'robots': 'django-robots',
-    'sanction': 'sanction',
+    'sanction': 'sanction==0.3.1',
     'unidecode': 'unidecode',
     'django_countries': 'django-countries==1.0.5',
     'djcelery': 'django-celery==3.0.11',

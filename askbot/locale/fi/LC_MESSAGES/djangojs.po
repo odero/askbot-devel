@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: askbot\n"
 "Report-Msgid-Bugs-To: http://askbot.org/\n"
-"POT-Creation-Date: 2013-06-27 03:53-0500\n"
-"PO-Revision-Date: 2013-06-27 08:56+0000\n"
-"Last-Translator: evgeny <evgeny.fadeev@gmail.com>\n"
+"POT-Creation-Date: 2013-07-13 14:07-0500\n"
+"PO-Revision-Date: 2013-07-31 10:59+0000\n"
+"Last-Translator: Pekka Järvinen <pekka.jarvinen@gmail.com>\n"
 "Language-Team: Finnish (http://www.transifex.com/projects/p/askbot/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -87,7 +87,7 @@ msgid "send"
 msgstr "lähetä"
 
 #: media/js/group_messaging.js:164 media/js/post.js:1809
-#: media/js/post.js.c:3077 media/js/post.js.c:4586 media/js/user.js:888
+#: media/js/post.js.c:3081 media/js/post.js.c:4598 media/js/user.js:888
 msgid "cancel"
 msgstr "peruuta"
 
@@ -115,7 +115,7 @@ msgstr "Vastaanottaja:"
 
 #: media/js/live_search.js:196
 msgid "To see search results, 2 or more characters may be required"
-msgstr ""
+msgstr "Nähdäksesi hakutulokset, 2 tai useampi merkki saattaa olla vaadittu"
 
 #: media/js/live_search.js:218
 msgid "Ask Your Question"
@@ -124,8 +124,8 @@ msgstr "Esitä kysymys"
 #: media/js/live_search.js:299
 msgid "Sorry, this tag does not exist"
 msgid_plural "Sorry, these tags do not exist"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tämä tagi ei ole olemassa"
+msgstr[1] "Nämä tagit eivät ole olemassa"
 
 #: media/js/live_search.js:313
 msgid "search or ask your question"
@@ -138,8 +138,8 @@ msgstr "ladataan..."
 #: media/js/post.js:100
 msgid "must be shorter than %(max_chars)s character"
 msgid_plural "must be shorter than %(max_chars)s characters"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "pitää olla lyhyempi kuin %(max_chars)s merkki"
+msgstr[1] "pitää olla lyhyempi kuin %(max_chars)s merkkiä"
 
 #: media/js/post.js:154 media/js/post.js.c:1269
 msgid "tags cannot be empty"
@@ -153,8 +153,8 @@ msgstr "yksityiskohtia vaaditaan"
 #, c-format
 msgid "details must have > %s character"
 msgid_plural "details must have > %s characters"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "syötä vielä vähintään %s merkki"
+msgstr[1] "syötä vielä vähintään %s merkkiä"
 
 #: media/js/post.js:171
 msgid "enter your question"
@@ -164,8 +164,8 @@ msgstr "syötä kysymyksesi"
 #, c-format
 msgid "question must have > %s character"
 msgid_plural "question must have > %s characters"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "syötä vähintään %s merkki"
+msgstr[1] "syötä vähintään %s merkkiä"
 
 #: media/js/post.js:193
 msgid "content cannot be empty"
@@ -175,8 +175,8 @@ msgstr "anna vähintään yksi tagi"
 #, c-format
 msgid "answer must be > %s character"
 msgid_plural "answer must be > %s characters"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "syötä vähintään %s merkki"
+msgstr[1] "syötä vähintään %s merkkiä"
 
 #: media/js/post.js:253
 msgid "Back to the question"
@@ -216,7 +216,7 @@ msgstr "oletko varma, että tämä on roskaposti, loukkaava tai muuta hyväksym�
 
 #: media/js/post.js:559
 msgid "please confirm removal of offensive flag"
-msgstr ""
+msgstr "oletko varma, että tämä on roskaposti, loukkaava tai muuta hyväksymätöntä?"
 
 #: media/js/post.js:560
 msgid "anonymous users cannot flag offensive posts"
@@ -304,7 +304,7 @@ msgstr "pieni muokkaus (älä lähetä sähköpostihuomautusta)"
 msgid "Are you sure you don't want to post this comment?"
 msgstr "Oletko varma, ettet halua julkaista tätä kommenttia?"
 
-#: media/js/post.js:1890 media/js/utils.js:3352 media/js/utils.js.c:3507
+#: media/js/post.js:1890 media/js/utils.js:3360 media/js/utils.js.c:3515
 msgid "just now"
 msgstr "juuri nyt"
 
@@ -324,77 +324,81 @@ msgstr "kirjaudu sisään tai rekisteröidy jättääksesi kommentteja"
 msgid "Please enter question title (>10 characters)"
 msgstr "Kirjoita tähän kysymyksen otsikko (>10 merkkiä)"
 
-#: media/js/post.js:3071 media/js/post.js.c:3857 media/js/post.js.c:4046
+#: media/js/post.js:2612 media/js/post.js.c:4626
+msgid "Sorry, you have only read access"
+msgstr "Sinulla on vain lukuoikeus"
+
+#: media/js/post.js:3075 media/js/post.js.c:3869 media/js/post.js.c:4058
 msgid "save"
 msgstr "tallenna"
 
-#: media/js/post.js:3195
+#: media/js/post.js:3199
 msgid "Enter the logo url or upload an image"
-msgstr ""
+msgstr "Syötä logon URL-osoite tai lähetä kuva"
 
-#: media/js/post.js:3221
+#: media/js/post.js:3225
 msgid "Do you really want to remove the image?"
 msgstr "Oletko varma, että haluat poistaa tämän kuvan?"
 
-#: media/js/post.js:3329
+#: media/js/post.js:3341
 msgid "change logo"
 msgstr "vaihda logo"
 
-#: media/js/post.js:3330
+#: media/js/post.js:3342
 msgid "add logo"
 msgstr "lisää logo"
 
-#: media/js/post.js:3432
+#: media/js/post.js:3444
 #, c-format
 msgid "tag \"%s\" was already added, no need to repeat (press \"escape\" to delete)"
-msgstr ""
+msgstr "tagi \"%s\" on jo lisätty, ei tarvetta toistaa (paina \"escape\"-näppäintä poistaaksesi)"
 
-#: media/js/post.js:3441
+#: media/js/post.js:3453
 #, c-format
 msgid "a maximum of %s tag is allowed"
 msgid_plural "a maximum of %s tags are allowed"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Maksimissaan %s tagi on hyväksytty"
+msgstr[1] "Maksimissaan %s tagia on hyväksytty"
 
-#: media/js/post.js:3787
+#: media/js/post.js:3799
 msgid "Delete category?"
 msgstr "Poista kategoria?"
 
-#: media/js/post.js:3876 media/js/utils.js:875
+#: media/js/post.js:3888 media/js/utils.js:881
 msgid "edit"
 msgstr "muokkaa"
 
-#: media/js/post.js:3963
+#: media/js/post.js:3975
 msgid "category name cannot be empty"
 msgstr "anna vähintään yksi tagi"
 
-#: media/js/post.js:3999
+#: media/js/post.js:4011
 msgid "already exists at the current level!"
-msgstr ""
+msgstr "on jo olemassa tällä tasolla!"
 
-#: media/js/post.js:4035
+#: media/js/post.js:4047
 msgid "add category"
 msgstr "lisää kategoria"
 
-#: media/js/post.js:4582
+#: media/js/post.js:4594
 msgid "save tags"
 msgstr "tallenna tagit"
 
-#: media/js/post.js:4664 media/js/post.js.c:4698
+#: media/js/post.js:4689 media/js/post.js.c:4723
 msgid "User name:"
 msgstr "Käyttäjänimi:"
 
-#: media/js/post.js:4685
+#: media/js/post.js:4710
 msgid "Group name:"
 msgstr "Ryhmän nimi:"
 
-#: media/js/post.js:4711
+#: media/js/post.js:4736
 msgid "Shared with the following users:"
-msgstr ""
+msgstr "Jaettu seuraavien käyttäjien kanssa:"
 
-#: media/js/post.js:4717
+#: media/js/post.js:4742
 msgid "Shared with the following groups:"
-msgstr ""
+msgstr "Jaettu seuraavien ryhmien kanssa:"
 
 #: media/js/tag_selector.js:14
 msgid "Tag \"<span></span>\" matches:"
@@ -424,16 +428,16 @@ msgstr[1] "Sulje nämä?"
 #: media/js/user.js:74
 msgid "Remove all flags and approve this entry?"
 msgid_plural "Remove all flags and approve these entries?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Poista kaikki liput ja hyväksy tämä?"
+msgstr[1] "Poista kaikki liput ja hyväksy nämä?"
 
 #: media/js/user.js:223
 msgid "Post deleted"
-msgstr ""
+msgstr "poistettu"
 
 #: media/js/user.js:225
 msgid "Post approved"
-msgstr ""
+msgstr "Palautettu!"
 
 #: media/js/user.js:246
 msgid "Accept"
@@ -445,11 +449,11 @@ msgstr "Hylkää"
 
 #: media/js/user.js:270
 msgid "add new reject reason"
-msgstr ""
+msgstr "lisää uusi hylkäyssyy"
 
 #: media/js/user.js:375
 msgid "Looks there are some things to fix:"
-msgstr ""
+msgstr "Joitain asioita täytyy korjata:"
 
 #: media/js/user.js:443
 msgid "Please provide description."
@@ -461,11 +465,11 @@ msgstr "Anna yksityiskohtia."
 
 #: media/js/user.js:560
 msgid "A reason must be selected to delete one."
-msgstr ""
+msgstr "Poistamisen syy pitää valita."
 
 #: media/js/user.js:659
 msgid "A reason must be selected to reject post."
-msgstr ""
+msgstr "Syy pitää valita"
 
 #: media/js/user.js:708
 msgid "Please <a href=\"%(signin_url)s\">signin</a> to follow %(username)s"
@@ -502,202 +506,202 @@ msgstr "ja"
 msgid "click to close"
 msgstr "sulje klikkaamalla"
 
-#: media/js/utils.js:874
+#: media/js/utils.js:880
 msgid "click to edit this comment"
 msgstr "muokkaa kommenttia klikkaamalla"
 
-#: media/js/utils.js:899
+#: media/js/utils.js:905
 msgid "convert to answer"
 msgstr "muunna vastaukseksi"
 
-#: media/js/utils.js:952
+#: media/js/utils.js:958
 msgid "Ok"
 msgstr "Ok"
 
-#: media/js/utils.js:953 media/js/utils.js.c:1401
+#: media/js/utils.js:959 media/js/utils.js.c:1407
 msgid "Cancel"
 msgstr "Peruuta"
 
-#: media/js/utils.js:1213
+#: media/js/utils.js:1219
 #, c-format
 msgid "Uploaded file: %s"
 msgstr "Lähetettiin tiedosto: %s"
 
-#: media/js/utils.js:1228
+#: media/js/utils.js:1234
 msgid "Choose a different image"
 msgstr "Valitse muu kuva"
 
-#: media/js/utils.js:1230
+#: media/js/utils.js:1236
 msgid "Choose a different file"
 msgstr "Valitse eri tiedosto"
 
-#: media/js/utils.js:1244
+#: media/js/utils.js:1250
 msgid "Oops, looks like we had an error. Sorry."
 msgstr "Tapahtui virhe. Anteeksi."
 
-#: media/js/utils.js:1305
+#: media/js/utils.js:1311
 msgid "Choose an image to insert"
 msgstr "Valitse liitettävä kuva"
 
-#: media/js/utils.js:1307
+#: media/js/utils.js:1313
 msgid "Choose a file to insert"
 msgstr "Valitse liitettävä tiedosto"
 
-#: media/js/utils.js:1320
+#: media/js/utils.js:1326
 msgid "Allowed file types are:"
 msgstr "Hyväksytyt tiedostotyypit:"
 
-#: media/js/utils.js:1326
+#: media/js/utils.js:1332
 #: media/js/tinymce/plugins/askbot_attachment/editor_plugin.js:35
 msgid "Or paste file url here"
 msgstr "Tai liitä tiedoston URL-osoite tähän"
 
-#: media/js/utils.js:1400
+#: media/js/utils.js:1406
 msgid "Save"
 msgstr "Tallenna"
 
-#: media/js/utils.js:1472
+#: media/js/utils.js:1478
 msgid "saved"
 msgstr "tallennettu"
 
-#: media/js/utils.js:1596
+#: media/js/utils.js:1602
 msgid "enabled"
 msgstr "päällä"
 
-#: media/js/utils.js:1598
+#: media/js/utils.js:1604
 msgid "disabled"
 msgstr "poissa"
 
-#: media/js/utils.js:2030
-msgid "group name"
-msgstr ""
-
 #: media/js/utils.js:2038
+msgid "group name"
+msgstr "ryhmän nimi"
+
+#: media/js/utils.js:2046
 msgid "add new group"
 msgstr "lisää ryhmä"
 
-#: media/js/utils.js:2130
+#: media/js/utils.js:2138
 msgid "Group %(name)s already exists. Group names are case-insensitive."
-msgstr ""
+msgstr "Ryhmä nimeltä %(name)s on jo olemassa. Kirjainkoolla ei ole väliä ryhmien nimissä."
 
-#: media/js/utils.js:2303
+#: media/js/utils.js:2311
 #, c-format
 msgid "see questions tagged '%s'"
-msgstr ""
+msgstr "katso kysymyksiä, joilla on tagi '%s'"
 
-#: media/js/utils.js:3350
+#: media/js/utils.js:3358
 msgid "ago"
 msgstr "sitten"
 
-#: media/js/utils.js:3351
+#: media/js/utils.js:3359
 msgid "from now"
 msgstr "nykyhetkestä"
 
-#: media/js/utils.js:3353
+#: media/js/utils.js:3361
 msgid "about a minute"
 msgstr "noin minuutti"
 
-#: media/js/utils.js:3354
+#: media/js/utils.js:3362
 #, c-format
 msgid "%d minutes"
 msgstr "%d minuuttia"
 
-#: media/js/utils.js:3355
+#: media/js/utils.js:3363
 msgid "about an hour"
 msgstr "noin tunti"
 
-#: media/js/utils.js:3356
+#: media/js/utils.js:3364
 #, c-format
 msgid "%d hours"
 msgstr "%d tuntia"
 
-#: media/js/utils.js:3357 media/js/utils.js.c:3485
+#: media/js/utils.js:3365 media/js/utils.js.c:3493
 msgid "yesterday"
 msgstr "eilen"
 
-#: media/js/utils.js:3358
+#: media/js/utils.js:3366
 #, c-format
 msgid "%d days"
 msgstr "%d päivää"
 
-#: media/js/utils.js:3359
+#: media/js/utils.js:3367
 msgid "about a month"
 msgstr "noin kuukausi"
 
-#: media/js/utils.js:3360
+#: media/js/utils.js:3368
 #, c-format
 msgid "%d months"
 msgstr "%d kuukautta"
 
-#: media/js/utils.js:3361
+#: media/js/utils.js:3369
 msgid "about a year"
 msgstr "noin vuosi"
 
-#: media/js/utils.js:3362
+#: media/js/utils.js:3370
 #, c-format
 msgid "%d years"
 msgstr "%d vuotta"
 
-#: media/js/utils.js:3460
+#: media/js/utils.js:3468
 msgid "Jan"
 msgstr "Tam"
 
-#: media/js/utils.js:3461
+#: media/js/utils.js:3469
 msgid "Feb"
 msgstr "Hel"
 
-#: media/js/utils.js:3462
+#: media/js/utils.js:3470
 msgid "Mar"
 msgstr "Maa"
 
-#: media/js/utils.js:3463
+#: media/js/utils.js:3471
 msgid "Apr"
 msgstr "Huh"
 
-#: media/js/utils.js:3464
+#: media/js/utils.js:3472
 msgid "May"
 msgstr "Tou"
 
-#: media/js/utils.js:3465
+#: media/js/utils.js:3473
 msgid "Jun"
 msgstr "Kes"
 
-#: media/js/utils.js:3466
+#: media/js/utils.js:3474
 msgid "Jul"
 msgstr "Hei"
 
-#: media/js/utils.js:3467
+#: media/js/utils.js:3475
 msgid "Aug"
 msgstr "Elo"
 
-#: media/js/utils.js:3468
+#: media/js/utils.js:3476
 msgid "Sep"
 msgstr "Syy"
 
-#: media/js/utils.js:3469
+#: media/js/utils.js:3477
 msgid "Oct"
 msgstr "Lok"
 
-#: media/js/utils.js:3470
+#: media/js/utils.js:3478
 msgid "Nov"
 msgstr "Mar"
 
-#: media/js/utils.js:3471
+#: media/js/utils.js:3479
 msgid "Dec"
 msgstr "Jou"
 
-#: media/js/utils.js:3483
+#: media/js/utils.js:3491
 msgid "2 days ago"
 msgstr "kaksi päivää sitten"
 
-#: media/js/utils.js:3490
+#: media/js/utils.js:3498
 #, c-format
 msgid "%s hour ago"
 msgid_plural "%s hours ago"
 msgstr[0] "%s tunti sitten"
 msgstr[1] "%s tuntia sitten"
 
-#: media/js/utils.js:3500
+#: media/js/utils.js:3508
 #, c-format
 msgid "%s min ago"
 msgid_plural "%s mins ago"

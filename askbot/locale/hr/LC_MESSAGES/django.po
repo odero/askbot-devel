@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: askbot\n"
 "Report-Msgid-Bugs-To: http://askbot.org/\n"
-"POT-Creation-Date: 2013-06-27 03:52-0500\n"
-"PO-Revision-Date: 2013-06-27 08:55+0000\n"
+"POT-Creation-Date: 2013-07-13 14:06-0500\n"
+"PO-Revision-Date: 2013-08-02 05:36+0000\n"
 "Last-Translator: evgeny <evgeny.fadeev@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/askbot/language/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: exceptions.py:13
 msgid "Sorry, but anonymous visitors cannot access this function"
-msgstr "Nažalost anonimni posjetitelji ne mogu koristiti ovu funkciju"
+msgstr "Ispričavamo se, ali anonimni posljetitelji ne mogu pristupiti ovoj funkciji"
 
 #: feed.py:34 feed.py:108
 msgid " - "
@@ -28,21 +28,21 @@ msgstr " - "
 
 #: feed.py:35 feed.py:109
 msgid "Individual question feed"
-msgstr "Kanal pojedinog pitanja"
+msgstr "Praćenje pojedinačnog pitanja"
 
-#: forms.py:139
+#: forms.py:140
 msgid "select country"
 msgstr "odaberite državu"
 
-#: forms.py:149
+#: forms.py:150
 msgid "Country"
 msgstr "Država"
 
-#: forms.py:157
+#: forms.py:158
 msgid "Country field is required"
-msgstr "Polje država je nužno"
+msgstr "Potrebno je ispuniti polje Država"
 
-#: forms.py:187
+#: forms.py:188
 #, python-format
 msgid "must be > %d word"
 msgid_plural "must be > %d words"
@@ -50,7 +50,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: forms.py:198
+#: forms.py:199
 #, python-format
 msgid "must be < %d word"
 msgid_plural "must be < %d words"
@@ -58,20 +58,20 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: forms.py:219
+#: forms.py:220
 msgid "minor edit (don't send alerts)"
 msgstr ""
 
-#: forms.py:246 templates/widgets/markdown_help.html:20
+#: forms.py:247 templates/widgets/markdown_help.html:20
 #: templates/widgets/markdown_help.html:24
 msgid "title"
 msgstr "naslov"
 
-#: forms.py:248 templates/embed/ask_by_widget.html:170
+#: forms.py:249 templates/embed/ask_by_widget.html:170
 msgid "Please enter your question"
 msgstr ""
 
-#: forms.py:259
+#: forms.py:260
 #, python-format
 msgid "must have > %d character"
 msgid_plural "must have > %d characters"
@@ -79,40 +79,40 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: forms.py:269
+#: forms.py:270
 #, python-format
 msgid "The question is too long, maximum allowed size is %d characters"
 msgstr ""
 
-#: forms.py:276
+#: forms.py:277
 #, python-format
 msgid "The question is too long, maximum allowed size is %d bytes"
 msgstr ""
 
-#: forms.py:308
+#: forms.py:309
 msgid "content"
 msgstr "sadržaj"
 
-#: forms.py:369
+#: forms.py:370
 #, python-format
 msgid "each tag must be shorter than %(max_chars)d character"
 msgid_plural "each tag must be shorter than %(max_chars)d characters"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "svaki tag mora biti manji od %(max_chars)d znaka"
+msgstr[1] "svaki tag mora biti manji od %(max_chars)d znaka"
+msgstr[2] "svaki tag mora biti manji od %(max_chars)d znakova"
 
-#: forms.py:406
+#: forms.py:407
 msgid ""
 "We ran out of space for recording the tags. Please shorten or delete some of"
 " them."
 msgstr ""
 
-#: forms.py:409 forms.py:1015 models/widgets.py:27
+#: forms.py:410 forms.py:1006 models/widgets.py:27
 #: templates/widgets/edit_post.html:32 templates/widgets/meta_nav.html:6
 msgid "tags"
-msgstr "oznake"
+msgstr "tagovi"
 
-#: forms.py:411
+#: forms.py:412
 #, python-format
 msgid ""
 "Tags are short keywords, with no spaces within. Up to %(max_tags)d tag can "
@@ -120,11 +120,11 @@ msgid ""
 msgid_plural ""
 "Tags are short keywords, with no spaces within. Up to %(max_tags)d tags can "
 "be used."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Tagovi su kratke riječi bez razmaka. Možete koristiti najviše %(max_tags)d tag."
+msgstr[1] "Tagovi su kratke riječi bez razmaka. Možete koristiti najviše %(max_tags)d taga."
+msgstr[2] "Tagovi su kratke riječi bez razmaka. Možete koristiti najviše %(max_tags)d tagova."
 
-#: forms.py:438
+#: forms.py:439
 #, python-format
 msgid "please use %(tag_count)d tag or less"
 msgid_plural "please use %(tag_count)d tags or less"
@@ -132,265 +132,265 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: forms.py:446
+#: forms.py:447
 #, python-format
 msgid "At least one of the following tags is required : %(tags)s"
-msgstr "Najmanje jedna od sljedećih oznaka je nužna: %(tags)s"
+msgstr "Potreban je barem jedan od sljedećih tagova : %(tags)s"
 
-#: forms.py:474
+#: forms.py:475
 msgid "community wiki (karma is not awarded & many others can edit wiki post)"
-msgstr "wiki zajednica (karma se ne nagrađuje, a drugi korisnici mogu uređivati wiki postove)"
+msgstr "wiki zajednice (karma nije dodjeljena i drugi mogu uređivati wiki post)"
 
-#: forms.py:478
+#: forms.py:479
 msgid ""
 "if you choose community wiki option, the question and answer do not generate"
 " points and name of author will not be shown"
-msgstr "ako odaberete mogućnost wiki zajednica, pitanje i odgovor ne donosi bodove, a ime autora neće biti prikazano"
+msgstr "odaberete li mogućnost wiki zajednice, pitanje i odgovor ne generiraju podove i imena autora neće biti prikazivana"
 
-#: forms.py:505
+#: forms.py:496
 msgid "update summary:"
-msgstr "ažuriraj sažetak:"
+msgstr "zašetak ažuriranja:"
 
-#: forms.py:507
+#: forms.py:498
 msgid ""
 "enter a brief summary of your revision (e.g. fixed spelling, grammar, "
 "improved style, this field is optional)"
-msgstr "unesite kratak sažetak vaše prerade (npr. ispravljen pravopis, gramatika, stil ..., ovo polje je neobvezno)"
+msgstr "unesite kratak zažetak provjere (npr. ispravljen pravopis, gramatika, stilističke dorade - ovo polje nije obavezno)"
 
-#: forms.py:594
+#: forms.py:585
 msgid "Enter number of points to add or subtract"
-msgstr "Unesite broj bodova za dodati ili oduzeti"
+msgstr "Unesite broj bodova koji biste željeli dodati ili oduzeti"
 
-#: forms.py:609 const/__init__.py:375
+#: forms.py:600 const/__init__.py:375
 msgid "approved"
-msgstr "odobren"
+msgstr "odobreno"
 
-#: forms.py:610 const/__init__.py:376
+#: forms.py:601 const/__init__.py:376
 msgid "watched"
-msgstr "pod nadzorom"
+msgstr "praćeno"
 
-#: forms.py:611 const/__init__.py:377
+#: forms.py:602 const/__init__.py:377
 msgid "suspended"
-msgstr "suspendiran"
+msgstr "zaustavljeno"
 
-#: forms.py:612 const/__init__.py:378
+#: forms.py:603 const/__init__.py:378
 msgid "blocked"
-msgstr "blokiran"
+msgstr "blokirano"
 
-#: forms.py:614
+#: forms.py:605
 msgid "administrator"
 msgstr "administrator"
 
-#: forms.py:615 const/__init__.py:374
+#: forms.py:606 const/__init__.py:374
 msgid "moderator"
 msgstr "moderator"
 
-#: forms.py:634
+#: forms.py:625
 msgid "Change status to"
-msgstr "Promjeni status u"
+msgstr "Promijeni status u"
 
-#: forms.py:661
+#: forms.py:652
 msgid "which one?"
 msgstr "koji"
 
-#: forms.py:682
+#: forms.py:673
 msgid "Cannot change own status"
-msgstr "Ne može promijeniti svoj status"
+msgstr "Ne možete promijeniti vlastiti status"
 
-#: forms.py:688
+#: forms.py:679
 msgid "Cannot turn other user to moderator"
-msgstr "Ne može promijeniti drugog korisnika u moderatora"
+msgstr "Ne možete postaviti druge korisnike za moderatore"
 
-#: forms.py:695
+#: forms.py:686
 msgid "Cannot change status of another moderator"
-msgstr "Ne može promijeniti status drugog moderatora"
+msgstr "Ne može promijeniti status drugom moderatoru"
 
-#: forms.py:701
+#: forms.py:692
 msgid "Cannot change status to admin"
-msgstr "Ne može promijeniti status u admin"
+msgstr "Ne može promijeniti status u administraotra"
 
-#: forms.py:707
+#: forms.py:698
 #, python-format
 msgid ""
 "If you wish to change %(username)s's status, please make a meaningful "
 "selection."
-msgstr "Ako želite promijeniti status korisnika %(username)s , suvislo odaberite."
+msgstr "Želite li promijeniti %(username)sov status, odaberite nešto smisleno."
 
-#: forms.py:717
+#: forms.py:708
 msgid "Subject line"
-msgstr "Subjekt linija"
+msgstr "Redak za naslov"
 
-#: forms.py:722
+#: forms.py:713
 msgid "Message text"
 msgstr "Tekst poruke"
 
-#: forms.py:736
+#: forms.py:727
 msgid "Your name (optional):"
-msgstr "Vaše ime (neobvezno):"
+msgstr "Vaše ime (neobaveno):"
 
-#: forms.py:737
+#: forms.py:728
 msgid "Email:"
-msgstr "Email:"
+msgstr "Elektronička pošta:"
 
-#: forms.py:739
+#: forms.py:730
 msgid "Your message:"
 msgstr "Vaša poruka:"
 
-#: forms.py:744
+#: forms.py:735
 msgid "I don't want to give my email or receive a response:"
-msgstr "Ne želim dati svoj email i primati odgovore:"
+msgstr "Ne želim dijeliti elektroničku poštu ili primati odgovore:"
 
-#: forms.py:767
+#: forms.py:758
 msgid "Please mark \"I dont want to give my mail\" field."
-msgstr "Označite polje \"Ne želim dati svoj email\" ."
+msgstr "Označite polje \"Ne želim dijeliti svoju adresu elektroničke pošte\"."
 
-#: forms.py:800
+#: forms.py:791
 msgid "keep private within your groups"
 msgstr ""
 
-#: forms.py:839
+#: forms.py:830
 msgid "User name:"
 msgstr ""
 
-#: forms.py:841
+#: forms.py:832
 msgid "Enter name to post on behalf of someone else. Can create new accounts."
 msgstr ""
 
-#: forms.py:848
+#: forms.py:839
 msgid "Email address:"
 msgstr ""
 
-#: forms.py:898
+#: forms.py:889
 msgid "User name is required with the email"
 msgstr ""
 
-#: forms.py:903
+#: forms.py:894
 msgid "Email is required if user name is added"
 msgstr ""
 
-#: forms.py:923 forms.py:966
+#: forms.py:914 forms.py:957
 msgid "ask anonymously"
-msgstr "pitaj anonimno"
+msgstr "postavi pitanje anonimno"
 
-#: forms.py:925 forms.py:968
+#: forms.py:916 forms.py:959
 msgid "Check if you do not want to reveal your name when asking this question"
-msgstr "Odaberite ako ne želite da vaše ime bude prikazano"
+msgstr "Označite ne želite li otkrivati svoje ime pri postavljanju pitanja"
 
-#: forms.py:956
+#: forms.py:947
 msgid ""
 "Subject line is expected in the format: [tag1, tag2, tag3,...] question "
 "title"
 msgstr "Napišite subjekt u obliku: [oznaka1, oznaka2, oznaka3,...] naslov pitanja"
 
-#: forms.py:1215
+#: forms.py:1213
 msgid ""
 "You have asked this question anonymously, if you decide to reveal your "
 "identity, please check this box."
-msgstr "Postavili ste pitanje anonimno. Ako odlučite otkriti svoj identitet označite okvir za izbor."
+msgstr "Pitanje ste postavili anonimno, odlučite li se otkriti identitet, označite kućicu."
 
-#: forms.py:1219
+#: forms.py:1217
 msgid "reveal identity"
-msgstr "objavi identitet"
+msgstr "otkrij identitet"
 
-#: forms.py:1298
+#: forms.py:1296
 msgid ""
 "Sorry, only owner of the anonymous question can reveal his or her identity, "
 "please uncheck the box"
-msgstr "Samo vlasnik anonimnog pitanja može objaviti svoj identitet, uklonite oznaku s okvira za izbor"
+msgstr "Samo onaj tko je postavio anonimno pitanje može otkriti svoj identitet, uklonite odabir iz kužice"
 
-#: forms.py:1311
+#: forms.py:1309
 msgid ""
 "Sorry, apparently rules have just changed - it is no longer possible to ask "
 "anonymously. Please either check the \"reveal identity\" box or reload this "
 "page and try editing the question again."
-msgstr "Nažalost, pravila su se promijenila - više nije moguće anonimno postavljati pitanje. Označite okvir za izbor  \"objavi identitet\" ili učitajte ponovo ovu stranicu i pokušajte ponovo urediti pitanje. "
+msgstr "Izgleda da su pravila promjenjena - više nije moguće postavljati pitanja anonimno. Unesite označite \"otkrij identitet\" ili ponovno učitajte stranicu te zatim pokušajte ponovno unijeti pitanje."
 
-#: forms.py:1375
+#: forms.py:1373
 msgid "Real name"
 msgstr "Pravo ime"
 
-#: forms.py:1382
+#: forms.py:1380
 msgid "Website"
 msgstr "Web stranica"
 
-#: forms.py:1389
+#: forms.py:1387
 msgid "City"
 msgstr "Grad"
 
-#: forms.py:1398
+#: forms.py:1396
 msgid "Show country"
 msgstr "Prikaži državu"
 
-#: forms.py:1403
+#: forms.py:1401
 msgid "Show tag choices"
 msgstr ""
 
-#: forms.py:1408
+#: forms.py:1406
 msgid "Date of birth"
 msgstr "Datum rođenja"
 
-#: forms.py:1410
+#: forms.py:1408
 msgid "will not be shown, used to calculate age, format: YYYY-MM-DD"
-msgstr "neće biti prikazan, koristi se za izračun godina, oblik: GGGG-MM-DD"
+msgstr "neće biti prikazano, koristiti se za izračunavanje godina; format: YYYY-MM-DD"
 
-#: forms.py:1418
+#: forms.py:1416
 msgid "Profile"
 msgstr "Profil"
 
-#: forms.py:1427
+#: forms.py:1425
 msgid "Screen name"
-msgstr "Ime na zaslonu"
+msgstr "Prikazivano ime"
 
-#: forms.py:1459 forms.py:1463
+#: forms.py:1457 forms.py:1461
 msgid "this email has already been registered, please use another one"
-msgstr "ova email adresa već je registrirana, odaberite drugu"
+msgstr "ova je adresa eletroničke pošte već registrirana, pokušajte nekom drugom"
 
-#: forms.py:1472
+#: forms.py:1470
 msgid "Choose email tag filter"
-msgstr "Odaberite email filter oznaku"
+msgstr "Odaberite filter tagova elektroničke pošte"
 
-#: forms.py:1524
+#: forms.py:1522
 msgid "Asked by me"
-msgstr "Moje pitanje"
+msgstr "Ja sam postavio pitanje"
 
-#: forms.py:1527
+#: forms.py:1525
 msgid "Answered by me"
-msgstr "Moj odgovor"
+msgstr "Ja sam odgovorio"
 
-#: forms.py:1530
+#: forms.py:1528
 msgid "Individually selected"
-msgstr "Individualno odabrano"
+msgstr "Odabrano pojedinačno"
 
-#: forms.py:1533
+#: forms.py:1531
 msgid "Entire forum (tag filtered)"
-msgstr "Cjeli forum (filtriran oznakom)"
+msgstr "Cijeli forum (filtrirani tagovi)"
 
-#: forms.py:1537
+#: forms.py:1535
 msgid "Comments and posts mentioning me"
-msgstr "Komentari i postovi u kojima se spominjem"
+msgstr "Komentari i postovi koji me spominju"
 
-#: forms.py:1621
+#: forms.py:1619
 msgid "please choose one of the options above"
-msgstr "odaberite jednu od gornjih opcija"
+msgstr "odaberite jednu od prethodnih mogućnosti"
 
-#: forms.py:1624
+#: forms.py:1622
 msgid "okay, let's try!"
-msgstr "uredu, pokušajmo!"
+msgstr "u redu, pokušajmo!"
 
-#: forms.py:1627
+#: forms.py:1625
 #, python-format
 msgid "no %(sitename)s email please, thanks"
 msgstr "bez %(sitename)s emaila molim, hvala"
 
-#: forms.py:1675 templates/reopen.html:7
+#: forms.py:1673 templates/reopen.html:7
 msgid "Title"
 msgstr "Naslov"
 
-#: forms.py:1678 templates/groups.html:32
+#: forms.py:1676 templates/groups.html:32
 msgid "Description"
 msgstr ""
 
-#: forms.py:1697 templates/tags.html:3 templates/tags/header.html:9
+#: forms.py:1695 templates/tags.html:3 templates/tags/header.html:9
 #: templates/tags/list_bulk_tag_subscription.html:12
 #: templates/widgets/edit_post.html:26 templates/widgets/related_tags.html:3
 #: templates/widgets/tag_category_selector.html:2
@@ -420,7 +420,7 @@ msgstr "pitanje/"
 
 #: urls.py:61
 msgid "tags/"
-msgstr "oznake/"
+msgstr "tagovi/"
 
 #: urls.py:66 urls.py:71 urls.py:78 urls.py:84 urls.py:93 urls.py:100
 msgid "users/"
@@ -452,11 +452,11 @@ msgstr "korisnici/azuriranje_ima_prilagodjen_avatar/"
 
 #: urls.py:115 urls.py:120
 msgid "badges/"
-msgstr "znacke/"
+msgstr "značke/"
 
 #: urls.py:133
 msgid "feedback/"
-msgstr "povrat/"
+msgstr "povratna informacija/"
 
 #: urls.py:154
 msgid "about/"
@@ -480,7 +480,7 @@ msgstr "odgovori/"
 
 #: urls.py:164 urls.py:256
 msgid "revisions/"
-msgstr "revizije/"
+msgstr "pregledi/"
 
 #: urls.py:221 urls.py:226 urls.py:231 urls.py:236 urls.py:241 urls.py:246
 #: urls.py:256
@@ -493,7 +493,7 @@ msgstr "pitaj/"
 
 #: urls.py:231
 msgid "retag/"
-msgstr "ponovi_oznaku/"
+msgstr "ponovno tagiraj/"
 
 #: urls.py:236
 msgid "close/"
@@ -501,11 +501,11 @@ msgstr "zatvori/"
 
 #: urls.py:241
 msgid "reopen/"
-msgstr "ponovo_otvori/"
+msgstr "ponovno otvori/"
 
 #: urls.py:246
 msgid "answer/"
-msgstr "odgovor/"
+msgstr "odgovori/"
 
 #: urls.py:314
 msgid "tags/subscriptions/"
@@ -533,7 +533,7 @@ msgstr "poruke/"
 
 #: urls.py:459
 msgid "markread/"
-msgstr "procitano/"
+msgstr "označeno/"
 
 #: urls.py:490 urls.py:495 urls.py:500 urls.py:505 urls.py:510 urls.py:515
 #: urls.py:520 urls.py:525 urls.py:530
@@ -554,20 +554,20 @@ msgstr ""
 
 #: urls.py:560
 msgid "upload/"
-msgstr "posalji/"
+msgstr "učitavanje/"
 
-#: urls.py:579 setup_templates/settings.py:229
+#: urls.py:585 setup_templates/settings.py:229
 #: templates/authopenid/providers_javascript.html:7
 msgid "account/"
-msgstr "racun/"
+msgstr "korisnički račun/"
 
 #: conf/access_control.py:8
 msgid "Access control settings"
-msgstr "Postavke za kontrolu pristupa"
+msgstr "Postavke kontrole pristupa"
 
 #: conf/access_control.py:17
 msgid "Allow only registered user to access the forum"
-msgstr "Dozvoli pristup forumu samo registriranim korisnicima"
+msgstr "Omogući samo registiranim korisnicima pristup forumu"
 
 #: conf/access_control.py:22
 msgid "nothing - not required"
@@ -599,7 +599,7 @@ msgstr ""
 
 #: conf/badges.py:13
 msgid "Badge settings"
-msgstr "Postavke znacki"
+msgstr "Postavke znački"
 
 #: conf/badges.py:23
 msgid "Disciplined: minimum upvotes for deleted post"
@@ -611,63 +611,63 @@ msgstr "Pritisak Skupine: minimum negativnih glasova za obrisane postove"
 
 #: conf/badges.py:41
 msgid "Teacher: minimum upvotes for the answer"
-msgstr "Učitelj: minimum pozitivnih glasova za odgovor"
+msgstr "Učitelj: najmanji potreban broj pozitivnih ocjena za odgovor"
 
 #: conf/badges.py:50
 msgid "Nice Answer: minimum upvotes for the answer"
-msgstr "Lijep odgovor: minimum pozitivnih glasova za odgovor"
+msgstr "Lijep odgovor: najmanji potreban broj pozitivnih ocjena"
 
 #: conf/badges.py:59
 msgid "Good Answer: minimum upvotes for the answer"
-msgstr "Dobar Odgovor: minimum pozitivnih glasova za odgovor"
+msgstr "Dobar odgovor: najmanji potreban broj pozitivnih ocjena"
 
 #: conf/badges.py:68
 msgid "Great Answer: minimum upvotes for the answer"
-msgstr "Odličan odgovor:  minimum pozitivnih glasova za odgovor"
+msgstr "Odličan odgovor: najmanji potreban broj pozitivnih ocjena"
 
 #: conf/badges.py:77
 msgid "Nice Question: minimum upvotes for the question"
-msgstr "Lijepo Pitanje: minimum pozitivnih glasova za pitanje"
+msgstr "Lijepo pitanje: najmanji potreban broj pozitivnih ocjena"
 
 #: conf/badges.py:86
 msgid "Good Question: minimum upvotes for the question"
-msgstr "Dobro Pitanje: minimum pozitivnih glasova za pitanje"
+msgstr "Dobro pitanje: najmanji potreban broj pozitivnih ocjena"
 
 #: conf/badges.py:95
 msgid "Great Question: minimum upvotes for the question"
-msgstr "Odlično pitanje: minimum pozitivnih glasova za pitanje"
+msgstr "Odlično pitanje: najmanji potreban broj pozitivnih ocjena"
 
 #: conf/badges.py:104
 msgid "Popular Question: minimum views"
-msgstr "Popularno Pitanje: minimum pogleda"
+msgstr "Popularno pitanje: najmanji potreban broj pogleda"
 
 #: conf/badges.py:113
 msgid "Notable Question: minimum views"
-msgstr "Značajno Pitanje: minimum pogleda"
+msgstr "Zamijećeno pitanje: najmanji potreban broj pogleda"
 
 #: conf/badges.py:122
 msgid "Famous Question: minimum views"
-msgstr "Slavno Pitanje: minimum pogleda"
+msgstr "Čuveno pitanje: najmanji potreban broj pogleda"
 
 #: conf/badges.py:131
 msgid "Self-Learner: minimum answer upvotes"
-msgstr "Samouk: minimum pozitivnih glasova za odgovor"
+msgstr "Samouk: najmanji potreban broj pozitivni ocjena za odgovor"
 
 #: conf/badges.py:140
 msgid "Civic Duty: minimum votes"
-msgstr "Građanska Dužnost: minimum glasova"
+msgstr "Građanska dužnost: najmanji potreban broj pozitivnih ocjena"
 
 #: conf/badges.py:149
 msgid "Enlightened Duty: minimum upvotes"
-msgstr "Nadahnuta Dužnost: minimum pozitivnih glasova"
+msgstr "Prosvjetiteljska obaveza: najmanji potreban broj pozitivnih ocjena"
 
 #: conf/badges.py:158
 msgid "Guru: minimum upvotes"
-msgstr "Guru: minimum pozitivnih glasova"
+msgstr "Guru: najmanji potreban broj pozitivnih ocjena"
 
 #: conf/badges.py:167
 msgid "Necromancer: minimum upvotes"
-msgstr "Čarobnjak: minimum pozitivnih glasova"
+msgstr "Prizivač duhova: najmanji potreban broj glasova"
 
 #: conf/badges.py:176
 msgid "Necromancer: minimum delay in days"
@@ -679,7 +679,7 @@ msgstr "Pomoćnik Urednika: minimalan broj uređivanja"
 
 #: conf/badges.py:194
 msgid "Favorite Question: minimum stars"
-msgstr "Omiljeno Pitanje: minimum zvijezda"
+msgstr "Najdraže pitanje: najmanji potreban broj zvjezdica"
 
 #: conf/badges.py:203
 msgid "Stellar Question: minimum stars"
@@ -687,7 +687,7 @@ msgstr "Zvijezdano Pitanje: minimum zvijezda"
 
 #: conf/badges.py:212
 msgid "Commentator: minimum comments"
-msgstr "Komentator: minimum komentara"
+msgstr "Komentator: najmanji potreban broj komentara"
 
 #: conf/badges.py:221
 msgid "Taxonomist: minimum tag use count"
@@ -695,185 +695,189 @@ msgstr "Klasifikator: minimalan broj korištenih oznaka"
 
 #: conf/badges.py:230
 msgid "Enthusiast: minimum days"
-msgstr "Entuzijast: minimum dana"
+msgstr "Entuzijast: najmanji potreban broj dana"
 
 #: conf/email.py:15
 msgid "Email and email alert settings"
-msgstr "Postavke za email i email upozorenja"
+msgstr "Elektronička pošta i mogućnosti obavještavanja"
 
 #: conf/email.py:24
 msgid "Prefix for the email subject line"
-msgstr "Prefiks za email subjekt"
+msgstr "Prefiks za redak naslova elektroničke pošte"
 
 #: conf/email.py:26
 msgid ""
 "This setting takes default from the django settingEMAIL_SUBJECT_PREFIX. A "
 "value entered here will overridethe default."
-msgstr "Ova postavke uzima vrijednost zadanu u django postavci EMAIL_SUBJECT_PREFIX. Unešena vrijednost zamijenit će zadanu vrijednost."
+msgstr "Postavke preuzimaju zadanu vrijednosti s django settingEMAIL_SUBJECT_PREFIX. Unesena vrijednost obrisat će zadanu."
 
-#: conf/email.py:38
+#: conf/email.py:44
+msgid "Site administrator email address"
+msgstr ""
+
+#: conf/email.py:53
 msgid "Enable email alerts"
 msgstr "Omogući upozorenja emailom"
 
-#: conf/email.py:47
+#: conf/email.py:62
 msgid "Maximum number of news entries in an email alert"
-msgstr "Maksimalan broj stavki vijesti u email upozorenju"
+msgstr "Najveći mogući broj novih unosa u obavijesti elektroničkom poštom"
 
-#: conf/email.py:57
+#: conf/email.py:72
 msgid "Default notification frequency all questions"
-msgstr "Zadana učestalost obavještavanja za: sva pitanja"
+msgstr "Zadana učestalost obavještavanja za sva pitanja"
 
-#: conf/email.py:59
+#: conf/email.py:74
 msgid "Option to define frequency of emailed updates for: all questions."
-msgstr "Opcija za definiranje učestalosti primanja email statusa za: sva pitanja"
+msgstr "Mogućnost definiranja učestalosti obavještavanja elektroničkom poštom za: sva pitanja."
 
-#: conf/email.py:71
+#: conf/email.py:86
 msgid "Default notification frequency questions asked by the user"
-msgstr "Zadana učestalost obavještavanja za korisnikova pitanja"
+msgstr "Zadana učestalost obavještavanja o pitanjima koja postavlja korisnik"
 
-#: conf/email.py:73
+#: conf/email.py:88
 msgid ""
 "Option to define frequency of emailed updates for: Question asked by the "
 "user."
-msgstr "Opcija za definiranje učestalosti primanja email statusa za:  Korisnikova pitanja."
+msgstr "Mogućnosti definiranja učestalosti ažuriranja elektroničkom poštom za: pitanja koja postavljaju korisnici."
 
-#: conf/email.py:85
+#: conf/email.py:100
 msgid "Default notification frequency questions answered by the user"
-msgstr "Zadana učestalost obavještavanja za korisnikova pitanja"
-
-#: conf/email.py:87
-msgid ""
-"Option to define frequency of emailed updates for: Question answered by the "
-"user."
-msgstr "Opcija za definiranje učestalosti primanja email statusa za: Pitanja odgovorena od strane korisnik."
-
-#: conf/email.py:99
-msgid ""
-"Default notification frequency questions individually"
-"                        selected by the user"
-msgstr "Zadana učestalost obavještavanja za pitanja odabrana od strane korisnika"
+msgstr "Zadana obavijest o učestalosti pitanja na koja odgovaraju korisnici"
 
 #: conf/email.py:102
 msgid ""
-"Option to define frequency of emailed updates for: Question individually "
-"selected by the user."
-msgstr "Opcija za definiranje učestalosti primanja email statusa za: Pitanja izabrana od strane korisnika."
+"Option to define frequency of emailed updates for: Question answered by the "
+"user."
+msgstr "Mogućnost definiranja učestalosti ažuriranja elektroničkom poštom za: pitanja na koje je odgovorio korisnik."
 
 #: conf/email.py:114
 msgid ""
-"Default notification frequency for mentions                        and "
-"comments"
-msgstr "Zadana učestalost obavještavanja za spominjanje i komentiranje"
+"Default notification frequency questions individually"
+"                        selected by the user"
+msgstr "Zadana učestalost obavještavanja o pitanjima koja je                        odabrao korisnik"
 
 #: conf/email.py:117
 msgid ""
+"Option to define frequency of emailed updates for: Question individually "
+"selected by the user."
+msgstr "Mogućnost definiranja učestalosti ažuriranja elektroničkom poštom za: pitanja koja je odabrao korisnik."
+
+#: conf/email.py:129
+msgid ""
+"Default notification frequency for mentions                        and "
+"comments"
+msgstr "Zadana učestalost obavijesti za bilješke                        i komentare"
+
+#: conf/email.py:132
+msgid ""
 "Option to define frequency of emailed updates for: Mentions and comments."
-msgstr "Opcija za definiranje učestalosti primanja email statusa za: Spominjanje i komentiranje."
+msgstr "Mogućnost definiranja učestalosti ažuriranja elektroničkom poštom za: bilješke i komentare."
 
-#: conf/email.py:128
+#: conf/email.py:143
 msgid "Send periodic reminders about unanswered questions"
-msgstr "Periodno pošalji obavijesti o neodgovorenim pitanjima"
+msgstr "Povremeno pošalji podsjetnik na neodgovorena pitanja"
 
-#: conf/email.py:130
+#: conf/email.py:145
 msgid ""
 "NOTE: in order to use this feature, it is necessary to run the management "
 "command \"send_unanswered_question_reminders\" (for example, via a cron job "
 "- with an appropriate frequency) "
-msgstr "NAPOMENA: da bi koristili ovo svojstvo potrebno je pokrenuti komandu  \"send_unanswered_question_reminders\" (npr. putem cron posla - sa prikladnom učestalošću)"
+msgstr "NAPOMENA: ako želite koristiti ovu značajku, potrebno je pokrenuti naredbu upravljanja \"send_unanswered_question_reminders\" (npr. putem cron joba s primjerenom učestalošću) "
 
-#: conf/email.py:143
+#: conf/email.py:158
 msgid "Days before starting to send reminders about unanswered questions"
-msgstr "Broj dana prije početka slanja obavijesti o neodgovorenim pitanjima"
+msgstr "Broj dana prije nego se pošalju podsjetnici na neodgovorena pitanja"
 
-#: conf/email.py:154
+#: conf/email.py:169
 msgid ""
 "How often to send unanswered question reminders (in days between the "
 "reminders sent)."
-msgstr "Koliko često slati obavijesti o neodgovorenim pitanjima (u danima između poslanih obavijesti)"
+msgstr "Koliko često slati podsjetnike na neodgovorena pitanja (unijeti koliko dana treba proći između dva podsjetnika)."
 
-#: conf/email.py:166
+#: conf/email.py:181
 msgid "Max. number of reminders to send about unanswered questions"
-msgstr "Maksimalan broj poslanih obavijesti o neodgovorenim pitanjima"
+msgstr "Najveći mogući broj podsjetnika na neodgovorena pitanja"
 
-#: conf/email.py:177
+#: conf/email.py:192
 msgid "Send periodic reminders to accept the best answer"
-msgstr "Periodno pošalji obavijesti za prihvaćanje najboljeg odgovora"
+msgstr "Periodično šalji podsjetnike na prihvaćanje najboljeg odgovora"
 
-#: conf/email.py:179
+#: conf/email.py:194
 msgid ""
 "NOTE: in order to use this feature, it is necessary to run the management "
 "command \"send_accept_answer_reminders\" (for example, via a cron job - with"
 " an appropriate frequency) "
-msgstr "NAPOMENA: da bi koristili ovo svojstvo potrebno je pokrenuti komandu  \"send_accept_answer_reminders\" (npr. putem cron posla - sa prikladnom učestalošću)"
+msgstr "NAPOMENA: ako želite koristiti ovu značajku, potrebno je pokrenuti naredbu upravljanja \"send_accept_answer_reminders\" (npr. putem cron joba s primjerenom učestalošću) "
 
-#: conf/email.py:192
+#: conf/email.py:207
 msgid "Days before starting to send reminders to accept an answer"
-msgstr "Broj dana prije početka slanja obavijesti za prihvaćanje odgovora"
+msgstr "Broj dana prije nego se počnu slati podsjetnici na prihvaćanje odgovora"
 
-#: conf/email.py:203
+#: conf/email.py:218
 msgid ""
 "How often to send accept answer reminders (in days between the reminders "
 "sent)."
-msgstr "Koliko često slati obavijesti za prihvaćanje odgovora (u danima između poslanih obavijesti)"
+msgstr "Koliko često slati podsjetnike na prihvaćanje odgovora (unijeti koliko dana treba proći između dva podsjetnika)."
 
-#: conf/email.py:215
+#: conf/email.py:230
 msgid "Max. number of reminders to send to accept the best answer"
-msgstr "Maksimalan broj poslanih obavijesti za prihvaćanje najboljeg odgovora"
+msgstr "Najveći broj podsjetnika za poslati kako bi se prihvatio najbolji dogovor"
 
-#: conf/email.py:227
+#: conf/email.py:242
 msgid "Require email verification before allowing to post"
-msgstr "Zahtjevaj potvrdu emaila prije dopuštenja objave postova"
+msgstr "Potrebno je provjeriti adresu elektroničke pošte prije negoli se dopusti objavljivanje"
 
-#: conf/email.py:228
+#: conf/email.py:243
 msgid ""
 "Active email verification is done by sending a verification key in email"
-msgstr "Aktivacija se izvodi slanje potvrdnog ključa u emailu"
+msgstr "Provjera je li adresa elektroničke pošte aktivna obavlja se slanjem koda za provjeru na adresu"
 
-#: conf/email.py:237
+#: conf/email.py:252
 msgid "Fake email for anonymous user"
-msgstr "Napravi nepostojeći email za anonimne korisnike"
+msgstr "Lažna adresa elektroničke pošte za anonimne korisnike"
 
-#: conf/email.py:238
+#: conf/email.py:253
 msgid "Use this setting to control gravatar for email-less user"
-msgstr "Koristi ovu postavku za kontrolu gavatara za korisnike bez emaila"
+msgstr "Koristi ove postavke za nadziranje gravatara korisnika bez adrese elktroničke pošte"
 
-#: conf/email.py:247
+#: conf/email.py:262
 msgid "Allow posting questions by email"
-msgstr "Dozvoli objavu pitanja bez emaila"
+msgstr "Dopusti postavljati pitanja elektroničkom poštom"
 
-#: conf/email.py:249
+#: conf/email.py:264
 msgid ""
 "Before enabling this setting - please fill out IMAP settings in the "
 "settings.py file"
-msgstr "Prije omogućavanja ove postavke popunite IMAP postavku u settings.py datoteci"
+msgstr "Prije omogućavanja ove opcije - ispunite IMAP postavke i datoteci settings.py"
 
-#: conf/email.py:260
+#: conf/email.py:275
 msgid "Replace space in emailed tags with dash"
-msgstr "Zamjeni razmake između oznaka sa crticama u oznakama poslanim emailom"
+msgstr "Zamijeni razmake u tagovima poslanima elektroničkom poštom crticom"
 
-#: conf/email.py:262
+#: conf/email.py:277
 msgid ""
 "This setting applies to tags written in the subject line of questions asked "
 "by email"
-msgstr "Ova postavka se odnosi na oznake napisane u subjekt liniji  pitanja postavljenog putem emaila."
+msgstr "Ove se postavke odnose na togove napisane u naslovu pitanja postavljenog elektroničkom poštom"
 
-#: conf/email.py:273
+#: conf/email.py:288
 msgid "Enable posting answers and comments by email"
 msgstr "Omogući objavljivanje odgovora i komentara putem emaila"
 
-#: conf/email.py:276
+#: conf/email.py:291
 msgid "To enable this feature make sure lamson is running"
 msgstr "Prije omogućavanja ovog svojstva provjerite da li lamson radi"
 
-#: conf/email.py:287
+#: conf/email.py:302
 msgid "Emailed post: when to notify author about publishing"
 msgstr ""
 
-#: conf/email.py:312
+#: conf/email.py:327
 msgid "Reply by email hostname"
 msgstr "Odgovori putem poslužiteljevog emaila"
 
-#: conf/email.py:323
+#: conf/email.py:338
 msgid ""
 "Email replies having fewer words than this number will be posted as comments"
 " instead of answers"
@@ -927,7 +931,7 @@ msgstr "Recaptcha je alat koji pomaže odvojiti prave ljude od robota za neželj
 
 #: conf/external_keys.py:84
 msgid "Facebook public API key"
-msgstr "Facebook javni API ključ"
+msgstr "Facebook API javni ključ"
 
 #: conf/external_keys.py:86
 #, python-format
@@ -935,11 +939,11 @@ msgid ""
 "Facebook API key and Facebook secret allow to use Facebook Connect login "
 "method at your site. Please obtain these keys at <a "
 "href=\"%(url)s\">facebook create app</a> site"
-msgstr "Facebook API ključ i Facebook secret omogućuju korištenje Facebook Connect prijave na vašoj stranici. Nabavite ključeve na stranici<a href=\"%(url)s\">kreiraj facebook aplikaciju</a> "
+msgstr "Facebook API ključ i Facebook tajna dozvoljavaju upotrebu Facebook Connect usluge kao metodu prijave na vašu stranicu. Preuzmite ključeve sa <a href=\"%(url)s\">facebook create app</a> stranice"
 
 #: conf/external_keys.py:99
 msgid "Facebook secret key"
-msgstr "Facebook tajni ključ"
+msgstr "Tajni Facebookov kôd"
 
 #: conf/external_keys.py:107
 msgid "Twitter consumer key"
@@ -950,7 +954,7 @@ msgstr "Twitter korisnički ključ"
 msgid ""
 "Please register your forum at <a href=\"%(url)s\">twitter applications "
 "site</a>"
-msgstr "Registrirajte svoj forum na stranici <a href=\"%(url)s\">twitter aplikacije</a>"
+msgstr "Registrirajte forum <a href=\"%(url)s\">twitterovoj stranici s aplikacijama</a>"
 
 #: conf/external_keys.py:120
 msgid "Twitter consumer secret"
@@ -965,7 +969,7 @@ msgstr "LinkedIn korisnički ključ"
 msgid ""
 "Please register your forum at <a href=\"%(url)s\">LinkedIn developer "
 "site</a>"
-msgstr "Registrirajte svoj forum na stranici <a href=\"%(url)s\">LinkedIn stranica za programere</a>"
+msgstr "Registrirajte forum na <a href=\"%(url)s\">LinkedIn razvijateljskoj stranici</a>"
 
 #: conf/external_keys.py:141
 msgid "LinkedIn consumer secret"
@@ -980,7 +984,7 @@ msgstr "ident.ca korisnički ključ"
 msgid ""
 "Please register your forum at <a href=\"%(url)s\">Identi.ca applications "
 "site</a>"
-msgstr "Registrirajte svoj forum na <a href=\"%(url)s\">Identi.ca aplikacije</a>"
+msgstr "Registrirajte forum na <a href=\"%(url)s\">Identi.ca aplikacijskoj stranici</a>"
 
 #: conf/external_keys.py:162
 msgid "ident.ca consumer secret"
@@ -1036,7 +1040,7 @@ msgstr ""
 
 #: conf/forum_data_rules.py:12
 msgid "Data entry and display rules"
-msgstr "Pravila unosa i prikaza podataka"
+msgstr "Unos podataka i pravila prikazivanja"
 
 #: conf/forum_data_rules.py:27
 msgid "Editor for the posts"
@@ -1067,21 +1071,21 @@ msgstr "<em>Napomena: prvo pročitajte <a href=\"%(url)s\">ovo</a>.</em>"
 
 #: conf/forum_data_rules.py:78
 msgid "Check to enable community wiki feature"
-msgstr "Označite za omogućavanje svojstva wiki zajednice"
+msgstr "Označite kako biste omogućili značajka wiki zajedenice"
 
 #: conf/forum_data_rules.py:87
 msgid "Allow asking questions anonymously"
-msgstr "Dopusti anonimno postavljanje pitanja"
+msgstr "Dopusti postavljanje pitanja anonimno"
 
 #: conf/forum_data_rules.py:89
 msgid ""
 "Users do not accrue reputation for anonymous questions and their identity is"
 " not revealed until they change their mind"
-msgstr "Za objavu anonimnih pitanja korisnicima ne raste ugled, a njihov identitet se ne otkriva dok ne promjene mišljenje"
+msgstr "Korisnicima ne raste ugled za anonimna pitanja i njihov identitet se ne otkriva sve dok ne promjene mišljenje"
 
 #: conf/forum_data_rules.py:101
 msgid "Allow posting before logging in"
-msgstr "Dozvoli objavljivanje postova prije prijave"
+msgstr "Dopusti objavljivanje prije prijave"
 
 #: conf/forum_data_rules.py:103
 msgid ""
@@ -1089,7 +1093,7 @@ msgid ""
 "logging in. Enabling this may require adjustments in the user login system "
 "to check for pending posts every time the user logs in. The builtin Askbot "
 "login system supports this feature."
-msgstr "Označite ako želite omogućiti objavu pitanja ili odgovora prije prijave. Ova opcija zahtjeva prilagodbu sistema za prijavu korisnika radi provjere postova na čekanju svaki put kad se korisnik prijavi. Askbot sistem za provjeru ima ovo svojstvo."
+msgstr "Označite kako biste omogućili korisnicima da počnu objavljivati pitanja ili odgovore prije negoli se prijave. Omogućavanje ove opcije zahtjeva podešavanje korisničkog sustava prijava kako bi se pri svakoj prijavi provjeravalo postoji li nešto za objaviti. Ugrađeni Askbot sustav prijava sadržava ovu značajku."
 
 #: conf/forum_data_rules.py:118
 msgid "Auto-follow questions by the Author"
@@ -1115,29 +1119,29 @@ msgstr ""
 
 #: conf/forum_data_rules.py:147
 msgid "Allow swapping answer with question"
-msgstr "Dozvoli zamjenu odgovora sa pitanjem"
+msgstr "Dopusti zamjenu pitanja s odgovorom"
 
 #: conf/forum_data_rules.py:149
 msgid ""
 "This setting will help import data from other forums such as zendesk, when "
 "automatic data import fails to detect the original question correctly."
-msgstr "Ova postavka pomaže prenijeti podatke s drugih foruma kao što su zendesk, kada automatsko unošenje podataka ne uspije pravilno otkriti originalno pitanje."
+msgstr "Ova će opcija pomoći unosu podataka s drugih foruma kao što je zendesk kada automatski unos ne uspije detektirati orginalno pitanje pravilno."
 
 #: conf/forum_data_rules.py:161
 msgid "Maximum length of tag (number of characters)"
-msgstr "Maksimalna duljina oznake (broj znakova)"
+msgstr "Najveća dopuštena duljina taga (broj znakova)"
 
 #: conf/forum_data_rules.py:170
 msgid "Minimum length of title (number of characters)"
-msgstr "Maksimalna duljina naslova (broj znakova)"
+msgstr "Najmanja dopuštena duljina naslova (broj znakova)"
 
 #: conf/forum_data_rules.py:180
 msgid "Minimum length of question body (number of characters)"
-msgstr "Maksimalna duljina pitanja (broj znakova)"
+msgstr "Najmanja dopuštena duljina pitanja (broj znakova)"
 
 #: conf/forum_data_rules.py:191
 msgid "Minimum length of answer body (number of characters)"
-msgstr "Maksimalna duljina odgovora (broj znakova)"
+msgstr "Najmanja dopuštena duljina odgovora (broj znakova)"
 
 #: conf/forum_data_rules.py:202
 msgid "Minimum length of comment (number of characters)"
@@ -1169,44 +1173,44 @@ msgstr ""
 
 #: conf/forum_data_rules.py:256
 msgid "Mandatory tags"
-msgstr "Nužne oznake"
+msgstr "Obavezni tagovi"
 
 #: conf/forum_data_rules.py:259
 msgid ""
 "At least one of these tags will be required for any new or newly edited "
 "question. A mandatory tag may be wildcard, if the wildcard tags are active."
-msgstr "Najmanje jedna od ovih oznaka biti će nužna za bilo koje novo ili novo uređeno pitanje. Nužna oznaka može biti višeznačnik, ako su su oznake za višeznačnike aktivne."
+msgstr "Najmanje će jedan od ovih tagova biti potreban za svako novo ili nanovo uređivano pitanje. Spomenuti tag može sadržavati zamjenske znakove ako su aktivni tagovi koji omogućuju zamjenske znakove."
 
 #: conf/forum_data_rules.py:271
 msgid "Force lowercase the tags"
-msgstr "Nametni oznake u malim slovima"
+msgstr "Prisili da tagovi budu pisani malim slovima"
 
 #: conf/forum_data_rules.py:273
 msgid ""
 "Attention: after checking this, please back up the database, and run a "
 "management command: <code>python manage.py fix_question_tags</code> to "
 "globally rename the tags"
-msgstr "Pozor: nakon što ovo označite, napravite kopiju baze podataka i pokrenite komandu: <code>python manage.py fix_question_tags</code> za globalnu promjenu naziva oznaka"
+msgstr "Pozor: nakon provjere, napravite sigurnosnu kopiju baze podataka i unesite naredbu za upravljanje: <code>python manage.py fix_question_tags</code> kako biste preimenovali sve tagove"
 
 #: conf/forum_data_rules.py:287
 msgid "Format of tag list"
-msgstr "Format liste oznaka"
+msgstr "Oblikovanje liste tagova"
 
 #: conf/forum_data_rules.py:289
 msgid ""
 "Select the format to show tags in, either as a simple list, or as a tag "
 "cloud"
-msgstr "Odaberite format prikaza oznaka u obliku jednostavne liste ili oblaka oznaka"
+msgstr "Odaberite format u kojem će se prikazivati tagovi, kao obična lista, ili kao oblak tagova"
 
 #: conf/forum_data_rules.py:301
 msgid "Use wildcard tags"
-msgstr "Koristi višeznačne oznake"
+msgstr "Koristi tagove sa zamjenskim znakovima"
 
 #: conf/forum_data_rules.py:303
 msgid ""
 "Wildcard tags can be used to follow or ignore many tags at once, a valid "
 "wildcard tag has a single wildcard at the very end"
-msgstr "Višeznačne oznake se mogu koristiti za praćenje ili ignoriranje više oznaka odjednom, ispravna višeznačna oznaka ima jedan višeznačnik na samom kraju"
+msgstr "Zamjenski znakovi mogu biti korišteni kako bi se moglo pratiti ili zanemarivati više tagova odjednom, pravilna upotreba takvih tagova sastoji se od jednog zamjenskog znaka na samome kraju"
 
 #: conf/forum_data_rules.py:315
 msgid "Use separate set for subscribed tags"
@@ -1240,32 +1244,32 @@ msgstr ""
 
 #: conf/forum_data_rules.py:354
 msgid "Default max number of comments to display under posts"
-msgstr "Zadan maksimalan broj komentara prikazanih ispod postova"
+msgstr "Zadani najveći broj komentara prikazivanih ispod objave"
 
 #: conf/forum_data_rules.py:365
 #, python-format
 msgid "Maximum comment length, must be < %(max_len)s"
-msgstr "Maksimalna duljina komentara mora biti < %(max_len)s"
+msgstr "Najveća duljina komentara mora biti < %(max_len)s"
 
 #: conf/forum_data_rules.py:375
 msgid "Limit time to edit comments"
-msgstr "Ograniči vrijeme za uređivanje komentara"
+msgstr "Ograniči vrijeme unutar kojega se komentar može uređivati"
 
 #: conf/forum_data_rules.py:377
 msgid "If unchecked, there will be no time limit to edit the comments"
-msgstr "Ako nije označeno, vrijeme za uređivanje komentara neće biti ograničeno"
+msgstr "Ako nije označeno, neće biti vremenskog ograničenja za uređivanje komentara"
 
 #: conf/forum_data_rules.py:388
 msgid "Minutes allowed to edit a comment"
-msgstr "Dozvoljen broj minuta za uređivanje komentara"
+msgstr "Vremenski period u minutama unutar kojega je moguće uređivati komentar"
 
 #: conf/forum_data_rules.py:389
 msgid "To enable this setting, check the previous one"
-msgstr "Za omogućavanje ove postavke označite prethodni"
+msgstr "Da biste omogućili ovu postavku, označite prethodnu"
 
 #: conf/forum_data_rules.py:398
 msgid "Save comment by pressing <Enter> key"
-msgstr "Sačuvajte komentar pritiskom tipke <Enter>"
+msgstr "Spremi komentar pritiskom tipke <Enter>"
 
 #: conf/forum_data_rules.py:400
 msgid ""
@@ -1275,11 +1279,11 @@ msgstr ""
 
 #: conf/forum_data_rules.py:411
 msgid "Minimum length of search term for Ajax search"
-msgstr "Minimalna duljina traženog pojma za Ajax pretragu"
+msgstr "Najmanja dužina pretraživanog termina za Ajax tražilicu"
 
 #: conf/forum_data_rules.py:412
 msgid "Must match the corresponding database backend setting"
-msgstr "Mora odgovarati pozadinskoj postavci baze podataka"
+msgstr "Mora odgovarati postavkama pozadinskog servisa baze podataka"
 
 #: conf/forum_data_rules.py:421
 msgid "Do not make text query sticky in search"
@@ -1294,15 +1298,15 @@ msgstr "Označite za deaktiviviranje \"ljepljivog\" ponašanja za traženi upit.
 
 #: conf/forum_data_rules.py:436
 msgid "Maximum number of tags per question"
-msgstr "Maksimalan broj oznaka po pitanju"
+msgstr "Najveći dopušteni broj tagova po pitanju"
 
 #: conf/forum_data_rules.py:448
 msgid "Number of questions to list by default"
-msgstr "Zadan broj pitanja na listi"
+msgstr "Broj pitanja za izlistati prema zadanim potavkama"
 
 #: conf/forum_data_rules.py:458
 msgid "What should \"unanswered question\" mean?"
-msgstr "Što bi \"neodgovoreno ptanje\" trebalo značiti?"
+msgstr "Što bi \"neodgovoreno pitanje\" značilo?"
 
 #: conf/group_settings.py:9
 msgid "Group settings"
@@ -1507,15 +1511,15 @@ msgstr "Licenca sadržaja"
 
 #: conf/license.py:21
 msgid "Show license clause in the site footer"
-msgstr "Prikaži klauzulu licence u podnožju stranice"
+msgstr "Prikaži licencijsku klauzulu u podnožju stranice"
 
 #: conf/license.py:30
 msgid "Short name for the license"
-msgstr "Kratko ime licence"
+msgstr "Kratko ime za licenciju"
 
 #: conf/license.py:39
 msgid "Full name of the license"
-msgstr "Puno ime licence"
+msgstr "Puno ime licencije"
 
 #: conf/license.py:40
 msgid "Creative Commons Attribution Share Alike 3.0"
@@ -1523,11 +1527,11 @@ msgstr "Creative Commons Attribution Share Alike 3.0"
 
 #: conf/license.py:48
 msgid "Add link to the license page"
-msgstr "Napravi vezu na stranicu licence"
+msgstr "Dodaj poveznjicu na licencijsku stranicu"
 
 #: conf/license.py:57
 msgid "License homepage"
-msgstr "Početna stranica licence"
+msgstr "Naslovnica licencije"
 
 #: conf/license.py:59
 msgid "URL of the official page with all the license legal clauses"
@@ -1535,11 +1539,11 @@ msgstr "URL službene stranice sa svim klauzulama licence"
 
 #: conf/license.py:69
 msgid "Use license logo"
-msgstr "Koristi logo licence"
+msgstr "Koristi logo licencije"
 
 #: conf/license.py:78
 msgid "License logo image"
-msgstr "Slika loga licence"
+msgstr "Slika licencijskog loga"
 
 #: conf/login_providers.py:13
 msgid "Login provider setings"
@@ -1551,7 +1555,7 @@ msgstr "Na stranici \"Prijava\" prikaži gumb za alternativne pružatelje prijav
 
 #: conf/login_providers.py:31
 msgid "Always display local login form and hide \"Askbot\" button."
-msgstr "Uvijek prikaži lokalni prijavni obrazac i sakri \"Askbot\" gumb."
+msgstr "Uvijek prikaži obrazac za lokalnu prijavu i sakrij gumb \"Askbot\"."
 
 #: conf/login_providers.py:40
 msgid "Activate to allow login with self-hosted wordpress site"
@@ -1561,7 +1565,7 @@ msgstr "Aktiviraj za dopuštenje prijave sa svoje wordpress internet stranice"
 msgid ""
 "to activate this feature you must fill out the wordpress xml-rpc setting "
 "bellow"
-msgstr "za aktiviranje ovog svojstva morate popuniti wordpress xml-rpc postavke ispod"
+msgstr "da biste aktivirali ovu značajku, potrebno je ispuniti niže dostupne wordpress xml-rpc postavke"
 
 #: conf/login_providers.py:50
 msgid ""
@@ -1573,11 +1577,11 @@ msgstr "Popunite sa wordpress url-om na xml-rpc, uobičajeno http://mojastranica
 msgid ""
 "To enable, go to Settings->Writing->Remote Publishing and check the box for "
 "XML-RPC"
-msgstr "Za omogućavanje idite na Settings->Writing->Remote Publishing i označite okvir za izbor za XML-RPC"
+msgstr "Za omogućavanje otvorite Postavke->Pisanje->Remote Publishing i označite kućicu za XML-RPC"
 
 #: conf/login_providers.py:60
 msgid "Upload your icon"
-msgstr "Pošaljite vašu ikonu"
+msgstr "Učitaj svoju ikonu"
 
 #: conf/login_providers.py:93
 msgid "local password"
@@ -1593,7 +1597,7 @@ msgstr "Aktivirajte %(provider)s prijavu"
 msgid ""
 "Note: to really enable %(provider)s login some additional parameters will "
 "need to be set in the \"External keys\" section"
-msgstr "Napomena: za omogućavanje %(provider)s prijave potrebno je podesiti dodatne parametre u dijelu \"Vanjski ključevi\""
+msgstr "Napomena: za omogućavanje %(provider)s prijavu, bit će potrebno podesiti dodatne parametre unutar sekcije \"Vanjski ključevi\""
 
 #: conf/markup.py:15
 msgid "Markup in posts"
@@ -1609,39 +1613,39 @@ msgid ""
 " - bold and italic text can still be marked up with asterisks. Note that "
 "\"MathJax support\" implicitly turns this feature on, because underscores "
 "are heavily used in LaTeX input."
-msgstr "Ako je označeno, znakovi podvlačenja neće aktivirati kurziv ili podebljano formatiranje - podebljan i kurziv tekst se mogu označiti sa zvjezdicama. Napomena da \"MathJax podrška\" implicitno uključuje ovo svojstvo zato što se znakovi podvlačenja puno koriste u LaTeX unosu."
+msgstr "Ako je označeno, podcrtani znakovi neće pokrenuti ukošeno ili podebljano formatiranje - podebljan se i ukošen tekst još uvijek može naznačiti zvjezdicom. Podrška za \"Mathjax\" implicitno uključuje ovu značajku jer su podcrtavanja česta pri unosu LaTeXa."
 
 #: conf/markup.py:58
 msgid "Mathjax support (rendering of LaTeX)"
-msgstr "Podrška za Mathjax (izvođenje LaTeXa)"
+msgstr "Mathjax podrška (prikazivanje LaTeXa)"
 
 #: conf/markup.py:60
 #, python-format
 msgid ""
 "If you enable this feature, <a href=\"%(url)s\">mathjax</a> must be "
 "installed on your server in its own directory."
-msgstr "Ako omogućite ovo svojstvo, <a href=\"%(url)s\">mathjax</a> mora biti instaliran na vašem poslužitelju u svojem direktoriju."
+msgstr "Omogućite li ovu značajku, <a href=\"%(url)s\">mathjax</a> mora biti instaliran na poslužitelju u vlasitoj mapi."
 
 #: conf/markup.py:74
 msgid "Base url of MathJax deployment"
-msgstr "Osnovni url MathJax implementacije"
+msgstr "Base url MathJax implementacije"
 
 #: conf/markup.py:76
 msgid ""
 "Note - <strong>MathJax is not included with askbot</strong> - you should "
 "deploy it yourself, preferably at a separate domain and enter url pointing "
 "to the \"mathjax\" directory (for example: http://mysite.com/mathjax)"
-msgstr "Napomena - <strong>MathJax nije uključen u askbot</strong> - trebate ga sami instalirati. po mogućnosti na drugoj domeni i unijeti url koji pokazuje na \"mathjax\" direktorij (npr. http://mojastranica.hr/mathjax)"
+msgstr "Napomena - <strong>askbot ne uključuje MathJax</strong> - morat ćete ga implementirati sami, preporučljivo na drugoj domena i unesite url koji će upućivati na mapu \"mathjax\" (naprimjer: http://mysite.com/mathjax)"
 
 #: conf/markup.py:91
 msgid "Enable autolinking with specific patterns"
-msgstr "Omogući automatsko spajanje s pojedinim obrazcima"
+msgstr "Omogući autopovezivanje prema specifičnom uzorku"
 
 #: conf/markup.py:93
 msgid ""
 "If you enable this feature, the application  will be able to detect patterns"
 " and auto link to URLs"
-msgstr "Ako omogućite ovo svojstvo aplikacija će moći pronaći obrazce i automatski spojiti s URL-ovima"
+msgstr "Omogućite li ovu značajku, aplikacija  će moći detektirati uzorke i automatski ih povezivati s URL-ovima"
 
 #: conf/markup.py:106
 msgid "Regexes to detect the link patterns"
@@ -1658,7 +1662,7 @@ msgstr "Unesite ispravan regularni izraz za obrazac, jedan po liniji. Na primjer
 
 #: conf/markup.py:127
 msgid "URLs for autolinking"
-msgstr "URL-ovi za automatsko spajanje"
+msgstr "URL-ovi za automatsko povezivanje"
 
 #: conf/markup.py:129
 msgid ""
@@ -1676,19 +1680,19 @@ msgstr "Granice karme"
 
 #: conf/minimum_reputation.py:22
 msgid "Upvote"
-msgstr "Pozitivan glas"
+msgstr "Pozitivno ocijeni"
 
 #: conf/minimum_reputation.py:31
 msgid "Downvote"
-msgstr "Negativan glas"
+msgstr "Negativno ocijeni"
 
 #: conf/minimum_reputation.py:40
 msgid "Answer own question immediately"
-msgstr "Odmah odgovorite na svoje pitanje"
+msgstr "Odgovori na vlastito pitanje odmah"
 
 #: conf/minimum_reputation.py:49
 msgid "Accept own answer"
-msgstr "Prihvatite svoj odgovor"
+msgstr "Prihvati vlasititi odgovor"
 
 #: conf/minimum_reputation.py:58
 msgid "Accept any answer"
@@ -1696,19 +1700,19 @@ msgstr ""
 
 #: conf/minimum_reputation.py:67
 msgid "Flag offensive"
-msgstr "Označi kao uvredljivo"
+msgstr "Označi zastavicom uvredljivim"
 
 #: conf/minimum_reputation.py:88
 msgid "Delete comments posted by others"
-msgstr "Obriši komentare drugih korisnika"
+msgstr "Obriši komentare koje su objavili ostali korisnici"
 
 #: conf/minimum_reputation.py:97
 msgid "Delete questions and answers posted by others"
-msgstr "Obriši pitanja i odgovore drugih korisnika"
+msgstr "Obriši pitanja i odgovore koje su objavili ostali korisnici"
 
 #: conf/minimum_reputation.py:106
 msgid "Upload files"
-msgstr "Pošaljite datoteke"
+msgstr "Spremanje datoteka na poslužitelj"
 
 #: conf/minimum_reputation.py:115
 msgid "Insert clickable links"
@@ -1726,35 +1730,35 @@ msgstr ""
 
 #: conf/minimum_reputation.py:137
 msgid "Close own questions"
-msgstr "Zatvorite svoja pitanja"
+msgstr "Zatvori vlasitio pitanje"
 
 #: conf/minimum_reputation.py:146
 msgid "Retag questions posted by other people"
-msgstr "Ponovo označi pitanja drugih korisnika"
+msgstr "Ponovno tagiraj pitanja koja su objavili drugi korisnici"
 
 #: conf/minimum_reputation.py:155
 msgid "Reopen own questions"
-msgstr "Ponovo otvori svoja pitanja"
+msgstr "Ponovno otvori vlastita pitanja"
 
 #: conf/minimum_reputation.py:164
 msgid "Edit community wiki posts"
-msgstr "Uređivanje postova wiki zajednice"
+msgstr "Uredi wiki objave zajednice"
 
 #: conf/minimum_reputation.py:173
 msgid "Edit posts authored by other people"
-msgstr "Uređivanje postova drugih korisnika "
+msgstr "Uredi objave koje drugi korisnici ignoriraju"
 
 #: conf/minimum_reputation.py:182
 msgid "View offensive flags"
-msgstr "Pregled uvredljivih oznaka"
+msgstr "Pogledajte što je zastavicama označeno uvredljivim"
 
 #: conf/minimum_reputation.py:191
 msgid "Close questions asked by others"
-msgstr "Zatvori pitanja drugih korisnika"
+msgstr "Zatvori pitanja koja postavljaju drugi korisnici"
 
 #: conf/minimum_reputation.py:200
 msgid "Remove rel=nofollow from own homepage"
-msgstr "Ukloni rel=nofollow sa svoje početne stranice"
+msgstr "Izbriši rel=nofollow s vlastite naslovnice"
 
 #: conf/minimum_reputation.py:202
 msgid ""
@@ -1839,71 +1843,71 @@ msgstr ""
 
 #: conf/reputation_changes.py:13
 msgid "Karma loss and gain rules"
-msgstr "Pravila za dobivanje i gubljenje karme"
+msgstr "Pravila rasta i gubitka karme"
 
 #: conf/reputation_changes.py:23
 msgid "Maximum daily reputation gain per user"
-msgstr "Maksimalna dnevna količina dobivenog ugleda po korisniku"
+msgstr "Dnevno najveći rast ugleda po korisniku"
 
 #: conf/reputation_changes.py:32
 msgid "Gain for receiving an upvote"
-msgstr "Dobit za primanje pozitivnog glasa"
+msgstr "Porast za dobivanje pozitivne ocjene"
 
 #: conf/reputation_changes.py:41
 msgid "Gain for the author of accepted answer"
-msgstr "Dobit za autora prihvaćenog odgovora"
+msgstr "Porast za autorstvo nad prihvaćenim odgovorom"
 
 #: conf/reputation_changes.py:50
 msgid "Gain for accepting best answer"
-msgstr "Dobit za prihvaćanje najboljeg odgovora"
+msgstr "Porast za prihvaćanje najboljeg odgovora"
 
 #: conf/reputation_changes.py:59
 msgid "Gain for post owner on canceled downvote"
-msgstr "Dobit za vlasnika posta na obustavljenom negativnom glasu"
+msgstr "Porast za vlasnika objave za poništenu negativnu ocjenu"
 
 #: conf/reputation_changes.py:68
 msgid "Gain for voter on canceling downvote"
-msgstr "Dobit za glasača na obustavljenom negativnom glasu"
+msgstr "Porast za glasača pri poništavanju negativnog glasa"
 
 #: conf/reputation_changes.py:78
 msgid "Loss for voter for canceling of answer acceptance"
-msgstr "Gubitak za glasača za obustavljanje prihvaćanja odgovora"
+msgstr "Gubitak za glasača pri onemogućavanju prihvaćanja odgovora"
 
 #: conf/reputation_changes.py:88
 msgid "Loss for author whose answer was \"un-accepted\""
-msgstr "Gubitak za glasača čiji odgovor je  bio \"neprihvacen\""
+msgstr "Gubitak za autora čijem je odgovoru \"oduzeto prihvaćanje\""
 
 #: conf/reputation_changes.py:98
 msgid "Loss for giving a downvote"
-msgstr "Gubitak za davanje negativnog glasa"
+msgstr "Gubitak za dijeljenja negativnih glasova"
 
 #: conf/reputation_changes.py:108
 msgid "Loss for owner of post that was flagged offensive"
-msgstr "Gubitak za vlasnika posta označenog kao uvredljiv"
+msgstr "Gubitak za vlasnika čija je objava zastovicom označena uvredljivom"
 
 #: conf/reputation_changes.py:118
 msgid "Loss for owner of post that was downvoted"
-msgstr "Gubitak za vlasnika posta koji je dobio negativan glas"
+msgstr "Gubitak za vlasnika čijia je objava dobila negativan glas"
 
 #: conf/reputation_changes.py:128
 msgid "Loss for owner of post that was flagged 3 times per same revision"
-msgstr "Gubitak za vlasnika posta koji je označen 3 puta po istoj reviziji"
+msgstr "Gubitak za vlasnika čija je objava označena zastavicom tri puta u istom pregledu"
 
 #: conf/reputation_changes.py:138
 msgid "Loss for owner of post that was flagged 5 times per same revision"
-msgstr "Gubitak za vlasnika posta koji je označen 5 puta po istoj reviziji"
+msgstr "Gubitak za vlasnika čija je objava označena zastavicom 5 puta u istom pregledu"
 
 #: conf/reputation_changes.py:148
 msgid "Loss for post owner when upvote is canceled"
-msgstr "Gubitak za vlasnika posta kada je pozitivan glas obustavljen"
+msgstr "Gubitak za vlasnika objava kojoj je poništen pozitivan glas"
 
 #: conf/sidebar_main.py:12
 msgid "Main page sidebar"
-msgstr "Rubni stupac glavne stranice"
+msgstr "Bočna traka glavne stranice"
 
 #: conf/sidebar_main.py:20 conf/sidebar_question.py:67
 msgid "Custom sidebar header"
-msgstr "Prilagođeno zaglavlje rubnog stupca"
+msgstr "Prilagođeno zaglavlje bočne trake"
 
 #: conf/sidebar_main.py:23 conf/sidebar_profile.py:23
 msgid ""
@@ -1921,38 +1925,38 @@ msgstr ""
 
 #: conf/sidebar_main.py:45
 msgid "Show avatar block in sidebar"
-msgstr "Prikaži blok avatara u rubnom stupcu"
+msgstr "Prikaz bloka avatara u bočnoj traci"
 
 #: conf/sidebar_main.py:47
 msgid "Uncheck this if you want to hide the avatar block from the sidebar "
-msgstr "Uklonite oznaku ako želite sakriti blok avatara u rubnom stupcu"
+msgstr "Odznačite želite li sakriti blok avatara iz bočne trake "
 
 #: conf/sidebar_main.py:58
 msgid "Limit how many avatars will be displayed on the sidebar"
-msgstr "Limitiraj koliko će avatara biti prikazano u rubnom stupcu"
+msgstr "Određivanje broja avatara koji će se prikazivati na bočnoj traci"
 
 #: conf/sidebar_main.py:68
 msgid "Show tag selector in sidebar"
-msgstr "Prikaži izbornik oznaka u rubnom stupcu"
+msgstr "Prikaži izbornik tagova u bočnoj traci"
 
 #: conf/sidebar_main.py:70
 msgid ""
 "Uncheck this if you want to hide the options for choosing interesting and "
 "ignored tags "
-msgstr "Uklonite oznaku ako želite sakriti mogućnost za odabiranje zanimljivih i ignoriranih oznaka"
+msgstr "Odzdnačite želite li sakriti mogućnost biranja zanimljivih i ignoriranih tagova "
 
 #: conf/sidebar_main.py:81
 msgid "Show tag list/cloud in sidebar"
-msgstr "Prikaži listu/oblak oznaka u rubnom stupcu"
+msgstr "Prikaz liste/oblaka tagova u bočnoj traci"
 
 #: conf/sidebar_main.py:83
 msgid ""
 "Uncheck this if you want to hide the tag cloud or tag list from the sidebar "
-msgstr "Ukloni oznaku ako želite sakriti listu ili oblak oznaka iz rubnog stupca"
+msgstr "Odznačite ovo želite li sakriti oblak ili listu tagova iz bočne trake "
 
 #: conf/sidebar_main.py:94 conf/sidebar_question.py:132
 msgid "Custom sidebar footer"
-msgstr "Prilagođeno podnožje rubnog stupca"
+msgstr "Prilagođeno podnožje bočne trake"
 
 #: conf/sidebar_main.py:97 conf/sidebar_question.py:135
 msgid ""
@@ -1964,7 +1968,7 @@ msgstr "Koristi ovo područje za unos sadržaja u DONJEM DIJELU rubnog stupca u 
 
 #: conf/sidebar_profile.py:12
 msgid "User profile sidebar"
-msgstr "Rubni stupac korisničkog profila"
+msgstr "Bočna traka korisničkog profila"
 
 #: conf/sidebar_profile.py:20
 msgid "Custom sidebar"
@@ -2005,29 +2009,29 @@ msgstr ""
 
 #: conf/sidebar_question.py:92
 msgid "Show tag list in sidebar"
-msgstr "Prikaži listu oznaka u rubnom stupcu"
+msgstr "Prikaži listu tagova u bočnoj traci"
 
 #: conf/sidebar_question.py:94
 msgid "Uncheck this if you want to hide the tag list from the sidebar "
-msgstr "Uklonite oznaku ako želite sakriti listu oznaka iz rubnog stupca"
+msgstr "Odznačite ovo želite li sakriti listu tagova iz bočne trake "
 
 #: conf/sidebar_question.py:105
 msgid "Show meta information in sidebar"
-msgstr "Prikaži meta informacije u rubnom stupcu"
+msgstr "Prikaži metainformacije u bočnoj traci"
 
 #: conf/sidebar_question.py:107
 msgid ""
 "Uncheck this if you want to hide the meta information about the question "
 "(post date, views, last updated). "
-msgstr "Uklonite oznaku ako želite sakriti meta informacije o pitanju (datum objave, preglede, zadnje ažuriranje)."
+msgstr "Odznačite ovo želite li sakriti metainformacije o pitanju (datum objave, broj pogleda, zadnje ažuriranje). "
 
 #: conf/sidebar_question.py:119
 msgid "Show related questions in sidebar"
-msgstr "Prikaži slična pitanja u rubnom stupcu"
+msgstr "Prikaži povezana pitanja u bočnoj traci"
 
 #: conf/sidebar_question.py:121
 msgid "Uncheck this if you want to hide the list of related questions. "
-msgstr "Uklonite oznaku ako želite sakriti listu sličnih pitanja."
+msgstr "Odznačite ovo želite li sakriti listu povezanih pitanja. "
 
 #: conf/site_modes.py:63
 msgid "Bootstrap mode"
@@ -2045,53 +2049,61 @@ msgid ""
 "will be changed after you modify this setting."
 msgstr ""
 
-#: conf/site_settings.py:12
+#: conf/site_settings.py:14
 msgid "URLS, keywords & greetings"
 msgstr "URL-ovi, ključne riječi i pozdravi"
 
-#: conf/site_settings.py:21
+#: conf/site_settings.py:23
 msgid "Site title for the Q&A forum"
 msgstr "Naslov stranice za P&O forum"
 
-#: conf/site_settings.py:30
+#: conf/site_settings.py:32
 msgid "Comma separated list of Q&A site keywords"
 msgstr "Lista ključnih riječi odvojenih zarezom za P&O stranicu"
 
-#: conf/site_settings.py:39
+#: conf/site_settings.py:41
 msgid "Copyright message to show in the footer"
 msgstr "Poruka o autorskim pravima prikazana u podnožju stranice"
 
-#: conf/site_settings.py:49
+#: conf/site_settings.py:51
 msgid "Site description for the search engines"
-msgstr "Opis internet stranice za tražilice"
+msgstr "Opis stranice za tražilice"
 
-#: conf/site_settings.py:58
+#: conf/site_settings.py:60
 msgid "Short name for your Q&A forum"
 msgstr "Kratko ime za vaš P&O forum"
 
-#: conf/site_settings.py:67
+#: conf/site_settings.py:70
+msgid "Please enter url of your site"
+msgstr ""
+
+#: conf/site_settings.py:73
+msgid "Url must start either from http or https"
+msgstr ""
+
+#: conf/site_settings.py:92
 msgid "Base URL for your Q&A forum, must start with http or https"
 msgstr "Osnovni URL za vaš P&O forum, mora početi s http ili https"
 
-#: conf/site_settings.py:78
-msgid "Check to enable greeting for anonymous user"
-msgstr "Označite za omogućavanje pozdrava anonimnog korisnika"
-
-#: conf/site_settings.py:89
-msgid "Text shown in the greeting message shown to the anonymous user"
-msgstr "Tekst prikazan u pozdravnoj poruci za anonimnog korisnika"
-
-#: conf/site_settings.py:93
-msgid "Use HTML to format the message "
-msgstr "Koristi HTML format poruke"
-
-#: conf/site_settings.py:102
-msgid "Feedback site URL"
-msgstr "URL stranice sa povratnom informacijom"
-
 #: conf/site_settings.py:104
+msgid "Check to enable greeting for anonymous user"
+msgstr "Označite želite li da pozdravnu poruku vide i anonimni korisnici"
+
+#: conf/site_settings.py:115
+msgid "Text shown in the greeting message shown to the anonymous user"
+msgstr "Tekst prikazan u pozdravnoj poruci za anonimne korisnike"
+
+#: conf/site_settings.py:119
+msgid "Use HTML to format the message "
+msgstr "Koristite HTML za oblikovanje poruke "
+
+#: conf/site_settings.py:128
+msgid "Feedback site URL"
+msgstr "URL stranice za povratne informacije"
+
+#: conf/site_settings.py:130
 msgid "If left empty, a simple internal feedback form will be used instead"
-msgstr "Ako se ostavi prazno biti će korišten jednostavan obrazac za povratnu informaciju"
+msgstr "Ako je ostavljeno prazno, bit će korišten jednostavni interni obrazac za povratne informacije"
 
 #: conf/skin_general_settings.py:15
 msgid "Skin, logos and HTML <head> parts"
@@ -2103,7 +2115,7 @@ msgstr "Logo P&O stranice"
 
 #: conf/skin_general_settings.py:25
 msgid "To change the logo, select new file, then submit this whole form."
-msgstr "Za promjenu loga odaberite novu datoteku zatim podnesite cjeli obrazac."
+msgstr "Da biste promijenili logo, odaberite novu datoteku te podnesite ovaj cijeli obrazac."
 
 #: conf/skin_general_settings.py:34
 msgid "English"
@@ -2197,7 +2209,7 @@ msgstr "Prikaži logo"
 msgid ""
 "Check if you want to show logo in the forum header or uncheck in the case "
 "you do not want the logo to appear in the default location"
-msgstr "Označite ako želite da logo bude u zaglavlju foruma ili uklonite oznaku ako ne želite da logo bude prikazan na zadanom mjestu"
+msgstr "Označite ako želite da se logo prikazuje u zaglavlju foruma, odznačite ako ne želite da se logo prikazuje na zadanoj lokaciji"
 
 #: conf/skin_general_settings.py:87
 msgid "Site favicon"
@@ -2230,7 +2242,7 @@ msgid ""
 "If checked, all forum functions will be shown to users, regardless of their "
 "reputation. However to use those functions, moderation rules, reputation and"
 " other limits will still apply."
-msgstr "U slučaju odabira sve funkcije foruma biti će prikazane korisnicima bez obzira na njihov ugled, ali za korištenje tih funkcija, moderatorskih pravila, ugleda i ostalog, ograničenja će se i dalje primjenjivati"
+msgstr "Ako je označeno, sve će funkcije foruma biti prikazane korisniku bez obzira na njihov ugled. Ako koristite ovu funkciju, idalje se primjenjuju moderacijska pravila i druga ograničenja veza uz ugled korisnika."
 
 #: conf/skin_general_settings.py:137
 msgid "Select skin"
@@ -2258,7 +2270,7 @@ msgstr "<strong>Za korištenje ove mogućnosti</strong>, označite \"Prilagodi H
 
 #: conf/skin_general_settings.py:181
 msgid "Custom header additions"
-msgstr "Dodatci prilagođenog zaglavlja"
+msgstr "Prilagođeni dodaci zaglavlja"
 
 #: conf/skin_general_settings.py:183
 msgid ""
@@ -2277,11 +2289,11 @@ msgstr "Mod podnožja stranice"
 msgid ""
 "Footer is the bottom portion of the content, which is common to all pages. "
 "You can disable, customize, or use the default footer."
-msgstr "Podnožje je donji dio sadržaja uobičajen svim stanicama. Možete onemogućiti, prilagoditi ili koristiti zadano podnožje."
+msgstr "Podnožje je donji dio sadržaja, sadrže ga sve stranice. Možete ga onemogućiti, prilagoditi ili koristiti zadano postavke."
 
 #: conf/skin_general_settings.py:217
 msgid "Custom footer (HTML format)"
-msgstr "Prilagđeno podnožje (HTML format)"
+msgstr "Prilagođeno podnožje (podnožje u HTML-kodu)"
 
 #: conf/skin_general_settings.py:219
 msgid ""
@@ -2294,7 +2306,7 @@ msgstr "<strong>Za korištenje ove mogućnosti</strong>, označite \"Mod podnož
 
 #: conf/skin_general_settings.py:234
 msgid "Apply custom style sheet (CSS)"
-msgstr "Primjeni prilagođenu listu stilova (CSS)"
+msgstr "Primijeni custom style sheet (CSS)"
 
 #: conf/skin_general_settings.py:236
 msgid ""
@@ -2304,7 +2316,7 @@ msgstr "Označite ako želite promjeniti izgled vašeg foruma dodavanjem prilago
 
 #: conf/skin_general_settings.py:248
 msgid "Custom style sheet (CSS)"
-msgstr "Prilagođena lista stilova (CSS)"
+msgstr "Custom style sheet (CSS)"
 
 #: conf/skin_general_settings.py:250
 msgid ""
@@ -2317,7 +2329,7 @@ msgstr "<strong>Za korištenje ove funkcije</strong> označite \"Primjeni prilag
 
 #: conf/skin_general_settings.py:266
 msgid "Add custom javascript"
-msgstr "Dodaj prilagođen javascript"
+msgstr "Dodaj prilagođenu javaskriptu"
 
 #: conf/skin_general_settings.py:269
 msgid "Check to enable javascript that you can enter in the next field"
@@ -2325,7 +2337,7 @@ msgstr "Označite za omogućavanje javascripta koji možete unijeti u sljedećem
 
 #: conf/skin_general_settings.py:279
 msgid "Custom javascript"
-msgstr "Prilagođen javascript"
+msgstr "Prilagođena javaskripta"
 
 #: conf/skin_general_settings.py:281
 msgid ""
@@ -2344,7 +2356,7 @@ msgstr "Broj revizije teme"
 
 #: conf/skin_general_settings.py:301
 msgid "Will be set automatically but you can modify it if necessary."
-msgstr "Biti će postavljeno automatski, ali u slučaju potrebe možete ga prilagoditi."
+msgstr "Bit će postavljeno automatsi, ali možete uređivati ako želite."
 
 #: conf/skin_general_settings.py:312
 msgid "Hash to update the media revision number automatically."
@@ -2352,7 +2364,7 @@ msgstr "Jedinstvena vrijednost za automatsko ažuriranje broja medijske revizije
 
 #: conf/skin_general_settings.py:316
 msgid "Will be set automatically, it is not necesary to modify manually."
-msgstr "Biti će određena automatski, nije potrebno ručno podesiti."
+msgstr "Bit će postavljeno automatski, nema potrebe podešavati ručno."
 
 #: conf/social_sharing.py:11
 msgid "Content sharing"
@@ -2368,7 +2380,7 @@ msgstr ""
 
 #: conf/social_sharing.py:38
 msgid "Check to enable sharing of questions on Twitter"
-msgstr "Označite za omogućavanje dijeljenja pitanja na Twitteru"
+msgstr "Označite želite li omogućiti dijeljenje pitanja na Twitteru"
 
 #: conf/social_sharing.py:40
 msgid ""
@@ -2379,19 +2391,19 @@ msgstr ""
 
 #: conf/social_sharing.py:52
 msgid "Check to enable sharing of questions on Facebook"
-msgstr "Označite za omogućavanje dijeljenja pitanja na Facebooku"
+msgstr "Označite želite li omogućiti dijeljenje pitanja na Facebooku"
 
 #: conf/social_sharing.py:61
 msgid "Check to enable sharing of questions on LinkedIn"
-msgstr "Označite za omogućavanje dijeljenja pitanja na LinkedInu"
+msgstr "Označite želite li omogućiti dijeljenje pitanja na LinkedInu"
 
 #: conf/social_sharing.py:70
 msgid "Check to enable sharing of questions on Identi.ca"
-msgstr "Označite za omogućavanje dijeljenja pitanja na Identi.ca-i"
+msgstr "Označite želite li omogućiti dijeljenje pitanja na Identi.ca"
 
 #: conf/social_sharing.py:79
 msgid "Check to enable sharing of questions on Google+"
-msgstr "Označite za omogućavanje dijeljenja pitanja na Google+u"
+msgstr "Označite želite li omogućiti dijeljenje pitanja na Google+"
 
 #: conf/spam_and_moderation.py:10
 msgid "Akismet spam protection"
@@ -2412,7 +2424,7 @@ msgstr "Akismet ključ za otkrivanje neželjene pošte"
 
 #: conf/super_groups.py:5
 msgid "Reputation, Badges, Votes & Flags"
-msgstr "Ugled, Značke, Glasovi i Zastave"
+msgstr "Ugled, značke, glasovi i zastavice"
 
 #: conf/super_groups.py:6
 msgid "Static Content, URLS & UI"
@@ -2424,11 +2436,11 @@ msgstr "Pravila o podacima i Formatiranju"
 
 #: conf/super_groups.py:8
 msgid "External Services"
-msgstr "Vanjski Servisi"
+msgstr "Vanjski servisi"
 
 #: conf/super_groups.py:9
 msgid "Login, Users & Communication"
-msgstr "Prijava, Korisnici i Komunikacija"
+msgstr "Prijava, korisnici i komunikacija"
 
 #: conf/user_settings.py:14
 msgid "User settings"
@@ -2444,7 +2456,7 @@ msgstr ""
 
 #: conf/user_settings.py:41
 msgid "Allow editing user screen name"
-msgstr "Dopusti uređivanje prikaznog imena korisnika"
+msgstr "Dozvoli uređivanje korisničkog prikazivanog imena"
 
 #: conf/user_settings.py:50
 msgid "Auto-fill user name, email, etc on registration"
@@ -2464,15 +2476,15 @@ msgstr ""
 
 #: conf/user_settings.py:78
 msgid "Allow account recovery by email"
-msgstr "Dopusti obnavljanje računa putem emaila "
+msgstr "Dopusti obnovu korisničkog računa elektroničkom poštom"
 
 #: conf/user_settings.py:87
 msgid "Allow adding and removing login methods"
-msgstr "Dopusti dodavanje i oduzimanje metoda prijave"
+msgstr "Dopusti dodavanje i brisanje metoda prijave"
 
 #: conf/user_settings.py:97
 msgid "Minimum allowed length for screen name"
-msgstr "Minimalna dozvoljena duljina prikaznog imena"
+msgstr "Namjanja dopuštena duljina prikazivanog imena"
 
 #: conf/user_settings.py:105
 msgid "Default avatar for users"
@@ -2498,26 +2510,26 @@ msgstr "Odaberite ovu mogućnost ako želite koristiti avatare iz gavatar.com-a.
 
 #: conf/user_settings.py:134
 msgid "Default Gravatar icon type"
-msgstr "Zadan tip Gavatar ikone"
+msgstr "Zadan gravatar tip ikone"
 
 #: conf/user_settings.py:136
 msgid ""
 "This option allows you to set the default avatar type for email addresses "
 "without associated gravatar images.  For more information, please visit <a "
 "href=\"http://en.gravatar.com/site/implement/images/\">this page</a>."
-msgstr "Ova opcija vam omogućava zadavanje tipa avatara za email adrese bez povezanih gavatar slika. Za više informacija posjetite <a href=\"http://en.gravatar.com/site/implement/images/\">ovu stranicu</a>."
+msgstr "Ova vam opcija omogućava postavljanje zadanog tipa avatara za elektroničku poštu povezanu sa slikama na gravataru.  Za više informacija posjetite <a href=\"http://en.gravatar.com/site/implement/images/\">ovu stranicu</a>."
 
 #: conf/user_settings.py:146
 msgid "Name for the Anonymous user"
-msgstr "Ime za Anonimnog korisnika"
+msgstr "Ime anonimnog korisnika"
 
 #: conf/vote_rules.py:14
 msgid "Vote and flag limits"
-msgstr "Limit za glasanje i označavanje zastavom"
+msgstr "Ograničenja pri glasovanju i označavanju zastavicama"
 
 #: conf/vote_rules.py:24
 msgid "Number of votes a user can cast per day"
-msgstr "Broj glasova koje korisnik dnevno može odbaciti"
+msgstr "Broj glasova koje korisnik može dnevno podijeliti"
 
 #: conf/vote_rules.py:33
 msgid "Maximum number of flags per user per day"
@@ -2529,25 +2541,25 @@ msgstr "Granica za upozorenje o preostalim dnevnim glasovima"
 
 #: conf/vote_rules.py:51
 msgid "Number of days to allow canceling votes"
-msgstr "Broj dana za dopuštanje otkazivanja glasova"
+msgstr "Broj dana nakon kojih se dopušta poništavanje glasova"
 
 #: conf/vote_rules.py:60
 msgid "Number of days required before answering own question"
-msgstr "Broj dana potrebnih prije mogućnosti odgovaranja na svoje pitanje"
+msgstr "Broj dana nakon kojih se može odgovarati na vlasita pitanja"
 
 #: conf/vote_rules.py:69
 msgid "Number of flags required to automatically hide posts"
-msgstr "Broj zastava potrebnih za automatsko skrivanje posta"
+msgstr "Broj zastavica potreban za automatsko skrivanje objave"
 
 #: conf/vote_rules.py:78
 msgid "Number of flags required to automatically delete posts"
-msgstr "Broj zastava potrebnih za automatsko brisanje posta"
+msgstr "Broj zastavica potreban za automatsko brisanje objave"
 
 #: conf/vote_rules.py:87
 msgid ""
 "Minimum days to accept an answer, if it has not been accepted by the "
 "question poster"
-msgstr "Minimalan broj dana za prihvaćanje odgovora, ako ga nije prihvatila osoba koja je postavila pitanje"
+msgstr "Najmanji broj dana nakon kojih se odgovor može prihvatiti ako ga nije prihvatio korisnik koji je postavio pitanje"
 
 #: const/__init__.py:11
 msgid "duplicate question"
@@ -2567,19 +2579,19 @@ msgstr "nije pravo pitanje"
 
 #: const/__init__.py:15
 msgid "the question is answered, right answer was accepted"
-msgstr "pitanje je odgovoreno, ispravan odgovor je prihvaćen"
+msgstr "odgovoreno je na pitanje, dobar je odgovor prihvaćen"
 
 #: const/__init__.py:16
 msgid "question is not relevant or outdated"
-msgstr "pitanje nije relevantno ili je zastarilo"
+msgstr "pitanje nije relevantno ili je staro"
 
 #: const/__init__.py:17
 msgid "question contains offensive or malicious remarks"
-msgstr "pitanje sadrži uvredljive ili zle primjedbe"
+msgstr "pitanje sadržava uvredljive ili štetne značajke"
 
 #: const/__init__.py:18
 msgid "spam or advertising"
-msgstr "spam ili oglašavanje"
+msgstr "spam ili reklama"
 
 #: const/__init__.py:19
 msgid "too localized"
@@ -2616,23 +2628,23 @@ msgstr "aktivno"
 
 #: const/__init__.py:57
 msgid "inactive"
-msgstr "ne aktivno"
+msgstr "neaktivno"
 
 #: const/__init__.py:58
 msgid "hottest"
-msgstr "popularna"
+msgstr "najzanimljivije"
 
 #: const/__init__.py:59
 msgid "coldest"
-msgstr "ne popularna"
+msgstr "nezanimljivo"
 
 #: const/__init__.py:60 templates/question/answer_tab_bar.html:21
 msgid "most voted"
-msgstr "s najviše glasova"
+msgstr "najtraženije"
 
 #: const/__init__.py:61
 msgid "least voted"
-msgstr "s najmanje glasova"
+msgstr "najmaje glasova"
 
 #: const/__init__.py:62
 msgid "relevance"
@@ -2659,11 +2671,11 @@ msgstr ""
 
 #: const/__init__.py:122 templates/user_inbox/responses_and_flags.html:9
 msgid "all"
-msgstr "sva"
+msgstr "sve"
 
 #: const/__init__.py:123
 msgid "unanswered"
-msgstr "0 odgovora"
+msgstr "neodgovoreno"
 
 #: const/__init__.py:124
 msgid "followed"
@@ -2679,11 +2691,11 @@ msgstr "oblak"
 
 #: const/__init__.py:138
 msgid "Question has no answers"
-msgstr "Pitanje nema odgovore"
+msgstr "Pitanje nema odgovora"
 
 #: const/__init__.py:139
 msgid "Question has no accepted answers"
-msgstr "Pitanje nema prihvaćene odgovore"
+msgstr "Pitanje nema prihvaćenog odgovora"
 
 #: const/__init__.py:195
 msgid "asked a question"
@@ -2695,19 +2707,19 @@ msgstr "odgovorio/la na pitanje"
 
 #: const/__init__.py:197 const/__init__.py:301
 msgid "commented question"
-msgstr "komentirao/la pitanje"
+msgstr "komentirano pitanje"
 
 #: const/__init__.py:198 const/__init__.py:302
 msgid "commented answer"
-msgstr "komentirao/la odgovor"
+msgstr "komentiran odgovor"
 
 #: const/__init__.py:199
 msgid "edited question"
-msgstr "uredio/la pitanje"
+msgstr "uređeno pitanje"
 
 #: const/__init__.py:200
 msgid "edited answer"
-msgstr "uredio/la odgovor"
+msgstr "uređen odgovor"
 
 #: const/__init__.py:201
 msgid "received badge"
@@ -2715,19 +2727,19 @@ msgstr "primio/la značku"
 
 #: const/__init__.py:202
 msgid "marked best answer"
-msgstr "označio/la najbolji odgovor"
+msgstr "označen je najbolji odgovor"
 
 #: const/__init__.py:203
 msgid "upvoted"
-msgstr "dao/la pozitivan glas"
+msgstr "pozitivno ocijenjeno"
 
 #: const/__init__.py:204
 msgid "downvoted"
-msgstr "dao/la negativan glas"
+msgstr "negativno ocijenjeno"
 
 #: const/__init__.py:205
 msgid "canceled vote"
-msgstr "poništio/la glas"
+msgstr "poništen glas"
 
 #: const/__init__.py:206
 msgid "deleted question"
@@ -2743,7 +2755,7 @@ msgstr "označeno kao uvredljivo"
 
 #: const/__init__.py:209
 msgid "updated tags"
-msgstr "ažurirane oznake"
+msgstr "ažurirani tagovi"
 
 #: const/__init__.py:210
 msgid "selected favorite"
@@ -2813,7 +2825,7 @@ msgstr "[zatvoreno]"
 msgid "[deleted]"
 msgstr "[obrisano]"
 
-#: const/__init__.py:309 views/readers.py:613
+#: const/__init__.py:309 views/readers.py:642
 msgid "initial version"
 msgstr "prva verzija"
 
@@ -3012,7 +3024,7 @@ msgstr ""
 
 #: const/message_keys.py:39 templates/question_retag.html:58
 msgid "tags are required"
-msgstr "oznake su nužne"
+msgstr "potrebno je unijeti tagove"
 
 #: const/message_keys.py:41
 msgid "please use letters, numbers and characters \"-+.#\""
@@ -3025,7 +3037,7 @@ msgid ""
 "reach a resolution."
 msgstr "Čini se da je vaš račun blokiran stoga ne možete objavljivati nove postove dok se spor ne riješi. Kontaktirajte administratora foruma za rješenje."
 
-#: const/message_keys.py:52 models/__init__.py:1121
+#: const/message_keys.py:52 models/__init__.py:1136
 msgid ""
 "Sorry, your account appears to be suspended and you cannot make new posts "
 "until this issue is resolved. You can, however edit your existing posts. "
@@ -3036,7 +3048,7 @@ msgstr "Čini se da je vaš račun blokiran stoga ne možete objavljivati nove p
 msgid ""
 "Welcome! Please set email address (important!) in your profile and adjust "
 "screen name, if necessary."
-msgstr "Dobrodošli! Unesite email adresu (važno!) u vaš profil te ako je potrebno, podesite prikazno ime."
+msgstr "Dobrodošli! U postavkama profila podesite adresu elektroničke pošte (važno!) i prikazivanog imena ako je potrebno."
 
 #: deps/django_authopenid/forms.py:112 deps/django_authopenid/views.py:206
 msgid "i-names are not supported"
@@ -3147,7 +3159,7 @@ msgstr "Yahoo prijava"
 
 #: deps/django_authopenid/util.py:493
 msgid "AOL screen name"
-msgstr "AOL prikazno ime"
+msgstr "AOL prikazivano ime"
 
 #: deps/django_authopenid/util.py:502
 msgid "Sign in with LaunchPad"
@@ -3224,17 +3236,22 @@ msgstr "Prijavite se sa %(provider)s korisničkim računom"
 msgid "OpenID %(openid_url)s is invalid"
 msgstr "OpenID %(openid_url)s je neispravan"
 
-#: deps/django_authopenid/views.py:391 deps/django_authopenid/views.py:568
-#: deps/django_authopenid/views.py:583
+#: deps/django_authopenid/views.py:391
+msgid ""
+"Sorry, there was some problem connecting to the login provider, please try "
+"again or use another login method"
+msgstr ""
+
+#: deps/django_authopenid/views.py:520
+msgid "Your new password saved"
+msgstr "Vaša nova lozinka je sačuvana"
+
+#: deps/django_authopenid/views.py:568 deps/django_authopenid/views.py:583
 #, python-format
 msgid ""
 "Unfortunately, there was some problem when connecting to %(provider)s, "
 "please try again or use another provider"
 msgstr "Nažalost, nastali su problemi prilikom spajanja na %(provider)s, pokušajte ponovo ili koristite drugog pružatelja"
-
-#: deps/django_authopenid/views.py:520
-msgid "Your new password saved"
-msgstr "Vaša nova lozinka je sačuvana"
 
 #: deps/django_authopenid/views.py:613
 msgid "The login password combination was not correct"
@@ -3446,86 +3463,90 @@ msgstr[2] ""
 msgid "Please log in to use %s"
 msgstr "Za korištenje %s potrebna je prijava"
 
-#: models/__init__.py:561
+#: models/__init__.py:569 models/__init__.py:1388 views/writers.py:226
+msgid "Sorry, but you have only read access"
+msgstr ""
+
+#: models/__init__.py:573
 msgid "Sorry, this operation is not allowed"
 msgstr ""
 
-#: models/__init__.py:611
+#: models/__init__.py:623
 msgid ""
 "Sorry, you cannot accept or unaccept best answers because your account is "
 "blocked"
 msgstr "Ne možete prihvatiti ili odbiti najbolji odgovor jer je vaš račun blokiran"
 
-#: models/__init__.py:615
+#: models/__init__.py:627
 msgid ""
 "Sorry, you cannot accept or unaccept best answers because your account is "
 "suspended"
 msgstr "Ne možete prihvatiti ili odbiti najbolji odgovor jer je vaš račun suspendiran"
 
-#: models/__init__.py:629
+#: models/__init__.py:641
 #, python-format
 msgid ""
 ">%(points)s points required to accept or unaccept  your own answer to your "
 "own question"
 msgstr "Potrebno je >%(points)s bodova za prihvaćanje ili odbijanje svojeg odgovora na svoje pitanje "
 
-#: models/__init__.py:653
+#: models/__init__.py:665
 #, python-format
 msgid ""
 "Sorry, you will be able to accept this answer only after %(will_be_able_at)s"
-msgstr "Biti ćete u mogućnosti prihvatiti ovaj odgovor nakon %(will_be_able_at)s"
+msgstr "Ispričavamo se, ali odgovor ćete moći prihvatiti tek nakon %(will_be_able_at)s"
 
-#: models/__init__.py:662
+#: models/__init__.py:674
 #, python-format
 msgid ""
 "Sorry, only moderators or original author of the question  - %(username)s - "
 "can accept or unaccept the best answer"
-msgstr "Samo moderatori ili autor pitanja - %(username)s - može prihvatiti ili odbiti najbolji odgovor "
+msgstr "Ispričavamo se, ali samo moderatori ili autor pitanja  - %(username)s - može prihvatiti ili neprihvatiti najbolji odgovor"
 
-#: models/__init__.py:685
+#: models/__init__.py:697
 msgid "Sorry, you cannot vote for your own posts"
 msgstr "Ne možete glasati za svoje postove"
 
-#: models/__init__.py:689
+#: models/__init__.py:701
 msgid "Sorry your account appears to be blocked "
-msgstr "Izgleda da je vaš račun blokiran"
+msgstr "Nažalost, vaš je korisnički račun blokiran "
 
-#: models/__init__.py:694
+#: models/__init__.py:706
 msgid "Sorry your account appears to be suspended "
-msgstr "Izgleda da je vaš račun suspendiran"
+msgstr "Nažalost, vaš je korisnički račun suspendiran "
 
-#: models/__init__.py:704
+#: models/__init__.py:716
 #, python-format
 msgid ">%(points)s points required to upvote"
-msgstr "Potrebno je >%(points)s za davanje pozitivnog glasa"
+msgstr ">%(points)s bodova je potrebno za pozitivnu ocjenu"
 
-#: models/__init__.py:710
+#: models/__init__.py:722
 #, python-format
 msgid ">%(points)s points required to downvote"
-msgstr "Potrebno je >%(points)s za davanje negativnog glasa"
+msgstr ">%(points)s bodova je potrebno za negativnu ocjenu"
 
-#: models/__init__.py:725
+#: models/__init__.py:737
 msgid "Sorry, blocked users cannot upload files"
-msgstr "Blokirani korisnici ne mogu slati datoteke"
+msgstr "Ispričavamo se, ali blokirani korisnici ne mogu spremati datoteke na poslužitelj"
 
-#: models/__init__.py:726
+#: models/__init__.py:738
 msgid "Sorry, suspended users cannot upload files"
-msgstr "Suspendirani korisnici ne mogu slati datoteke"
+msgstr "Ispričavamo se, ali suspendirani korisnici ne mogu spremati datoteke na poslužitelj"
 
-#: models/__init__.py:728
+#: models/__init__.py:740
 #, python-format
 msgid "sorry, file uploading requires karma >%(min_rep)s"
 msgstr "Slanje datoteka zahtjeva veličinu karme >%(min_rep)s"
 
-#: models/__init__.py:747
+#: models/__init__.py:759
 msgid "Could not post, because your karma is insufficient to publish links"
 msgstr ""
 
-#: models/__init__.py:773
+#: models/__init__.py:785
 msgid "Sorry, you already gave an answer, please edit it instead."
 msgstr ""
 
-#: models/__init__.py:797
+#: models/__init__.py:809
 #, python-format
 msgid ""
 "Sorry, comments (except the last one) are editable only within %(minutes)s "
@@ -3533,168 +3554,168 @@ msgid ""
 msgid_plural ""
 "Sorry, comments (except the last one) are editable only within %(minutes)s "
 "minutes from posting"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Ispričavamo se, komentari se (osim zadnjega) mogu uređivati tek nakon %(minutes)s minute od objave"
+msgstr[1] "Ispričavamo se, komentari se (osim zadnjega) mogu uređivati tek nakon %(minutes)s minute od objave"
+msgstr[2] "Ispričavamo se, komentari se (osim zadnjega) mogu uređivati tek nakon %(minutes)s minuta od objave"
 
-#: models/__init__.py:809
+#: models/__init__.py:821
 msgid "Sorry, but only post owners or moderators can edit comments"
-msgstr "Samo vlasnici posta ili moderatori mogu uređivati komentare"
+msgstr "Ispričavamo se, ali komentare mogu uređivati samo vlasnici objava ili moderatori"
 
-#: models/__init__.py:838
+#: models/__init__.py:850
 msgid ""
 "Sorry, since your account is suspended you can comment only your own posts"
-msgstr "Zato što vam je račun suspendiran možete komentirati samo svoje postove"
+msgstr "Ispričavamo se, ali budući da je vaš korisnički račun suspendiran, možete komentirati samo vlastite objave"
 
-#: models/__init__.py:842
+#: models/__init__.py:854
 #, python-format
 msgid ""
 "Sorry, to comment any post a minimum reputation of %(min_rep)s points is "
 "required. You can still comment your own posts and answers to your questions"
-msgstr "Za komentiranje postova potrebno je imati ugled od najmanje %(min_rep)s bodova. Trenutno možete komentirati samo svoje postove i odgovore na pitanja."
+msgstr "Ispričavamo se, ali da biste mogli komentirati bilo koju objavu, ugled vam mora iznositi barem %(min_rep)s. Svejedno možete komentirati vlastite objave i odgovarati na tuđa pitanja"
 
-#: models/__init__.py:872
+#: models/__init__.py:884
 msgid ""
 "This post has been deleted and can be seen only by post owners, site "
 "administrators and moderators"
-msgstr "Ovaj post je obrisan, a mogu ga vidjeti samo vlasnik posta, administrator i moderatori."
+msgstr "Ova je objava obrisana i vidljiva je samo vlasniku, administratorima i moderatorima stranice"
 
-#: models/__init__.py:889
+#: models/__init__.py:901
 msgid ""
 "Sorry, only moderators, site administrators and post owners can edit deleted"
 " posts"
-msgstr "Samo moderatori, administratori i vlasnici posta mogu uređivati obrisane postove"
+msgstr "Ispričavamo se, ali budući da vam je korisnički račun blokiran, ne možete uređivati objave"
 
-#: models/__init__.py:904
+#: models/__init__.py:917
 msgid "Sorry, since your account is blocked you cannot edit posts"
-msgstr "Ne možete uređivati postove zato što vam je račun blokiran"
+msgstr "Ispričavamo se, ali budući da vam je korisnički račun blokiran, ne možete uređivati objave"
 
-#: models/__init__.py:908
+#: models/__init__.py:921
 msgid ""
 "Sorry, since your account is suspended you can edit only your own posts"
-msgstr "Ne možete uređivati postove zato što vam je račun suspendiran"
+msgstr "Ispričavamo se, ali budući da vam je korisnički račun suspendiran, možete uređivati samo vlastite objave"
 
-#: models/__init__.py:913
+#: models/__init__.py:926
 #, python-format
 msgid ""
 "Sorry, to edit wiki posts, a minimum reputation of %(min_rep)s is required"
-msgstr "Za uređivanje wiki postova, potreban je minimalan ugled od %(min_rep)s "
+msgstr "Ispričavamo se, ali da biste mogli uređivati wiki objave, ugled vam mora iznositi barem %(min_rep)s"
 
-#: models/__init__.py:920
+#: models/__init__.py:933
 #, python-format
 msgid ""
 "Sorry, to edit other people's posts, a minimum reputation of %(min_rep)s is "
 "required"
-msgstr "Za uređivanje postova drugih korisnika, potreban je minimalan ugled od %(min_rep)s"
+msgstr "Ispričavamo se, ali da biste mogli uređivati tuđe objave, ugled vam mora iznositi barem %(min_rep)s"
 
-#: models/__init__.py:983
+#: models/__init__.py:996
 msgid ""
 "Sorry, cannot delete your question since it has an upvoted answer posted by "
 "someone else"
 msgid_plural ""
 "Sorry, cannot delete your question since it has some upvoted answers posted "
 "by other users"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Ispričavamo se, ali ne možete obrisati vlastito pitanje budući da je netko objavio pozitivno ocijenjen odgovor"
+msgstr[1] "Ispričavamo se, ali ne možete obrisati vlastito pitanje budući da su drugi korisnici na njega objavili pozitivno ocijenjene odgovore"
+msgstr[2] "Ispričavamo se, ali ne možete obrisati vlastito pitanje budući da su drugi korisnici na njega objavili pozitivno ocijenjene odgovore"
 
-#: models/__init__.py:998
+#: models/__init__.py:1011
 msgid "Sorry, since your account is blocked you cannot delete posts"
-msgstr "Ne možete obrisati postove jer vam je račun blokiran"
+msgstr "Ispričavamo se, ali budući da vam je korisnički račun blokiran, ne možete brisati objave"
 
-#: models/__init__.py:1002
+#: models/__init__.py:1015
 msgid ""
 "Sorry, since your account is suspended you can delete only your own posts"
-msgstr "Možete brisati samo svoje postove jer vam je račun suspendiran"
+msgstr "Ispričavamo se, ali budući da vam je korisnički račun suspendiran, možete brisati samo vlastite objave"
 
-#: models/__init__.py:1006
+#: models/__init__.py:1019
 #, python-format
 msgid ""
 "Sorry, to delete other people's posts, a minimum reputation of %(min_rep)s "
 "is required"
 msgstr ""
 
-#: models/__init__.py:1026
+#: models/__init__.py:1040
 msgid "Sorry, since your account is blocked you cannot close questions"
-msgstr "Ne možete zatvoriti pitanja jer vam je račun blokiran"
+msgstr "Ispričavamo se, ali budući da vam je korisnički račun blokiran, ne možete zatvarati pitanja"
 
-#: models/__init__.py:1030
+#: models/__init__.py:1044
 msgid "Sorry, since your account is suspended you cannot close questions"
-msgstr "Ne možete zatvoriti pitanja jer vam je račun suspendiran"
+msgstr "Ispričavamo se, ali budući da vam je korisnički račun suspendiran, ne možete zatvarati pitanja"
 
-#: models/__init__.py:1034
+#: models/__init__.py:1048
 #, python-format
 msgid ""
 "Sorry, to close other people' posts, a minimum reputation of %(min_rep)s is "
 "required"
-msgstr "Za zatvaranje postova drugih korisnika potreban je minimalan ugled od %(min_rep)s"
+msgstr "Ispričavamo se, ali da biste mogli zatvarati tuđe objave, ugled vam mora iznositi barem %(min_rep)s"
 
-#: models/__init__.py:1043
+#: models/__init__.py:1057
 #, python-format
 msgid ""
 "Sorry, to close own question a minimum reputation of %(min_rep)s is required"
-msgstr "Za zatvaranje svojih pitanja potreban je minimalan ugled od %(min_rep)s"
+msgstr "Ispričavamo se, ali da biste mogli zatvoriti vlastito pitanje, ugled vam mora iznositi barem %(min_rep)s"
 
-#: models/__init__.py:1069
+#: models/__init__.py:1084
 #, python-format
 msgid ""
 "Sorry, only administrators, moderators or post owners with reputation > "
 "%(min_rep)s can reopen questions."
-msgstr "Samo administratori, moderatori i vlasnici posta sa ugledom > %(min_rep)s mogu ponovo otvoriti pitanja."
+msgstr "Ispričavamo se, ali samo administratori, moderatori ili vlasnici objava s ugledom > %(min_rep)s mogu ponovno otvarati pitanja."
 
-#: models/__init__.py:1075
+#: models/__init__.py:1090
 #, python-format
 msgid ""
 "Sorry, to reopen own question a minimum reputation of %(min_rep)s is "
 "required"
-msgstr "Za ponovo otvaranje svojih pitanja potreban je minimalan ugled od %(min_rep)s"
+msgstr "Ispričavamo se, ali da biste ponovno otvorili pitanje, ugled vam mora iznositi barem %(min_rep)s"
 
-#: models/__init__.py:1080
+#: models/__init__.py:1095
 msgid "Sorry, you cannot reopen questions because your account is blocked"
 msgstr ""
 
-#: models/__init__.py:1085
+#: models/__init__.py:1100
 msgid "Sorry, you cannot reopen questions because your account is suspended"
 msgstr ""
 
-#: models/__init__.py:1108
+#: models/__init__.py:1123
 msgid "You have flagged this question before and cannot do it more than once"
 msgstr "Već ste označili zastavom ovo pitanje i ne možete ga označiti ponovo"
 
-#: models/__init__.py:1116
+#: models/__init__.py:1131
 msgid ""
 "Sorry, since your account is blocked you cannot flag posts as offensive"
 msgstr "Ne možete označiti postove kao uvedljive jer vam je račun blokiran"
 
-#: models/__init__.py:1127
+#: models/__init__.py:1142
 #, python-format
 msgid ""
 "Sorry, to flag posts as offensive a minimum reputation of %(min_rep)s is "
 "required"
 msgstr "Za označavanje postova uvredljivim potreban je minimalan ugled od %(min_rep)s"
 
-#: models/__init__.py:1148
+#: models/__init__.py:1163
 #, python-format
 msgid ""
 "Sorry, you have exhausted the maximum number of %(max_flags_per_day)s "
 "offensive flags per day."
 msgstr "Iscrpili ste maksimalan broj od %(max_flags_per_day)s uvredljivih zastava po danu."
 
-#: models/__init__.py:1160
+#: models/__init__.py:1175
 msgid "cannot remove non-existing flag"
-msgstr "ne mogu ukloniti nepostojeću zastavu"
+msgstr "ne možete ukloniti nepostojeće zastavice"
 
-#: models/__init__.py:1166
+#: models/__init__.py:1181
 msgid "Sorry, since your account is blocked you cannot remove flags"
 msgstr "Ne možete ukloniti zastave jer vam je račun blokiran"
 
-#: models/__init__.py:1170
+#: models/__init__.py:1185
 msgid ""
 "Sorry, your account appears to be suspended and you cannot remove flags. "
 "Please contact the forum administrator to reach a resolution."
 msgstr "Ne možete ukloniti zastave jer vam je račun suspendiran. Kontaktirajte administratora foruma radi rješavanja problema."
 
-#: models/__init__.py:1176
+#: models/__init__.py:1191
 #, python-format
 msgid "Sorry, to flag posts a minimum reputation of %(min_rep)d is required"
 msgid_plural ""
@@ -3703,169 +3724,169 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: models/__init__.py:1195
+#: models/__init__.py:1210
 msgid "you don't have the permission to remove all flags"
-msgstr "nemate dozvolu za uklanjanje svih zastava"
+msgstr "nemate dovoljne ovlasti za brisanje svih zastavica"
 
-#: models/__init__.py:1196
+#: models/__init__.py:1211
 msgid "no flags for this entry"
-msgstr "nema zastava na ovom unosu"
+msgstr "nema zastavica na ovom unosu"
 
-#: models/__init__.py:1220
+#: models/__init__.py:1235
 msgid ""
 "Sorry, only question owners, site administrators and moderators can retag "
 "deleted questions"
-msgstr "Samo vlasnici pitanja, administratori i moderatori mogu ponovo označiti obrisana pitanja"
+msgstr "Ispričavamo se, ali samo vlasnici pitanja, administratori i moderatori stranice mogu ponovno tagirati obrisana pitanja"
 
-#: models/__init__.py:1227
+#: models/__init__.py:1243
 msgid "Sorry, since your account is blocked you cannot retag questions"
-msgstr "Ne možete ponovo označiti pitanja jer vam je račun blokiran"
+msgstr "Ispričavamo se, ali budući da vam je korisnički račun blokiran, ne možete ponovno tagirati pitanja"
 
-#: models/__init__.py:1231
+#: models/__init__.py:1247
 msgid ""
 "Sorry, since your account is suspended you can retag only your own questions"
-msgstr "Ne možete ponovo označiti pitanja jer vam je račun suspendiran"
+msgstr "Ispričavamo se, ali budući da vam je račun suspendiran, možete ponovno tagirati samo vlastita pitanja"
 
-#: models/__init__.py:1235
+#: models/__init__.py:1251
 #, python-format
 msgid ""
 "Sorry, to retag questions a minimum reputation of %(min_rep)s is required"
-msgstr "Za ponovo označavanje pitanja potreban je minimalan ugled od %(min_rep)s"
+msgstr "Ispričavamo se, ali da biste mogli ponovno tagirati pitanja ugled vam mora iznositi barem %(min_rep)s"
 
-#: models/__init__.py:1254
+#: models/__init__.py:1270
 msgid "Sorry, since your account is blocked you cannot delete comment"
-msgstr "Ne možete obrisati komentar jer vam je račun blokiran"
+msgstr "Ispričavamo se, ali budući da vam je blokiran korisnički račun, ne možete borisati komentar"
 
-#: models/__init__.py:1258
+#: models/__init__.py:1274
 msgid ""
 "Sorry, since your account is suspended you can delete only your own comments"
-msgstr "Ne možete obrisati svoje komentare jer vam je račun suspendiran"
+msgstr "Ispričavamo se, ali budući da vam je račun suspendiran, možete brisamo samo vlastite komentare"
 
-#: models/__init__.py:1262
+#: models/__init__.py:1278
 #, python-format
 msgid "Sorry, to delete comments reputation of %(min_rep)s is required"
-msgstr "Za brisanje komentara potreban je minimalan ugled od %(min_rep)s"
+msgstr "Ispričavamo se, ali da biste mogli brisati komentare, ugled vam treba biti barem %(min_rep)s"
 
-#: models/__init__.py:1286
+#: models/__init__.py:1303
 msgid "sorry, but older votes cannot be revoked"
 msgstr "stari glasovi se ne mogu opozvati"
 
-#: models/__init__.py:1973 utils/functions.py:98
+#: models/__init__.py:1995 utils/functions.py:98
 #, python-format
 msgid "on %(date)s"
 msgstr "na %(date)s"
 
-#: models/__init__.py:1975
+#: models/__init__.py:1997
 msgid "in two days"
-msgstr "za dva dana"
+msgstr "u dva dana"
 
-#: models/__init__.py:1977
+#: models/__init__.py:1999
 msgid "tomorrow"
 msgstr "sutra"
 
-#: models/__init__.py:1979
+#: models/__init__.py:2001
 #, python-format
 msgid "in %(hr)d hour"
 msgid_plural "in %(hr)d hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "za %(hr)d sat"
+msgstr[1] "za %(hr)d sata"
+msgstr[2] "za %(hr)d sati"
 
-#: models/__init__.py:1981
+#: models/__init__.py:2003
 #, python-format
 msgid "in %(min)d min"
 msgid_plural "in %(min)d mins"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "za %(min)d minutu"
+msgstr[1] "za %(min)d minute"
+msgstr[2] "za %(min)d minuta"
 
-#: models/__init__.py:1982
+#: models/__init__.py:2004
 #, python-format
 msgid "%(days)d day"
 msgid_plural "%(days)d days"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(days)d dan"
+msgstr[1] "%(days)d dana"
+msgstr[2] "%(days)d dana"
 
-#: models/__init__.py:1984
+#: models/__init__.py:2006
 #, python-format
 msgid ""
 "New users must wait %(days)s before answering their own question.  You can "
 "post an answer %(left)s"
-msgstr "Novi korisnici mogu odgovaranje na svoje pitanje nakon %(days)s dana. Možete objaviti odgovor %(left)s"
+msgstr "Novi korisnici moraju čekati %(days)s prije nego što će moći odgovarati na vlastita pitanja.  Odogovr možete objaviti %(left)s"
 
-#: models/__init__.py:2172 templates/email/feedback_email.txt:9
+#: models/__init__.py:2194 templates/email/feedback_email.txt:9
 msgid "Anonymous"
 msgstr "Anoniman"
 
-#: models/__init__.py:2276
+#: models/__init__.py:2298
 msgid "Site Adminstrator"
-msgstr "Administartor"
+msgstr "Administrator stranice"
 
-#: models/__init__.py:2278
+#: models/__init__.py:2300
 msgid "Forum Moderator"
-msgstr "Forum Moderator"
+msgstr "Moderator foruma"
 
-#: models/__init__.py:2280
+#: models/__init__.py:2302
 msgid "Suspended User"
-msgstr "Suspendiran Korisnik"
+msgstr "Suspendirani korisnik"
 
-#: models/__init__.py:2282
+#: models/__init__.py:2304
 msgid "Blocked User"
-msgstr "Blokiran Korisnik"
+msgstr "Blokirani korisnik"
 
-#: models/__init__.py:2284
+#: models/__init__.py:2306
 msgid "Registered User"
-msgstr "Registrian Korisnik"
+msgstr "Registrirani korisnik"
 
-#: models/__init__.py:2286
+#: models/__init__.py:2308
 msgid "Watched User"
-msgstr "Korisnik pod Smotrom"
+msgstr "Nadzirani korisnik"
 
-#: models/__init__.py:2288
+#: models/__init__.py:2310
 msgid "Approved User"
-msgstr "Odobren Korisnik"
+msgstr "Odobreni korisnik"
 
-#: models/__init__.py:2473
+#: models/__init__.py:2495
 #, python-format
 msgid "%(username)s karma is %(reputation)s"
 msgstr "%(username)s karma je %(reputation)s"
 
-#: models/__init__.py:2486
+#: models/__init__.py:2508
 #, python-format
 msgid "one gold badge"
 msgid_plural "%(count)d gold badges"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(count)d zlatna značka"
+msgstr[1] "%(count)d zlatne značke"
+msgstr[2] "%(count)d zlatnih znački"
 
-#: models/__init__.py:2493
+#: models/__init__.py:2515
 #, python-format
 msgid "one silver badge"
 msgid_plural "%(count)d silver badges"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(count)d srebrna značka"
+msgstr[1] "%(count)d srebrne značke"
+msgstr[2] "%(count)d srebrnih znački"
 
-#: models/__init__.py:2500
+#: models/__init__.py:2522
 #, python-format
 msgid "one bronze badge"
 msgid_plural "%(count)d bronze badges"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(count)d brončana značka"
+msgstr[1] "%(count)d brončane značke"
+msgstr[2] "%(count)d brončanih znački"
 
-#: models/__init__.py:2511
+#: models/__init__.py:2533
 #, python-format
 msgid "%(item1)s and %(item2)s"
 msgstr "%(item1)s i %(item2)s"
 
-#: models/__init__.py:2513
+#: models/__init__.py:2535
 #, python-format
 msgid "%(user)s has %(badges)s"
 msgstr "%(user)s ima %(badges)s"
 
-#: models/__init__.py:2660
+#: models/__init__.py:2682
 #, python-format
 msgid "At least %d karma point is required to post links"
 msgid_plural "At least %d karma points is required to post links"
@@ -3873,60 +3894,60 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: models/__init__.py:3131
+#: models/__init__.py:3159
 #, python-format
 msgid "%(user)s shared a %(post_link)s."
 msgstr ""
 
-#: models/__init__.py:3134 models/__init__.py:3144
+#: models/__init__.py:3162 models/__init__.py:3172
 #, python-format
 msgid "%(user)s edited a %(post_link)s."
 msgstr ""
 
-#: models/__init__.py:3136
+#: models/__init__.py:3164
 #, python-format
 msgid "%(user)s posted a %(post_link)s"
 msgstr ""
 
-#: models/__init__.py:3139
+#: models/__init__.py:3167
 #, python-format
 msgid "%(user)s edited an %(post_link)s."
 msgstr ""
 
-#: models/__init__.py:3141
+#: models/__init__.py:3169
 #, python-format
 msgid "%(user)s posted an %(post_link)s."
 msgstr ""
 
-#: models/__init__.py:3146
+#: models/__init__.py:3174
 #, python-format
 msgid "%(user)s posted a %(post_link)s."
 msgstr ""
 
-#: models/__init__.py:3162
+#: models/__init__.py:3190
 msgid "To reply, PLEASE WRITE ABOVE THIS LINE."
 msgstr ""
 
-#: models/__init__.py:3204
+#: models/__init__.py:3232
 #, python-format
 msgid "\"%(title)s\""
 msgstr "\"%(title)s\""
 
-#: models/__init__.py:3356
+#: models/__init__.py:3384
 #, python-format
 msgid ""
 "Congratulations, you have received a badge '%(badge_name)s'. Check out <a "
 "href=\"%(user_profile)s\">your profile</a>."
-msgstr "Čestitamo, dobili ste značku '%(badge_name)s'. Provjerite <a href=\"%(user_profile)s\">vaš profil</a>."
+msgstr "Čestitamo, dobili ste %(badge_name)s značku. Provjerite na <a href=\"%(user_profile)s\">vašem profilu</a>."
 
-#: models/__init__.py:3629
+#: models/__init__.py:3657
 #, python-format
 msgid "Welcome to %(site_name)s"
 msgstr ""
 
-#: models/__init__.py:3650 views/commands.py:697
+#: models/__init__.py:3678 views/commands.py:697
 msgid "Your tag subscription was saved, thanks!"
-msgstr "Vaša pretplata na oznaku je sačuvana, hvala!"
+msgstr "Vaša pretplata na tagove je spremljena, zahvaljujemo!"
 
 #: models/badges.py:129
 #, python-format
@@ -3961,29 +3982,29 @@ msgstr "Pristalica"
 
 #: models/badges.py:219
 msgid "First upvote"
-msgstr "Prvi pozitivan glas"
+msgstr "Prva pozitivna ocjena"
 
 #: models/badges.py:227
 msgid "Critic"
-msgstr "Kritičar"
+msgstr "Kritično"
 
 #: models/badges.py:228
 msgid "First downvote"
-msgstr "Prvi negativan glas"
+msgstr "Prva negativna ocjena"
 
 #: models/badges.py:237
 msgid "Civic Duty"
-msgstr "Građanska Dužnost"
+msgstr "Građanska dužnost"
 
 #: models/badges.py:238
 #, python-format
 msgid "Voted %(num)s times"
-msgstr "Glasano %(num)s puta"
+msgstr "Ocijenjeno %(num)s puta"
 
 #: models/badges.py:252
 #, python-format
 msgid "Answered own question with at least %(num)s up votes"
-msgstr "Odgovor na svoje pitanje sa najmanje %(num)s pozitivnih odgovora"
+msgstr "Odgovorio na vlasito pitanje sa najmanje %(num)s pozitivnih ocjena"
 
 #: models/badges.py:256
 msgid "Self-Learner"
@@ -3996,19 +4017,19 @@ msgstr "Lijep odgovor"
 #: models/badges.py:309 models/badges.py:321 models/badges.py:333
 #, python-format
 msgid "Answer voted up %(num)s times"
-msgstr "Odgovor pozitivno glasan %(num)s puta"
+msgstr "Odgovor je ocijenjen %(num)s puta"
 
 #: models/badges.py:316
 msgid "Good Answer"
-msgstr "Dobar Odgovor"
+msgstr "Dobar odgovor"
 
 #: models/badges.py:328
 msgid "Great Answer"
-msgstr "Odličan Odgovor"
+msgstr "Odličan odgovor"
 
 #: models/badges.py:340
 msgid "Nice Question"
-msgstr "Lijepo Pitanje"
+msgstr "Lijepo pitanje"
 
 #: models/badges.py:345 models/badges.py:357 models/badges.py:369
 #, python-format
@@ -4017,7 +4038,7 @@ msgstr "Pitanje pozitivno glasano %(num)s puta"
 
 #: models/badges.py:352
 msgid "Good Question"
-msgstr "Dobro Pitanje"
+msgstr "Dobro pitanje"
 
 #: models/badges.py:364
 msgid "Great Question"
@@ -4033,20 +4054,20 @@ msgstr "Postavljeno prvo pitanje s najmanje jednim pozitivnim glasom"
 
 #: models/badges.py:414
 msgid "Popular Question"
-msgstr "Popularno Pitanje"
+msgstr "Popularno pitanje"
 
 #: models/badges.py:418 models/badges.py:429 models/badges.py:441
 #, python-format
 msgid "Asked a question with %(views)s views"
-msgstr "Postavljeno pitanje sa %(views)s pregleda"
+msgstr "Postavljeno pitanje s %(views)s pogleda"
 
 #: models/badges.py:425
 msgid "Notable Question"
-msgstr "Značajno Pitanje"
+msgstr "Zamjećeno pitanje"
 
 #: models/badges.py:436
 msgid "Famous Question"
-msgstr "Slavno Pitanje"
+msgstr "Čuveno pitanje"
 
 #: models/badges.py:450
 msgid "Asked a question and accepted an answer"
@@ -4054,11 +4075,11 @@ msgstr "Postavljeno pitanje i prihvaćen odgovor"
 
 #: models/badges.py:453
 msgid "Scholar"
-msgstr "Naučnik"
+msgstr "Školarac"
 
 #: models/badges.py:495
 msgid "Enlightened"
-msgstr "Nadahnut"
+msgstr "Provijećeni"
 
 #: models/badges.py:499
 #, python-format
@@ -4091,7 +4112,7 @@ msgstr "Građanska Patrola"
 
 #: models/badges.py:551
 msgid "First flagged post"
-msgstr "Prvi post označen zastavom"
+msgstr "Prva objava obilježena zastavicom"
 
 #: models/badges.py:563
 msgid "Cleanup"
@@ -4132,7 +4153,7 @@ msgstr "Organizator"
 
 #: models/badges.py:637
 msgid "First retag"
-msgstr "Prvo ponovno označavanje"
+msgstr "Prvo ponovno tagiranje"
 
 #: models/badges.py:644
 msgid "Autobiographer"
@@ -4153,7 +4174,7 @@ msgstr "Zvjezdano Pitanje"
 
 #: models/badges.py:698
 msgid "Favorite Question"
-msgstr "Omiljeno Pitanje"
+msgstr "Najdraže pitanje"
 
 #: models/badges.py:710
 msgid "Enthusiast"
@@ -4202,64 +4223,64 @@ msgstr ""
 msgid "Answer: "
 msgstr ""
 
-#: models/post.py:1569
+#: models/post.py:1570
 msgid "Sorry, this question has been deleted and is no longer accessible"
-msgstr "Ovo pitanje je obrisano i više nije dostupno."
+msgstr "Ispričavamo se, pitanje je izbrisano i više mu se ne može pristupiti"
 
-#: models/post.py:1585
+#: models/post.py:1586
 msgid ""
 "Sorry, the answer you are looking for is no longer available, because the "
 "parent question has been removed"
-msgstr "Odgovor koji tražite više nije dostupan zato što je roditeljsko pitanje obrisano"
+msgstr "Ispričavamo se, odgovor koji tražite više nije dostupan jer je odgovarajuće pitanje obrisano"
 
-#: models/post.py:1592
+#: models/post.py:1593
 msgid "Sorry, this answer has been removed and is no longer accessible"
-msgstr "Ovaj odgovor je obrisan i više nije dostupan"
+msgstr "Ispričavamo se, odgovor je obrisan i više mu se ne može pristupiti"
 
-#: models/post.py:1608
+#: models/post.py:1609
 msgid ""
 "Sorry, the comment you are looking for is no longer accessible, because the "
 "parent question has been removed"
-msgstr "Komentar koji tražite više nije dostupan zato što je roditeljsko pitanje obrisano"
+msgstr "Ispričavamo se, komentaru koji tražite više se ne može pristupiti jer odgovarajuće pitanje obrisano"
 
-#: models/post.py:1615
+#: models/post.py:1616
 msgid ""
 "Sorry, the comment you are looking for is no longer accessible, because the "
 "parent answer has been removed"
-msgstr "Komentar koji tražite više nije dostupan zato što je roditeljski odgovor obrisan"
+msgstr "Ispričavamo se, komentaru koji tražite više se ne može pristupiti jer je odgovarajuće pitanje obrisano"
 
-#: models/post.py:1637
+#: models/post.py:1638
 msgid "This post is temporarily not available"
 msgstr ""
 
-#: models/post.py:2146
+#: models/post.py:2147
 #, python-format
 msgid ""
 "Thank you for your post to %(site)s. It will be published after the "
 "moderators review."
 msgstr ""
 
-#: models/post.py:2150
+#: models/post.py:2151
 #, python-format
 msgid "your post to %(site)s"
 msgstr ""
 
-#: models/post.py:2157
+#: models/post.py:2158
 msgid ""
 "Your post was placed on the moderation queue and will be published after the"
 " moderator approval."
 msgstr ""
 
-#: models/question.py:102
+#: models/question.py:108
 #, python-format
 msgid "\" and \"%s\""
 msgstr "\" i \"%s\""
 
-#: models/question.py:105
+#: models/question.py:111
 msgid "\" and more"
 msgstr "\" i više"
 
-#: models/question.py:828
+#: models/question.py:834
 #, python-format
 msgid "%(count)d answer:"
 msgid_plural "%(count)d answers:"
@@ -4267,17 +4288,17 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: models/question.py:1338
+#: models/question.py:1346
 #, python-format
 msgid "Tag %s is new and will be submitted for the moderators approval"
 msgstr ""
 
-#: models/question.py:1343 models/tag.py:217
+#: models/question.py:1351 models/tag.py:217
 #, python-format
 msgid "Tags %s are new and will be submitted for the moderators approval"
 msgstr ""
 
-#: models/question.py:1582
+#: models/question.py:1590
 #, python-format
 msgid "Please, <a href=\"%s\">review your question</a>."
 msgstr ""
@@ -4338,59 +4359,59 @@ msgstr "%(points)s bodova je oduzeto zbog doprinosa korisnika %(username)s  pita
 msgid "New tags added to %s"
 msgstr ""
 
-#: models/user.py:284
+#: models/user.py:316
 msgid "Entire forum"
-msgstr "Cjeli forum"
+msgstr "Cijeli forum"
 
-#: models/user.py:285
+#: models/user.py:317
 msgid "Questions that I asked"
 msgstr "Moja pitanja"
 
-#: models/user.py:286
+#: models/user.py:318
 msgid "Questions that I answered"
 msgstr "Moji odgovori na pitanja"
 
-#: models/user.py:287
+#: models/user.py:319
 msgid "Individually selected questions"
 msgstr "Individualno odabrana pitanja"
 
-#: models/user.py:288
+#: models/user.py:320
 msgid "Mentions and comment responses"
 msgstr "Odgovori na spomen i komentar"
 
-#: models/user.py:291
+#: models/user.py:323
 msgid "Instantly"
 msgstr "Odmah"
 
-#: models/user.py:292
+#: models/user.py:324
 msgid "Daily"
 msgstr "Dnevno"
 
-#: models/user.py:293
+#: models/user.py:325
 msgid "Weekly"
 msgstr "Tjedno"
 
-#: models/user.py:294
+#: models/user.py:326
 msgid "No email"
 msgstr "Bez emaila"
 
-#: models/user.py:530
+#: models/user.py:566
 msgid "Can join when they want"
 msgstr ""
 
-#: models/user.py:531
+#: models/user.py:567
 msgid "Users ask permission"
 msgstr ""
 
-#: models/user.py:532
+#: models/user.py:568
 msgid "Moderator adds users"
 msgstr ""
 
-#: models/user.py:581
+#: models/user.py:617
 msgid "Please give a list of valid email addresses."
 msgstr ""
 
-#: models/user.py:591
+#: models/user.py:627
 msgid "Please give a list of valid email domain names."
 msgstr ""
 
@@ -4404,25 +4425,25 @@ msgstr "Stranica nije pronađena"
 
 #: templates/404.html:13
 msgid "Sorry, could not find the page you requested."
-msgstr "Tražena stranica nije pronađena."
+msgstr "Nažalost ne možemo pronaći stranicu koju ste zatražili."
 
 #: templates/404.html:15
 msgid "This might have happened for the following reasons:"
-msgstr "Ovo se moglo dogoditi zbog sljedećih razloga:"
+msgstr "Do ovoga je moglo doći zbog sljedećih razloga:"
 
 #: templates/404.html:17
 msgid "this question or answer has been deleted;"
-msgstr "ovo pitanje ili odgovor je obrisano;"
+msgstr "odgovor ili pitanje je obrisano"
 
 #: templates/404.html:18
 msgid "url has error - please check it;"
-msgstr "url ima grešku - provjerite"
+msgstr "url ima grešku - provjerite;"
 
 #: templates/404.html:19
 msgid ""
 "the page you tried to visit is protected or you don't have sufficient "
 "points, see"
-msgstr "stranice koju ste htjeli posjetiti je zaštićena ili nemate dovoljno bodova za pregled"
+msgstr "stranica je koju pokušavate posjetit zaštićena, ili nemate dovoljno bodova, pogledajte"
 
 #: templates/404.html:19 templates/widgets/footer.html:39
 msgid "faq"
@@ -4430,7 +4451,7 @@ msgstr "čpp"
 
 #: templates/404.html:20
 msgid "if you believe this error 404 should not have occured, please"
-msgstr "ako smatrate da se 404 greška nije smjela dogoditi, "
+msgstr "vjerujete li da nije došlo do greške 404,"
 
 #: templates/404.html:21
 msgid "report this problem"
@@ -4442,11 +4463,11 @@ msgstr "natrag na prethodnu stranicu"
 
 #: templates/404.html:31 templates/widgets/scope_nav.html:17
 msgid "see all questions"
-msgstr "sva pitanja"
+msgstr "pogledaj sva pitanja"
 
 #: templates/404.html:32
 msgid "see all tags"
-msgstr "sve oznake"
+msgstr "pogledajte sve tagove"
 
 #: templates/500.html:3 templates/500.html.py:5
 msgid "Internal server error"
@@ -4458,15 +4479,15 @@ msgstr "greška na sistemu je zabilježena, greška će biti uklonjena u najkra�
 
 #: templates/500.html:9
 msgid "please report the error to the site administrators if you wish"
-msgstr "ako želite prijavite grešku administratoru"
+msgstr "ako želite, grešku možete prijaviti administratoru stranice"
 
 #: templates/500.html:12
 msgid "see latest questions"
-msgstr "zadnja pitanja"
+msgstr "pogledaj posljednja pitanja"
 
 #: templates/500.html:13
 msgid "see tags"
-msgstr "sve oznake"
+msgstr "vidi tagove"
 
 #: templates/answer_edit.html:4 templates/answer_edit.html.py:10
 msgid "Edit answer"
@@ -4475,11 +4496,11 @@ msgstr "Uredi odgovor"
 #: templates/answer_edit.html:10 templates/question_edit.html:9
 #: templates/question_retag.html:5 templates/revisions.html:7
 msgid "back"
-msgstr "nazad"
+msgstr "natrag"
 
 #: templates/answer_edit.html:41 templates/question_edit.html:61
 msgid "Save edit"
-msgstr "Sačuvaj uređeno"
+msgstr "Spremi uređivanje"
 
 #: templates/answer_edit.html:46 templates/close.html:16
 #: templates/feedback.html:64 templates/question_edit.html:62
@@ -4498,12 +4519,12 @@ msgstr "Odustani"
 #: templates/question/javascript.html:72 templates/question/javascript.html:75
 #: templates/widgets/edit_post.html:73
 msgid "hide preview"
-msgstr "sakri prikaz"
+msgstr "bez prikaza"
 
 #: templates/answer_edit.html:89 templates/ask.html:84
 #: templates/question_edit.html:103 templates/question/javascript.html:75
 msgid "show preview"
-msgstr "pokaži prikaz"
+msgstr "prikaži pregled"
 
 #: templates/ask.html:4 templates/widgets/ask_button.html:9
 #: templates/widgets/ask_form.html:67
@@ -4537,12 +4558,12 @@ msgstr "dajte dovoljno informacija"
 #: templates/ask.html:31 templates/widgets/answer_edit_tips.html:15
 #: templates/widgets/question_edit_tips.html:11
 msgid "be clear and concise"
-msgstr "budite jasni i precizni"
+msgstr "budite jasni i sažeti"
 
 #: templates/ask.html:36 templates/widgets/answer_edit_tips.html:20
 #: templates/widgets/question_edit_tips.html:16
 msgid "see frequently asked questions"
-msgstr "pogledajte često postavljena pitanja"
+msgstr "pogledajte učestalo postavljana pitanja"
 
 #: templates/ask.html:36 templates/faq_static.html:3
 #: templates/faq_static.html.py:5 templates/widgets/answer_edit_tips.html:20
@@ -4551,7 +4572,7 @@ msgid "FAQ"
 msgstr "ČPP"
 
 #: templates/badge.html:5 templates/badge.html.py:9
-#: templates/user_profile/user_recent.html:20
+#: templates/user_profile/user_recent.html:18
 #: templates/user_profile/user_stats.html:73
 #, python-format
 msgid "%(name)s"
@@ -4566,7 +4587,7 @@ msgstr "Značka"
 msgid "Badge \"%(name)s\""
 msgstr "Značka \"%(name)s"
 
-#: templates/badge.html:9 templates/user_profile/user_recent.html:18
+#: templates/badge.html:9 templates/user_profile/user_recent.html:16
 #: templates/user_profile/user_stats.html:71
 #, python-format
 msgid "%(description)s"
@@ -4595,11 +4616,11 @@ msgstr ""
 
 #: templates/badges.html:31
 msgid "Community badges"
-msgstr "Badge levels"
+msgstr "Značke zajednice"
 
 #: templates/badges.html:33
 msgid "gold badge: the highest honor and is very rare"
-msgstr "zlatna značka: najčasnija i vrlo je rijetka"
+msgstr "zlatna značka: odraz najviše časti i rijetko se dodjeljuje"
 
 #: templates/badges.html:36
 msgid ""
@@ -4610,11 +4631,11 @@ msgstr ""
 #: templates/badges.html:42 templates/badges.html.py:46
 msgid ""
 "silver badge: occasionally awarded for the very high quality contributions"
-msgstr "srebrna značka: daje se povremeno za vrlo kvalitetan doprinos"
+msgstr "srebrna značka: označava povremene visokokvallitetne doprinose"
 
 #: templates/badges.html:49 templates/badges.html.py:53
 msgid "bronze badge: often given as a special honor"
-msgstr "brončana značka: često se daje kao posebna čast"
+msgstr "brončana značka: često je odraz posebne časti"
 
 #: templates/base.html:23
 #, python-format
@@ -4623,11 +4644,11 @@ msgstr ""
 
 #: templates/close.html:3 templates/close.html.py:5
 msgid "Close question"
-msgstr "Zatvori pitanja"
+msgstr "Zatvori pitanje"
 
 #: templates/close.html:6
 msgid "Close the question"
-msgstr "Zatvori to pitanje"
+msgstr "Zatvori pitanje"
 
 #: templates/close.html:11
 msgid "Reasons"
@@ -4635,15 +4656,15 @@ msgstr "Razlozi"
 
 #: templates/close.html:15
 msgid "OK to close"
-msgstr "Uredu, zatvori"
+msgstr "U redu je zatvoriti"
 
 #: templates/faq_static.html:5
 msgid "Frequently Asked Questions "
-msgstr "Često Postavljena Pitanja"
+msgstr "Učestalo postavljana pitanja "
 
 #: templates/faq_static.html:6
 msgid "What kinds of questions can I ask here?"
-msgstr "Koja pitanja mogu ovdje postaviti?"
+msgstr "Kakva pitanja mogu postavljati?"
 
 #: templates/faq_static.html:7
 msgid ""
@@ -4665,11 +4686,11 @@ msgstr "Koja pitanja treba izbjegavati?"
 msgid ""
 "Please avoid asking questions that are not relevant to this community, too "
 "subjective and argumentative."
-msgstr "Izbjegavajte postavljati pitanja koja nisu relevantna za ovu zajednicu, previše subjektivna ili raspravna pitanja."
+msgstr "Izbjegavajte postavljati pitanja koja nisu relevantna za ovu zajednicu, preizraženu subjektivnost i preuveličavanja."
 
 #: templates/faq_static.html:13
 msgid "What should I avoid in my answers?"
-msgstr "Što trebam izbjegavati u dogovorima?"
+msgstr "Što u odgovorima trebam izbjegavati?"
 
 #: templates/faq_static.html:14
 msgid ""
@@ -4681,15 +4702,15 @@ msgstr "je <strong>pitanje i odgovor</strong> stranica - <strong>nije grupa za r
 
 #: templates/faq_static.html:15
 msgid "Who moderates this community?"
-msgstr "Tko uređuje ovu zajednicu?"
+msgstr "Tko moderira zajednicu?"
 
 #: templates/faq_static.html:16
 msgid "The short answer is: <strong>you</strong>."
-msgstr "Kratak odgovor je: <strong>vi</strong>."
+msgstr "Kratak je odgovor: <strong>ti</strong>."
 
 #: templates/faq_static.html:17
 msgid "This website is moderated by the users."
-msgstr "Ovu internet stranicu uređuju korisnici."
+msgstr "Stranicu moderiraju korisnici."
 
 #: templates/faq_static.html:18
 msgid ""
@@ -4725,31 +4746,31 @@ msgstr "Na primjer, ako postavite zanimljivo pitanje ili date koristan odgovor, 
 
 #: templates/faq_static.html:32 templates/user_profile/user_votes.html:14
 msgid "upvote"
-msgstr "pozitivan glas"
+msgstr "dodijeli pozitivnu ocjenu"
 
 #: templates/faq_static.html:37
 msgid "add comments"
-msgstr "dodaj komentare"
+msgstr "dodaj komentar"
 
 #: templates/faq_static.html:42 templates/user_profile/user_votes.html:16
 msgid "downvote"
-msgstr "negativan glas"
+msgstr "negativno ocijeni"
 
 #: templates/faq_static.html:45
 msgid " accept own answer to own questions"
-msgstr "prihvati svoj odgovor na svoje pitanje"
+msgstr " prihvati vlasititi odgovor na vlasitio pitanje"
 
 #: templates/faq_static.html:49
 msgid "open and close own questions"
-msgstr "otvori i zatvori svoja pitanja"
+msgstr "otvori i zatvori vlasita pitanja"
 
 #: templates/faq_static.html:53
 msgid "retag other's questions"
-msgstr "ponovo označi pitanja drugih korisnika"
+msgstr "drugačije tagiraj tuđa pitanja"
 
 #: templates/faq_static.html:58
 msgid "edit community wiki questions"
-msgstr "uredi pitanja wiki zajednice"
+msgstr "uredi wiki pitanja zajednice"
 
 #: templates/faq_static.html:63
 msgid "edit any answer"
@@ -4783,7 +4804,7 @@ msgstr "<p>Slika prikazana na profilu korisnika je <strong>gravatar</strong> (š
 
 #: templates/faq_static.html:73
 msgid "To register, do I need to create new password?"
-msgstr "Da li trebam kreirati novu lozinku za registraciju?"
+msgstr "Moram li napraviti novu lozinku želim li se registrirati?"
 
 #: templates/faq_static.html:74
 msgid ""
@@ -4793,30 +4814,30 @@ msgstr ""
 
 #: templates/faq_static.html:75
 msgid "\"Login now!\""
-msgstr "\"Prijavi sad!\""
+msgstr "\"Prijavi se sada!\""
 
 #: templates/faq_static.html:77
 msgid "Why other people can edit my questions/answers?"
-msgstr "Zašto drugi korisnici mogu uređivati moja pitanja/odgovore?"
+msgstr "Zašto drugi korisnici mogu uređivati moje pitanje/odgovor?"
 
 #: templates/faq_static.html:78
 msgid "Goal of this site is..."
-msgstr "Cilj ove internet stranice je ..."
+msgstr "Cilj je ove stranice..."
 
 #: templates/faq_static.html:78
 msgid ""
 "So questions and answers can be edited like wiki pages by experienced users "
 "of this site and this improves the overall quality of the knowledge base "
 "content."
-msgstr "Zato da se pitanja i odgovori mogu uređivati kao wiki stranice putem iskusnih korisnika ove stranice što unapređuje kvalitetu sadržaja."
+msgstr "Iskusniji korisnici mogu mijenjati pitanja i odgovore kao wiki stranice što poboljšava ukupnu kvalitetu sadržaja."
 
 #: templates/faq_static.html:79
 msgid "If this approach is not for you, we respect your choice."
-msgstr "Ako vam ovaj pristup ne odgovara, poštujemo vaš izbor."
+msgstr "Ako vam ne odgovara ovakav pristup, poštujemo vaš odabir."
 
 #: templates/faq_static.html:81
 msgid "Still have questions?"
-msgstr "Imate drugih pitanja?"
+msgstr "Još uvijek imate pitanja?"
 
 #: templates/faq_static.html:82
 #, python-format
@@ -4831,7 +4852,7 @@ msgstr "Povratna informacija"
 
 #: templates/feedback.html:5
 msgid "Give us your feedback!"
-msgstr "Dajte nam povratnu informaciju!"
+msgstr "Dostavite nam povratnu informaciju!"
 
 #: templates/feedback.html:14
 #, python-format
@@ -4852,11 +4873,11 @@ msgstr "\n        <span class='big strong'> Dragi posjetitelju </span>, želimo 
 
 #: templates/feedback.html:30
 msgid "(to hear from us please enter a valid email or check the box below)"
-msgstr "(ako želite informacije od nas unesite ispravnu email adresu ili označite okvir za izbor ispod)"
+msgstr "(želite li da vam se javimo, unesite valjanu adresu elektroničke pošte ili označite kućicu)"
 
 #: templates/feedback.html:37 templates/feedback.html.py:46
 msgid "(this field is required)"
-msgstr "(ovo polje je nužno)"
+msgstr "(potrebno je ispuniti ovo polje)"
 
 #: templates/feedback.html:55
 msgid "(Please solve the captcha)"
@@ -4864,7 +4885,7 @@ msgstr "(Riješite captchu)"
 
 #: templates/feedback.html:63
 msgid "Send Feedback"
-msgstr "Pošalji Povratnu Informaciju"
+msgstr "Pošalji povratnu informaciju"
 
 #: templates/groups.html:3 templates/groups.html.py:6
 #: templates/question/sidebar.html:108
@@ -5020,13 +5041,13 @@ msgstr "Uživajte."
 
 #: templates/import_data.html:2 templates/import_data.html.py:4
 msgid "Import StackExchange data"
-msgstr "Unesi  StackExchange podatke"
+msgstr "Umetni StackExchange podatke"
 
 #: templates/import_data.html:13
 msgid ""
 "<em>Warning:</em> if your database is not empty, please back it up\n"
 "        before attempting this operation."
-msgstr "<em>Upozorenje:</em> ako vaša baza podataka nije prazna, napravite kopiju\n prije izvršenja."
+msgstr "<em>Upozorenje:</em> ako vaša baza podataka nije prazna, napravite sigurnosnu kopiju\n        prije negoli izvršite radnju."
 
 #: templates/import_data.html:16
 msgid ""
@@ -5034,17 +5055,17 @@ msgid ""
 "        the data import completes. This process may take several minutes.\n"
 "        Please note that feedback will be printed in plain text.\n"
 "        "
-msgstr ""
+msgstr "Postavite na poslužitelj vašu stackexchange dump .zip datoteku te pričekajte dok\n        se unos podataka ne dovrši. Proces može trajati i nekoliko minuta.\n        Napominjemo da će povratna informacija biti prkazana kao nekriptirani tekst.\n        "
 
 #: templates/import_data.html:25
 msgid "Import data"
-msgstr "Unesi podatke"
+msgstr "Umetni podatke"
 
 #: templates/import_data.html:27
 msgid ""
 "In the case you experience any difficulties in using this import tool,\n"
 "        please try importing your data via command line: <code>python manage.py load_stackexchange path/to/your-data.zip</code>"
-msgstr "Ukoliko naiđete na probleme prilikom korištenja alata za prijenosa podataka, \n probajte unijeti vaše podatke putem komandne linije: <code>python manage.py load_stackexchange path/to/your-data.zip</code>"
+msgstr "U slučaju bilo kakvih problema s ovim važnim alatom,\n        pokušajte umetnuti podatke naredbenim retkom: <code>python manage.py load_stackexchange path/to/your-data.zip</code>"
 
 #: templates/list_suggested_tags.html:11
 msgid "Tag"
@@ -5095,7 +5116,7 @@ msgstr "Podijelite ovo pitanje na %(site)s"
 
 #: templates/macros.html:44
 msgid "current number of votes"
-msgstr "trenutan broj glasova"
+msgstr "sadašnji broj glasova"
 
 #: templates/macros.html:57
 msgid "anonymous user"
@@ -5103,7 +5124,7 @@ msgstr "anonimni korisnik"
 
 #: templates/macros.html:91 templates/macros.html.py:110
 msgid "asked"
-msgstr "pitano"
+msgstr "upitano"
 
 #: templates/macros.html:93 templates/macros.html.py:112
 msgid "answered"
@@ -5115,14 +5136,14 @@ msgstr "objavljeno"
 
 #: templates/macros.html:101
 msgid "this post is marked as community wiki"
-msgstr "ovaj post je označen kao wiki zajednica"
+msgstr "objava je označena kao wiki zajednice"
 
 #: templates/macros.html:104
 #, python-format
 msgid ""
 "This post is a wiki.\n"
 "        Anyone with karma &gt;%(wiki_min_rep)s is welcome to improve it."
-msgstr "Ovaj post je wiki.\n        Svatko sa &gt;%(wiki_min_rep)s karmom može ga unaprijediti."
+msgstr "Ova je objava wiki.\n        Svatko s karmom &gt;%(wiki_min_rep)s može ju unaprijediti."
 
 #: templates/macros.html:146
 msgid "updated"
@@ -5166,7 +5187,7 @@ msgstr ""
 
 #: templates/macros.html:430
 msgid "delete this comment"
-msgstr "obriši ovaj komentar"
+msgstr "obriši komentar"
 
 #: templates/macros.html:443 templates/revisions.html:38
 #: templates/revisions.html.py:41 templates/question/answer_controls.html:5
@@ -5186,7 +5207,7 @@ msgstr "prati %(alias)s"
 #: templates/macros.html:582
 #, python-format
 msgid "unfollow %(alias)s"
-msgstr "prestani pratiti %(alias)s"
+msgstr "ne prati %(alias)s"
 
 #: templates/macros.html:583
 #, python-format
@@ -5201,16 +5222,16 @@ msgstr "%(username)s gravatar slika"
 #: templates/macros.html:671
 #, python-format
 msgid "%(username)s's website is %(url)s"
-msgstr "%(username)s internet stranica je %(url)s"
+msgstr "%(username)s stranica je %(url)s"
 
 #: templates/macros.html:686 templates/macros.html.py:687
 #: templates/macros.html:725 templates/macros.html.py:726
 msgid "previous"
-msgstr "prethodni"
+msgstr "prethodno"
 
 #: templates/macros.html:698 templates/macros.html.py:737
 msgid "current page"
-msgstr "trenutna stranica"
+msgstr "sadašnja stranica"
 
 #: templates/macros.html:700 templates/macros.html.py:707
 #: templates/macros.html:739 templates/macros.html.py:746
@@ -5225,7 +5246,7 @@ msgstr "sljedeća stranica"
 #: templates/macros.html:762
 #, python-format
 msgid "responses for %(username)s"
-msgstr "odazivi za %(username)s"
+msgstr "odgovori za %(username)s"
 
 #: templates/macros.html:765
 #, python-format
@@ -5237,44 +5258,44 @@ msgstr[2] ""
 
 #: templates/macros.html:768
 msgid "no new responses yet"
-msgstr "nema novih odaziva"
+msgstr "još nema novih odgovora"
 
 #: templates/macros.html:783 templates/macros.html.py:784
 #, python-format
 msgid "%(new)s new flagged posts and %(seen)s previous"
-msgstr "%(new)s novih postova sa zastavom i %(seen)s prethodnih"
+msgstr "%(new)s objave s novim zastavicama i %(seen)s prethodne"
 
 #: templates/macros.html:786 templates/macros.html.py:787
 #, python-format
 msgid "%(new)s new flagged posts"
-msgstr "%(new)s novih postova sa zastavom"
+msgstr "%(new)s objave s novim zastavicama"
 
 #: templates/macros.html:792 templates/macros.html.py:793
 #, python-format
 msgid "%(seen)s flagged posts"
-msgstr "%(seen)s postova sa zastavom "
+msgstr "%(seen)s objave označene zastavicom"
 
 #: templates/main_page.html:14
 msgid "Questions"
 msgstr "Pitanja"
 
-#: templates/question.html:226
+#: templates/question.html:230
 msgid "see more comments"
 msgstr ""
 
-#: templates/question.html:228 templates/question.html.py:331
+#: templates/question.html:232 templates/question.html.py:335
 msgid "add a comment"
 msgstr ""
 
-#: templates/question.html:241 templates/question/content.html:46
+#: templates/question.html:245 templates/question/content.html:46
 msgid "Answer Your Own Question"
-msgstr "Odgovorite na Svoje Pitanje"
+msgstr "Odgovori na svoje pitanje"
 
-#: templates/question.html:246
+#: templates/question.html:250
 msgid "Post Your Answer"
 msgstr "Objavite Svoj Odgovor"
 
-#: templates/question.html:252 templates/widgets/ask_form.html:65
+#: templates/question.html:256 templates/widgets/ask_form.html:65
 msgid "Login/Signup to Post"
 msgstr "Prijava/Upis za Objavu"
 
@@ -5300,27 +5321,27 @@ msgstr "Ponovo označi pitanje"
 
 #: templates/question_retag.html:21
 msgid "Retag"
-msgstr "Ponovo označi"
+msgstr "Ponovno tagiraj"
 
 #: templates/question_retag.html:28
 msgid "Why use and modify tags?"
-msgstr "Zašto koristiti i mijenjati oznake?"
+msgstr "Zašto koristiti i mijenjati tagove?"
 
 #: templates/question_retag.html:30
 msgid "Tags help to keep the content better organized and searchable"
-msgstr "Oznake pomažu pri organizaciji i pretraživanju sadržaja"
+msgstr "Tagovi omogućuju da sadržaj ostane organiziran i lako pretraživ"
 
 #: templates/question_retag.html:32
 msgid "tag editors receive special awards from the community"
-msgstr "urednici oznaka primaju posebnu nagradu od zajednice"
+msgstr "zajednica daje posebne nagrade uređivačima tagova"
 
 #: templates/question_retag.html:59
 msgid "up to 5 tags, less than 20 characters each"
-msgstr "do 5 oznaka, manje od 20 znakova za svaku"
+msgstr "do 5 tagova, svaki manje od 20 znakova"
 
 #: templates/reopen.html:4 templates/reopen.html.py:6
 msgid "Reopen question"
-msgstr "Ponovo otvori pitanje"
+msgstr "Ponovno aktualiziraj pitanje"
 
 #: templates/reopen.html:12
 #, python-format
@@ -5339,11 +5360,11 @@ msgstr "Kada:"
 
 #: templates/reopen.html:23
 msgid "Reopen this question?"
-msgstr "Ponovo otvori ovo pitanje?"
+msgstr "Ponovno reaktualiziraj ovo pitanje?"
 
 #: templates/reopen.html:27
 msgid "Reopen this question"
-msgstr "Ponovo otvori ovo pitanje"
+msgstr "Ponovno aktualiziraj ovo pitanje"
 
 #: templates/revisions.html:4 templates/revisions.html.py:7
 msgid "Revision history"
@@ -5351,24 +5372,24 @@ msgstr "Povijest revizije"
 
 #: templates/revisions.html:23
 msgid "click to hide/show revision"
-msgstr "kliknite za prikaz/skrivanje revizije"
+msgstr "odaberite kako biste sakrili/prikazali reviziju"
 
 #: templates/revisions.html:29
 #, python-format
 msgid "revision %(number)s"
-msgstr "revizija broj %(number)s"
+msgstr "ponovni pregled %(number)s"
 
 #: templates/subscribe_for_tags.html:3 templates/subscribe_for_tags.html:5
 msgid "Subscribe for tags"
-msgstr "Pretplatite se na oznake"
+msgstr "Pretplati se na tagove"
 
 #: templates/subscribe_for_tags.html:6
 msgid "Please, subscribe for the following tags:"
-msgstr "Pretplatite se na sljedeće oznake:"
+msgstr "Pretplatite se na sljedeće tagove:"
 
 #: templates/subscribe_for_tags.html:15
 msgid "Subscribe"
-msgstr "Pretplatite se"
+msgstr "Pretplati se"
 
 #: templates/tags.html:17
 msgid "search for tags"
@@ -5377,7 +5398,7 @@ msgstr ""
 #: templates/users.html:8 templates/users.html.py:18
 #: templates/tags/list_bulk_tag_subscription.html:13
 msgid "Users"
-msgstr "People"
+msgstr "Korisnici"
 
 #: templates/users.html:16
 #, python-format
@@ -5396,11 +5417,11 @@ msgstr ""
 #: templates/users.html:33 templates/main_page/tab_bar.html:17
 #: templates/tags/header.html:14
 msgid "Sort by &raquo;"
-msgstr "Sortiraj po"
+msgstr "Sortiraj prema &raquo;"
 
 #: templates/users.html:40
 msgid "see people with the highest reputation"
-msgstr "korisnici sa najvećim ugledom"
+msgstr "pogledaj korisnike s najvišom reputacijom"
 
 #: templates/users.html:41 templates/user_profile/user_info.html:25
 #: templates/user_profile/user_reputation.html:5
@@ -5410,23 +5431,23 @@ msgstr "karma"
 
 #: templates/users.html:47
 msgid "see people who joined most recently"
-msgstr "najnoviji korisnici "
+msgstr "pogledaj korisnike koji su se pridružili nedavno"
 
 #: templates/users.html:48
 msgid "recent"
-msgstr "najnoviji"
+msgstr "nedavno"
 
 #: templates/users.html:53
 msgid "see people who joined the site first"
-msgstr "najstariji korisnici"
+msgstr "pogledaj korisnike koji su se pridružili prvi"
 
 #: templates/users.html:59
 msgid "see people sorted by name"
-msgstr "korisnici sortirani po imenu"
+msgstr "pogledaj korisnike sortirane prema imenu"
 
 #: templates/users.html:60
 msgid "by username"
-msgstr "    korisničkom imenu"
+msgstr "po korisničkom imenu"
 
 #: templates/users.html:66
 #, python-format
@@ -5450,7 +5471,7 @@ msgstr "(ili odaberite drugi način prijave gore)"
 #: templates/authopenid/signin.html:115
 #: templates/authopenid/widget_signin.html:118
 msgid "Sign in"
-msgstr "Prijavi me"
+msgstr "Prijavite se"
 
 #: templates/authopenid/changeemail.html:2
 msgid "Change Email"
@@ -5473,7 +5494,7 @@ msgstr ""
 
 #: templates/authopenid/changeemail.html:18
 msgid "Email verified"
-msgstr "Email potvrđen"
+msgstr "Adresa elektroničke pošte je provjerena"
 
 #: templates/authopenid/changeemail.html:21
 msgid ""
@@ -5507,7 +5528,7 @@ msgstr ""
 #: templates/authopenid/signup_with_password.html:5
 #: templates/authopenid/signup_with_password.html:45
 msgid "Signup"
-msgstr "Upiši me"
+msgstr "Prijavite se"
 
 #: templates/authopenid/confirm_email.txt:1
 msgid "Thank you for registering at our Q&A forum!"
@@ -5515,7 +5536,7 @@ msgstr "Hvala što ste se registrirali na naš P&O forum!"
 
 #: templates/authopenid/confirm_email.txt:3
 msgid "Your account details are:"
-msgstr "Detalji vašeg računa su:"
+msgstr "Detaljne informacije o vašem korisničkom računu su:"
 
 #: templates/authopenid/confirm_email.txt:5
 msgid "Username:"
@@ -5527,7 +5548,7 @@ msgstr "Lozinka:"
 
 #: templates/authopenid/confirm_email.txt:8
 msgid "Please sign in here:"
-msgstr "Upišite se ovdje:"
+msgstr "Prijavite se ovdje:"
 
 #: templates/authopenid/confirm_email.txt:11
 #: templates/authopenid/email_validation.txt:13
@@ -5545,12 +5566,12 @@ msgstr ""
 #: templates/authopenid/email_validation.html:7
 #: templates/authopenid/email_validation.txt:3
 msgid "To make use of the Forum, please follow the link below:"
-msgstr "Za korištenje Foruma, pratite vezu ispod:"
+msgstr "Kako bi vam Forum bio od koristi, odaberite sljdeću poveznicu:"
 
 #: templates/authopenid/email_validation.html:11
 #: templates/authopenid/email_validation.txt:7
 msgid "Following the link above will help us verify your email address."
-msgstr "Pratite vezu iznad kako bi mogli potvrdite vašu email adresu."
+msgstr "Slijeđenjem prethodne poveznice pomoći ćete nam da provjerimo vašu adresu elektroničke pošte."
 
 #: templates/authopenid/email_validation.html:13
 #: templates/authopenid/email_validation.txt:9
@@ -5566,7 +5587,7 @@ msgstr "Pozdrav od P&O foruma"
 
 #: templates/authopenid/logout.html:3
 msgid "Logout"
-msgstr "Sign out"
+msgstr "Odjava"
 
 #: templates/authopenid/logout.html:5
 msgid "You have successfully logged out"
@@ -5649,12 +5670,12 @@ msgstr "Prijavite se"
 #: templates/authopenid/signin.html:101
 #: templates/authopenid/widget_signin.html:105
 msgid "Login failed, please try again"
-msgstr "Prijava nije uspjela, pokušajte ponovo"
+msgstr "Prijava nije uspjela, pokušajte ponovno"
 
 #: templates/authopenid/signin.html:106
 #: templates/authopenid/widget_signin.html:109
 msgid "Login or email"
-msgstr "Korisničko ime ili email"
+msgstr "Prijava ili ekektronička pošta"
 
 #: templates/authopenid/signin.html:110
 #: templates/authopenid/widget_signin.html:113 utils/forms.py:264
@@ -5664,7 +5685,7 @@ msgstr "Lozinka"
 #: templates/authopenid/signin.html:122
 #: templates/authopenid/widget_signin.html:125
 msgid "To change your password - please enter the new one twice, then submit"
-msgstr "Za promjenu vaše lozinke unesite novu dva puta zatim podnesite"
+msgstr "Kako biste promijenili lozinku, novu unesite dva puta i pošaljite ju"
 
 #: templates/authopenid/signin.html:126
 #: templates/authopenid/widget_signin.html:129
@@ -5674,7 +5695,7 @@ msgstr "Nova lozinka"
 #: templates/authopenid/signin.html:135
 #: templates/authopenid/widget_signin.html:138
 msgid "Please, retype"
-msgstr "Ponovo unesite"
+msgstr "Ponovno unesite"
 
 #: templates/authopenid/signin.html:145
 #: templates/authopenid/widget_signin.html:148
@@ -5685,17 +5706,17 @@ msgstr "Promjeni lozinku"
 #: templates/authopenid/signin.html:159
 #: templates/authopenid/widget_signin.html:162
 msgid "Here are your current login methods"
-msgstr "Ovo su vaše trenutni načini prijave"
+msgstr "Ovo su sadašnje metode prijave"
 
 #: templates/authopenid/signin.html:163
 #: templates/authopenid/widget_signin.html:166
 msgid "provider"
-msgstr "pružatelj usluge pristupa"
+msgstr "davatelj usluga"
 
 #: templates/authopenid/signin.html:164
 #: templates/authopenid/widget_signin.html:167
 msgid "last used"
-msgstr "zadnji korišten"
+msgstr "zadnje korišteno"
 
 #: templates/authopenid/signin.html:165
 #: templates/authopenid/widget_signin.html:168
@@ -5712,49 +5733,49 @@ msgstr "obriši"
 #: templates/authopenid/signin.html:181
 #: templates/authopenid/widget_signin.html:184
 msgid "cannot be deleted"
-msgstr "ne može se obrisati"
+msgstr "ne može biti obrisano"
 
 #: templates/authopenid/signin.html:194
 #: templates/authopenid/widget_signin.html:197
 msgid "Still have trouble signing in?"
-msgstr "Imate i dalje problema s prijavom?"
+msgstr "Još uvijek imate problema s prijavom?"
 
 #: templates/authopenid/signin.html:199
 #: templates/authopenid/widget_signin.html:202
 msgid "Please, enter your email address below and obtain a new key"
-msgstr "Unesite vašu email adresu ispod i preuzmite novi ključ"
+msgstr "Unesite adresu elektroničke pošte i zatražite novi ključ"
 
 #: templates/authopenid/signin.html:201
 #: templates/authopenid/widget_signin.html:204
 msgid "Please, enter your email address below to recover your account"
-msgstr "Unesite vašu email adresu ispod za obnovu vašeg računa"
+msgstr "Unesite adresu elektroničke pošte kojom želite povratiti korisnički račun"
 
 #: templates/authopenid/signin.html:204
 #: templates/authopenid/widget_signin.html:207
 msgid "recover your account via email"
-msgstr "obnovite račun putem emaila"
+msgstr "povratite korisnički račun elektroničkom poštom"
 
-#: templates/authopenid/signin.html:214
+#: templates/authopenid/signin.html:215
 #: templates/authopenid/widget_signin.html:217
 msgid "Send a new recovery key"
-msgstr "Pošalji novi ključ za obnovu"
+msgstr "Pošalji novi ključ za obnavljanje"
 
-#: templates/authopenid/signin.html:216
+#: templates/authopenid/signin.html:217
 #: templates/authopenid/widget_signin.html:219
 msgid "Recover your account via email"
-msgstr "Obnovite račun putem emaila"
+msgstr "Povratite korisnički račun elektroničkom poštom"
 
 #: templates/authopenid/signup_with_password.html:11
 msgid "Please register by clicking on any of the icons below"
-msgstr "Registrirajte se klikom na jednu od ikona ispod"
+msgstr "Registrirajte se odabirom bilokoje ikone odozdo"
 
 #: templates/authopenid/signup_with_password.html:24
 msgid "or create a new user name and password here"
-msgstr "ili kreirajte novo korisničko ime i lozinku ovdje"
+msgstr "ili napravite novo korisničko ime i lozinku ovdje"
 
 #: templates/authopenid/signup_with_password.html:26
 msgid "Create login name and password"
-msgstr "Kreiraj korisničko ime i lozinku"
+msgstr "Napravite ime za prijavu i lozinku"
 
 #: templates/authopenid/signup_with_password.html:27
 msgid ""
@@ -5769,7 +5790,7 @@ msgstr "<span class='strong big'>Ako želite, kreirajte vaše forum ime i lozink
 msgid ""
 "Please read and type in the two words below to help us prevent automated "
 "account creation."
-msgstr "Pročitajte i unesite dvije riječi ispod i pomozite nam spriječiti automatsko kreiranje računa."
+msgstr "Pročitajte i upišite dvije riječi odozdo kako biste nam pomogli da spriječimo automatska stvaranja korisničkih računa."
 
 #: templates/authopenid/signup_with_password.html:47
 msgid "or"
@@ -5777,7 +5798,7 @@ msgstr "ili"
 
 #: templates/authopenid/signup_with_password.html:48
 msgid "return to OpenID login"
-msgstr "vrati na OpenID prijavu"
+msgstr "povratak na OpenID prijavu"
 
 #: templates/authopenid/verify_email.html:2
 #: templates/authopenid/verify_email.html:4
@@ -5815,11 +5836,11 @@ msgstr "Promijeni avatar"
 
 #: templates/avatar/add.html:6 templates/avatar/change.html:7
 msgid "Your current avatar: "
-msgstr "Vaš trenutni avatar:"
+msgstr "Vaš trenutačni avatar: "
 
 #: templates/avatar/add.html:9 templates/avatar/change.html:11
 msgid "You haven't uploaded an avatar yet. Please upload one now."
-msgstr "Niste još poslali avatar. Pošaljite ga."
+msgstr "Do sada niste učitali avatar. Učitajte ga sada."
 
 #: templates/avatar/add.html:13
 msgid "Upload New Image"
@@ -5827,11 +5848,11 @@ msgstr "Pošalji Novu Sliku"
 
 #: templates/avatar/change.html:4
 msgid "change avatar"
-msgstr "promjeni avatar"
+msgstr "odaberi avatar"
 
 #: templates/avatar/change.html:17
 msgid "Choose new Default"
-msgstr "Odaberit novi Zadani"
+msgstr "Odaberi novo zadano"
 
 #: templates/avatar/change.html:22
 msgid "Upload"
@@ -5843,7 +5864,7 @@ msgstr "obriši avatar"
 
 #: templates/avatar/confirm_delete.html:4
 msgid "Please select the avatars that you would like to delete."
-msgstr "Odaberite avatare koje želite obrisati."
+msgstr "Odaberite avatere koje biste željeli obrisati."
 
 #: templates/avatar/confirm_delete.html:6
 #, python-format
@@ -5901,7 +5922,8 @@ msgstr ""
 #, python-format
 msgid ""
 "If you believe that this message was sent in an error, please email about it"
-" the forum administrator at %(admin_email)s."
+" the forum administrator at <a "
+"href=\"mailto:%(admin_email)s\">%(admin_email)s</a>."
 msgstr ""
 
 #: templates/email/delayed_email_alert.html:2
@@ -6139,7 +6161,7 @@ msgstr ""
 
 #: templates/embed/widgets.html:16
 msgid "Ask a question"
-msgstr ""
+msgstr "Postavi pitanje"
 
 #: templates/embed/widgets.html:17 templates/embed/widgets.html.py:26
 msgid "create"
@@ -6181,7 +6203,7 @@ msgstr ""
 #: templates/group_messaging/senders_list.html:5
 #: templates/user_inbox/base.html:6 templates/user_profile/user_tabs.html:12
 msgid "inbox"
-msgstr "sandučić"
+msgstr "poruke"
 
 #: templates/group_messaging/senders_list.html:9
 msgid "sent"
@@ -6254,26 +6276,26 @@ msgstr "Postavke za grupu: %(name)s"
 msgid "Uncollapse all"
 msgstr "Složi sve"
 
-#: templates/main_page/headline.html:4 views/readers.py:149
+#: templates/main_page/headline.html:4 views/readers.py:151
 #, python-format
 msgid "%(q_num)s question"
 msgid_plural "%(q_num)s questions"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(q_num)s pitanje"
+msgstr[1] "%(q_num)s pitanja"
+msgstr[2] "%(q_num)s pitanja"
 
 #: templates/main_page/headline.html:6
 #, python-format
 msgid "with %(author_name)s's contributions"
-msgstr "sa %(author_name)s doprinosima"
+msgstr "sa %(author_name)s"
 
 #: templates/main_page/headline.html:11
 msgid "Tagged"
-msgstr "Označeno"
+msgstr "Tagirano"
 
 #: templates/main_page/headline.html:22
 msgid "Search tips:"
-msgstr "Savjeti za pretraživanje:"
+msgstr "Napomen o pretraživanju:"
 
 #: templates/main_page/headline.html:25
 msgid "reset author"
@@ -6283,11 +6305,11 @@ msgstr "vrati autora u izvorno stanje"
 #: templates/main_page/nothing_found.html:18
 #: templates/main_page/nothing_found.html:21
 msgid " or "
-msgstr "ili"
+msgstr " ili "
 
 #: templates/main_page/headline.html:28
 msgid "reset tags"
-msgstr "vrati oznake u izvorno stanje"
+msgstr "ponovno tagiraj"
 
 #: templates/main_page/headline.html:31 templates/main_page/headline.html:34
 msgid "start over"
@@ -6295,52 +6317,52 @@ msgstr "počni ispočetka"
 
 #: templates/main_page/headline.html:36
 msgid " - to expand, or dig in by adding more tags and revising the query."
-msgstr "- za proširenje ili idi dublje dodavanjem više oznaka i mijenjanjem upita."
+msgstr " - da biste proširili, ili tražite dalje dodavanjem novih tagova ili ponovnim pregledom upita."
 
 #: templates/main_page/headline.html:39
 msgid "Search tip:"
-msgstr "Savjet za pretragu:"
+msgstr "Napomene pri pretraživanju:"
 
 #: templates/main_page/headline.html:39
 msgid "add tags and a query to focus your search"
-msgstr "dodajte oznake i upit za poboljšanje pretrage"
+msgstr "dodajte tagove i upite kako biste suzili potragu"
 
 #: templates/main_page/nothing_found.html:4
 msgid "There are no unanswered questions here"
-msgstr "Ovdje nema ne odgovorenih pitanja"
+msgstr "Ovdje nema neodgovorenih pitanja"
 
 #: templates/main_page/nothing_found.html:7
 msgid "No questions here. "
-msgstr "Trenutno nema pitanja."
+msgstr "Ovdje nema pitanja. "
 
 #: templates/main_page/nothing_found.html:8
 msgid "Please follow some questions or follow some users."
-msgstr "Možete pratiti pitanja ili korisnike."
+msgstr "Pratite neka pitanja ili neke korisnike."
 
 #: templates/main_page/nothing_found.html:13
 msgid "You can expand your search by "
-msgstr "Možete proširiti pretragu po"
+msgstr "Možete proširiti pretragu "
 
 #: templates/main_page/nothing_found.html:16
 msgid "resetting author"
-msgstr "vraćanje autora u izvorno stanje"
+msgstr "ponovnim postavljanjem autora"
 
 #: templates/main_page/nothing_found.html:19
 msgid "resetting tags"
-msgstr "vraćanje oznaka u izvorno stanje"
+msgstr "ponovnim postavljanjem tagova"
 
 #: templates/main_page/nothing_found.html:22
 #: templates/main_page/nothing_found.html:25
 msgid "starting over"
-msgstr "ponovo iz početka"
+msgstr "kretanjem ispočetka"
 
 #: templates/main_page/nothing_found.html:30
 msgid "Please always feel free to ask your question!"
-msgstr "Slobodno postavi pitanje!"
+msgstr "Nemojte se bojati postaviti pitanje!"
 
 #: templates/main_page/questions_loop.html:9
 msgid "Did not find what you were looking for?"
-msgstr "Niste pronašli što ste tražili?"
+msgstr "Jeste li pronašli što ste tražili?"
 
 #: templates/main_page/questions_loop.html:10
 msgid "Ask your question!"
@@ -6348,7 +6370,7 @@ msgstr ""
 
 #: templates/main_page/tab_bar.html:11
 msgid "subscribe to the questions feed"
-msgstr "pretplatite se na pitanja kanal"
+msgstr "pretlapitete se na kanal o pitanjima"
 
 #: templates/main_page/tab_bar.html:12
 msgid "RSS"
@@ -6368,29 +6390,29 @@ msgid ""
 "Please note: %(app_name)s requires javascript to work properly, please "
 "enable javascript in your browser, <a href=\"%(noscript_url)s\">here is "
 "how</a>"
-msgstr "Napomena: %(app_name)s za ispravan rad zahtjeva javascript, omogućite javascript u vašem pregledniku, <a href=\"%(noscript_url)s\">ovako</a> "
+msgstr "Napomena: %(app_name)s zahtjeva javascript, omogućite ovu značajku u vašem internet pregledniku <a href=\"%(noscript_url)s\">ovako</a>"
 
 #: templates/meta/editor_data.html:5
 #, python-format
 msgid "each tag must be shorter that %(max_chars)s character"
 msgid_plural "each tag must be shorter than %(max_chars)s characters"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "svaki tag mora biti kraći od %(max_chars)s znaka"
+msgstr[1] "svaki tag mora biti kraći od %(max_chars)s znaka"
+msgstr[2] "svaki tag mora biti kraći od %(max_chars)s znakova"
 
 #: templates/meta/editor_data.html:7
 #, python-format
 msgid "please use %(tag_count)s tag"
 msgid_plural "please use %(tag_count)s tags or less"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "koristite %(tag_count)s tag"
+msgstr[1] "koristite %(tag_count)s ili manje taga"
+msgstr[2] "koristite %(tag_count)s ili manje tagova"
 
 #: templates/meta/editor_data.html:8
 #, python-format
 msgid ""
 "please use up to %(tag_count)s tags, less than %(max_chars)s characters each"
-msgstr "koristite do %(tag_count)s oznaka, manje od %(max_chars)s  znakova za svaku"
+msgstr "koristite najviše %(tag_count)s tagova sa manje od %(max_chars)s znakova u svakom tagu"
 
 #: templates/question/answer_card.html:21
 msgid "This response is published"
@@ -6398,7 +6420,7 @@ msgstr ""
 
 #: templates/question/answer_controls.html:2
 msgid "swap with question"
-msgstr "zamjeni sa pitanjem"
+msgstr "zamijeni ovo pitanje"
 
 #: templates/question/answer_controls.html:11
 msgid "remove offensive flag"
@@ -6407,7 +6429,7 @@ msgstr "ukloni zastavu uvredljivo"
 #: templates/question/answer_controls.html:13
 #: templates/question/question_controls.html:12
 msgid "remove flag"
-msgstr "ukloni zastavu"
+msgstr "izbriši tagove"
 
 #: templates/question/answer_controls.html:18
 #: templates/question/answer_controls.html:26
@@ -6416,7 +6438,7 @@ msgstr "ukloni zastavu"
 #: templates/question/question_controls.html:23
 msgid ""
 "report as offensive (i.e containing spam, advertising, malicious text, etc.)"
-msgstr "prijavi kao uvredljivo (npr. sadrži neželjen sadržaj, oglase, zlonamjeran tekst itd.)"
+msgstr "prijavi kao uvredljivo (npr. sadržavanje spama, oglašavanje, zlonamjerni tekst itd.)"
 
 #: templates/question/answer_controls.html:20
 #: templates/question/answer_controls.html:28
@@ -6428,7 +6450,7 @@ msgstr "označi zastavom uvredljivo"
 #: templates/question/answer_controls.html:33
 #: templates/question/question_controls.html:36
 msgid "undelete"
-msgstr "vrati obrisano"
+msgstr "poništi brisanje"
 
 #: templates/question/answer_controls.html:43
 msgid "unpublish"
@@ -6445,7 +6467,7 @@ msgstr "stalna veza"
 #: templates/question/answer_controls.html:55
 #: templates/widgets/markdown_help.html:20
 msgid "link"
-msgstr "veza"
+msgstr "poveznica"
 
 #: templates/question/answer_controls.html:58
 msgid "more"
@@ -6479,24 +6501,24 @@ msgstr "Sortiraj po"
 
 #: templates/question/answer_tab_bar.html:14
 msgid "oldest answers will be shown first"
-msgstr "stariji odgovori biti će prikazani prvi"
+msgstr "prvo će biti prikazani najstariji odgovori"
 
 #: templates/question/answer_tab_bar.html:17
 msgid "newest answers will be shown first"
-msgstr "noviji odgovori biti će prikazani prvi"
+msgstr "prvo će biti prikazani najnoviji odgovori"
 
 #: templates/question/answer_tab_bar.html:20
 msgid "most voted answers will be shown first"
-msgstr "odgovori s najviše glasova biti će prikazani prvi"
+msgstr "prvo će biti prikazana pitanja s najvišom ocjenom"
 
 #: templates/question/answer_vote_buttons.html:8
 #: templates/user_profile/users_answers.html:7
 msgid "this answer has been selected as correct"
-msgstr "ovaj odgovor je odabran kao točan"
+msgstr "ovaj je odgovor označen kao dobar"
 
 #: templates/question/answer_vote_buttons.html:10
 msgid "mark this answer as correct (click again to undo)"
-msgstr "označi ovaj odgovor kao točan (kliknite ponovo za poništavanje)"
+msgstr "označi odgovor točnim (odaberite ponovno kako biste poništili odabir)"
 
 #: templates/question/closed_question_info.html:2
 #, python-format
@@ -6520,15 +6542,15 @@ msgstr ""
 
 #: templates/question/new_answer_form.html:12
 msgid "Login/Signup to Answer"
-msgstr "Prijava/Upis za Odgovor"
+msgstr "Prijavite se/Upišite se kako biste mogli odgovarati"
 
 #: templates/question/new_answer_form.html:20
 msgid "Your answer"
-msgstr "Vaš odgovor"
+msgstr "Vaše pitanje"
 
 #: templates/question/new_answer_form.html:22
 msgid "Be the first one to answer this question!"
-msgstr "Odgovorite prvi na ovo pitanje!"
+msgstr "Prvi odgovorite na ovo pitanje!"
 
 #: templates/question/new_answer_form.html:28
 msgid ""
@@ -6565,11 +6587,11 @@ msgstr ""
 
 #: templates/question/question_controls.html:5
 msgid "retag"
-msgstr "ponovo označi"
+msgstr "ponovno tagiraj"
 
 #: templates/question/question_controls.html:29
 msgid "reopen"
-msgstr "ponovo otvori"
+msgstr "ponovno otvori"
 
 #: templates/question/question_controls.html:31
 msgid "close"
@@ -6577,23 +6599,23 @@ msgstr "zatvori"
 
 #: templates/question/sidebar.html:8
 msgid "Question tools"
-msgstr "Alat za pitanja"
+msgstr "Alati za pitanja"
 
 #: templates/question/sidebar.html:11
 msgid "click to unfollow this question"
-msgstr "kliknite za prestanak praćenja ovog pitanja"
+msgstr "odaberite ako biste željeli napustiti ovo pitanje"
 
 #: templates/question/sidebar.html:12
 msgid "Following"
-msgstr "Praćenje"
+msgstr "Praćenja"
 
 #: templates/question/sidebar.html:13
 msgid "Unfollow"
-msgstr "Prekini praćenje"
+msgstr "Napusti"
 
 #: templates/question/sidebar.html:17
 msgid "click to follow this question"
-msgstr "kliknite za praćenje ovog pitanja"
+msgstr "odaberite ako želite pratiti ovo pitanje"
 
 #: templates/question/sidebar.html:18
 msgid "Follow"
@@ -6603,17 +6625,17 @@ msgstr "Prati"
 #, python-format
 msgid "%(count)s follower"
 msgid_plural "%(count)s followers"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(count)s pratitelj"
+msgstr[1] "%(count)s pratitelja"
+msgstr[2] "%(count)s pratitelja"
 
 #: templates/question/sidebar.html:33
 msgid "subscribe to this question rss feed"
-msgstr "pretplatite se na rss kanal ovog pitanja"
+msgstr "pretplati se na rss obavijesti za ovo pitanje"
 
 #: templates/question/sidebar.html:34
 msgid "subscribe to rss feed"
-msgstr "pretplatite se na rss kanal"
+msgstr "pretplati se na rss obavijesti"
 
 #: templates/question/sidebar.html:44
 msgid "Invite"
@@ -6625,7 +6647,7 @@ msgstr ""
 #: templates/widgets/tag_selector.html:37
 #: templates/widgets/tag_selector.html:56
 msgid "add"
-msgstr "+"
+msgstr "dodaj"
 
 #: templates/question/sidebar.html:52 templates/question/sidebar.html.py:58
 msgid "- or -"
@@ -6688,7 +6710,7 @@ msgstr "Zadnje ažuriranje"
 
 #: templates/question/sidebar.html:151
 msgid "Related questions"
-msgstr "Slična pitanja"
+msgstr "Povezana pitanja"
 
 #: templates/tags/form_bulk_tag_subscription.html:4
 msgid "Tag subscriptions"
@@ -6705,7 +6727,7 @@ msgstr ""
 
 #: templates/tags/header.html:19
 msgid "sorted alphabetically"
-msgstr "sortirano po abecedi"
+msgstr "sortirano abecedno"
 
 #: templates/tags/header.html:20
 msgid "by name"
@@ -6713,7 +6735,7 @@ msgstr "po imenu"
 
 #: templates/tags/header.html:25
 msgid "sorted by frequency of tag use"
-msgstr "sortirano po učestalosti upotrebe oznake"
+msgstr "sortiraj prema učestalosti taga"
 
 #: templates/tags/header.html:26
 msgid "by popularity"
@@ -6753,7 +6775,7 @@ msgstr ""
 
 #: templates/user_inbox/base.html:14
 msgid "Sections:"
-msgstr "Odabiri:"
+msgstr "Sekcije:"
 
 #: templates/user_inbox/base.html:19
 msgid "messages"
@@ -6762,7 +6784,7 @@ msgstr ""
 #: templates/user_inbox/base.html:24
 #, python-format
 msgid "forum responses (%(re_count)s)"
-msgstr "forum odgovori (%(re_count)s)"
+msgstr "odgovori na forumu (%(re_count)s)"
 
 #: templates/user_inbox/base.html:31
 #, python-format
@@ -6799,27 +6821,27 @@ msgstr "odaberi:"
 
 #: templates/user_inbox/responses_and_flags.html:10
 msgid "seen"
-msgstr "pregledan"
+msgstr "uočeno"
 
 #: templates/user_inbox/responses_and_flags.html:11
 msgid "new"
-msgstr "novi"
+msgstr "novo"
 
 #: templates/user_inbox/responses_and_flags.html:12
 msgid "none"
-msgstr "nijedan"
+msgstr "ništa"
 
 #: templates/user_inbox/responses_and_flags.html:15
 msgid "mark as seen"
-msgstr "označi kao pogledan"
+msgstr "označi uočenim"
 
 #: templates/user_inbox/responses_and_flags.html:16
 msgid "mark as new"
-msgstr "označi kao nov"
+msgstr "označi novim"
 
 #: templates/user_inbox/responses_and_flags.html:17
 msgid "dismiss"
-msgstr "odbaci"
+msgstr "otpusti"
 
 #: templates/user_inbox/responses_and_flags.html:19
 msgid "remove flags/approve"
@@ -6927,12 +6949,12 @@ msgstr "uredi profil"
 #: templates/user_profile/user_edit.html:21
 #: templates/user_profile/user_info.html:14
 msgid "change picture"
-msgstr "promjeni sliku"
+msgstr "promijeni sliku"
 
 #: templates/user_profile/user_edit.html:25
 #: templates/user_profile/user_info.html:18
 msgid "remove"
-msgstr "ukloni"
+msgstr "izbriši"
 
 #: templates/user_profile/user_edit.html:32
 msgid "Registered user"
@@ -6940,7 +6962,7 @@ msgstr "Registrirani korisnik"
 
 #: templates/user_profile/user_edit.html:39
 msgid "Screen Name"
-msgstr "Pokazno ime"
+msgstr "Prikazivano ime"
 
 #: templates/user_profile/user_edit.html:59
 msgid "(cannot be changed)"
@@ -6949,16 +6971,16 @@ msgstr "(ne može se promijeniti)"
 #: templates/user_profile/user_edit.html:109
 #: templates/user_profile/user_email_subscriptions.html:23
 msgid "Update"
-msgstr "Ažuriraj"
+msgstr "Ažuriranje"
 
 #: templates/user_profile/user_email_subscriptions.html:5
 #: templates/user_profile/user_tabs.html:44
 msgid "subscriptions"
-msgstr "preplate"
+msgstr "pretplata"
 
 #: templates/user_profile/user_email_subscriptions.html:8
 msgid "Email subscription settings"
-msgstr "Postavke za email pretplate"
+msgstr "Pošalji postavke pretplate elektroničkom poštom"
 
 #: templates/user_profile/user_email_subscriptions.html:10
 msgid ""
@@ -6996,7 +7018,7 @@ msgstr "ažuriraj profil"
 
 #: templates/user_profile/user_info.html:41
 msgid "manage login methods"
-msgstr "uredi načine prijave"
+msgstr "upravljanje metodama prijave"
 
 #: templates/user_profile/user_info.html:54
 msgid "real name"
@@ -7016,7 +7038,7 @@ msgstr "član od"
 
 #: templates/user_profile/user_info.html:82
 msgid "last seen"
-msgstr "zadnji put viđen"
+msgstr "zadnji puta uočen"
 
 #: templates/user_profile/user_info.html:88
 msgid "website"
@@ -7037,39 +7059,39 @@ msgstr ""
 
 #: templates/user_profile/user_info.html:114
 msgid "todays unused votes"
-msgstr "dnevni glasovi"
+msgstr "današnje neiskorištene ocjene"
 
 #: templates/user_profile/user_info.html:115
 msgid "votes left"
-msgstr "glasova preostalo"
+msgstr "preostalo ocjena"
 
 #: templates/user_profile/user_moderate.html:4
 #: templates/user_profile/user_tabs.html:50
 msgid "moderation"
-msgstr "uređenje"
+msgstr "moderiranje"
 
 #: templates/user_profile/user_moderate.html:8
 #, python-format
 msgid "%(username)s's current status is \"%(status)s\""
-msgstr "%(username)s trenutni status je \"%(status)s\""
+msgstr "%(username)sov je sadašnji status \"%(status)s\""
 
 #: templates/user_profile/user_moderate.html:11
 msgid "User status changed"
-msgstr "Promijenjen status korisnika"
+msgstr "Korisnikov se status promijenio"
 
 #: templates/user_profile/user_moderate.html:25
 #, python-format
 msgid "Your current reputation is %(reputation)s points"
-msgstr "Vaš trenutni ugled iznosi %(reputation)s bodova"
+msgstr "Vaš sadašnji ugled ima %(reputation)s bodova"
 
 #: templates/user_profile/user_moderate.html:27
 #, python-format
 msgid "User's current reputation is %(reputation)s points"
-msgstr "Trenutni ugled korisnika iznosi %(reputation)s bodova"
+msgstr "Sadašnji ugled korisnika ima %(reputation)s bodova"
 
 #: templates/user_profile/user_moderate.html:31
 msgid "User reputation changed"
-msgstr "Ugled korisnika promijenjen"
+msgstr "Ugled se korisnika promijenio"
 
 #: templates/user_profile/user_moderate.html:38
 msgid "Subtract"
@@ -7082,17 +7104,17 @@ msgstr "Dodaj"
 #: templates/user_profile/user_moderate.html:43
 #, python-format
 msgid "Send message to %(username)s"
-msgstr "Pošalji poruke korisniku %(username)s"
+msgstr "Pošalji poruku %(username)su"
 
 #: templates/user_profile/user_moderate.html:44
 msgid ""
 "An email will be sent to the user with 'reply-to' field set to your email "
 "address. Please make sure that your address is entered correctly."
-msgstr "Email će biti poslan korisniku sa 'odgovori' poljem sa vezom na vašu email adresu. Provjerite da li je vaša email adresa ispravna."
+msgstr "Elektronička će pošta biti poslana s vašom adresom u polju 'odgovori'. Provjerite imate li upisanu točnu adresu."
 
 #: templates/user_profile/user_moderate.html:46
 msgid "Message sent"
-msgstr "Poruka poslana"
+msgstr "Poruka je poslana"
 
 #: templates/user_profile/user_moderate.html:64
 msgid "Send message"
@@ -7103,21 +7125,21 @@ msgid ""
 "Administrators have privileges of normal users, but in addition they can "
 "assign/revoke any status to any user, and are exempt from the reputation "
 "limits."
-msgstr "Administratori imaju privilegije kao i normalni korisnici, ali mogu dodijeliti/opozvati bilo koji status bilo kojeg korisnika i izuzeti su od limita ugleda."
+msgstr "Administratori imaju iste ovlasti kao i normalni korisnici, ali mogu dodijeliti/opozvati bilo koji status bilo kojem korisniku i izuzeti su iz reputacijskih limita."
 
 #: templates/user_profile/user_moderate.html:77
 msgid ""
 "Moderators have the same privileges as administrators, but cannot add or "
 "remove user status of 'moderator' or 'administrator'."
-msgstr "Moderatori imaju iste privilegije kao administratori, ali ne mogu dati ili oduzeti status 'moderator' ili 'administrator'."
+msgstr "Moderatori imaju iste ovlasti kao i administratori, ali ne mogu dodavati ili brisati korisničke statuse 'moderator' ili 'administrator'."
 
 #: templates/user_profile/user_moderate.html:80
 msgid "'Approved' status means the same as regular user."
-msgstr "Status 'Odobren' znači isto kao i uobičajeni korisnik"
+msgstr "Status 'Odobreno' znači isto što i redovan korisnik."
 
 #: templates/user_profile/user_moderate.html:83
 msgid "Suspended users can only edit or delete their own posts."
-msgstr "Suspendirani korisnici mogu samo uređivati ili brisati svoje postove."
+msgstr "Suspendirani korisnici mogu samo uređivati ili brisati vlastite objave."
 
 #: templates/user_profile/user_moderate.html:86
 msgid ""
@@ -7134,23 +7156,23 @@ msgstr "mreža"
 #, python-format
 msgid "Followed by %(count)s person"
 msgid_plural "Followed by %(count)s people"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Prati vas %(count)s osoba"
+msgstr[1] "Prate vas %(count)s osobe"
+msgstr[2] "Prati vas %(count)s osoba"
 
 #: templates/user_profile/user_network.html:20
 #, python-format
 msgid "Following %(count)s person"
 msgid_plural "Following %(count)s people"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Following %(count)s osobu"
+msgstr[1] "Following %(count)s osobe"
+msgstr[2] "Following %(count)s osoba"
 
 #: templates/user_profile/user_network.html:31
 msgid ""
 "Your network is empty. Would you like to follow someone? - Just visit their "
 "profiles and click \"follow\""
-msgstr "Vaša mreža je prazna. Želite li pratiti nekoga? Posjetite profil drugog korisnika i kliknite \"prati\""
+msgstr "Vaša je mreža prazna. Želite li pratiti koga - jednostavno posjetite njihov profil i odaberite \"prati\""
 
 #: templates/user_profile/user_network.html:33
 #, python-format
@@ -7163,8 +7185,8 @@ msgstr "%(username)s mreža je prazna"
 msgid "activity"
 msgstr "aktivnost"
 
-#: templates/user_profile/user_recent.html:25
-#: templates/user_profile/user_recent.html:29
+#: templates/user_profile/user_recent.html:23
+#: templates/user_profile/user_recent.html:27
 msgid "source"
 msgstr "izvor"
 
@@ -7186,9 +7208,9 @@ msgstr "pregled"
 #, python-format
 msgid "<span class=\"count\">%(counter)s</span> Question"
 msgid_plural "<span class=\"count\">%(counter)s</span> Questions"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "<span class=\"count\">%(counter)s</span> pitanje"
+msgstr[1] "<span class=\"count\">%(counter)s</span> pitanja"
+msgstr[2] "<span class=\"count\">%(counter)s</span> pitanja"
 
 #: templates/user_profile/user_stats.html:17
 msgid "Answer"
@@ -7201,41 +7223,41 @@ msgstr[2] ""
 #, python-format
 msgid "<span class=\"count\">%(cnt)s</span> Vote"
 msgid_plural "<span class=\"count\">%(cnt)s</span> Votes "
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "<span class=\"count\">%(cnt)s</span> ocjena"
+msgstr[1] "<span class=\"count\">%(cnt)s</span> ocjene "
+msgstr[2] "<span class=\"count\">%(cnt)s</span> ocjena "
 
 #: templates/user_profile/user_stats.html:31
 #, python-format
 msgid "<span class=\"count\">%(counter)s</span> Tag"
 msgid_plural "<span class=\"count\">%(counter)s</span> Tags"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "<span class=\"count\">%(counter)s</span> tag"
+msgstr[1] "<span class=\"count\">%(counter)s</span> taga"
+msgstr[2] "<span class=\"count\">%(counter)s</span> tagova"
 
 #: templates/user_profile/user_stats.html:65
 #, python-format
 msgid "<span class=\"count\">%(counter)s</span> Badge"
 msgid_plural "<span class=\"count\">%(counter)s</span> Badges"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "<span class=\"count\">%(counter)s</span> značka"
+msgstr[1] "<span class=\"count\">%(counter)s</span> značke"
+msgstr[2] "<span class=\"count\">%(counter)s</span> znački"
 
 #: templates/user_profile/user_stats.html:85
 msgid "Answer to:"
-msgstr "Odgovor na:"
+msgstr "Odgovori:"
 
 #: templates/user_profile/user_tabs.html:5
 msgid "User profile"
 msgstr "Korisnički profil"
 
-#: templates/user_profile/user_tabs.html:10 views/users.py:874
+#: templates/user_profile/user_tabs.html:10 views/users.py:819
 msgid "comments and answers to others questions"
 msgstr "komentari i odgovori na druga pitanja"
 
 #: templates/user_profile/user_tabs.html:16
 msgid "followers and followed users"
-msgstr "pratitelji i praćeni korisnici"
+msgstr "pratioci i praćeni korisnici"
 
 #: templates/user_profile/user_tabs.html:22
 msgid "Graph of user karma"
@@ -7243,37 +7265,37 @@ msgstr "graf korisnikove karme"
 
 #: templates/user_profile/user_tabs.html:27
 msgid "questions that user is following"
-msgstr "pitanja koje korisnici prate"
+msgstr "pitanja koja korisnik prati"
 
-#: templates/user_profile/user_tabs.html:36 views/users.py:916
+#: templates/user_profile/user_tabs.html:36 views/users.py:861
 msgid "user vote record"
 msgstr "zapis glasova korisnika"
 
 #: templates/user_profile/user_tabs.html:38
 #: templates/user_profile/user_votes.html:5
 msgid "votes"
-msgstr "glasovi"
+msgstr "ocjene"
 
-#: templates/user_profile/user_tabs.html:42 views/users.py:1028
+#: templates/user_profile/user_tabs.html:42 views/users.py:973
 msgid "email subscription settings"
-msgstr "postavke za email pretplate"
+msgstr "postavke pretplate elektroničkom poštom"
 
-#: templates/user_profile/user_tabs.html:48 views/users.py:284
+#: templates/user_profile/user_tabs.html:48 views/users.py:286
 msgid "moderate this user"
-msgstr "uredi ugled korisnika"
+msgstr "moderiraj ovog korisnika"
 
 #: templates/user_profile/users_answers.html:7
 #, python-format
 msgid "the answer has been voted for %(answer_score)s times"
-msgstr "odgovor je glasan %(answer_score)s puta"
+msgstr "ovaj je odgovor bio ocjenjivan %(answer_score)s puta"
 
 #: templates/user_profile/users_answers.html:17
 #, python-format
 msgid "(%(comment_count)s comment)"
 msgid_plural "the answer has been commented %(comment_count)s times"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "(%(comment_count)s komentar)"
+msgstr[1] "odgovor je komentiran %(comment_count)s puta"
+msgstr[2] "odgovor je komentiran %(comment_count)s puta"
 
 #: templates/widgets/answer_edit_tips.html:3
 #: templates/widgets/question_edit_tips.html:3
@@ -7286,7 +7308,7 @@ msgstr "napišite odgovor zanimljiv ovoj zajednici"
 
 #: templates/widgets/answer_edit_tips.html:9
 msgid "try to give an answer, rather than engage into a discussion"
-msgstr "pokušajte dati odgovor, ne se uključiti u raspravu"
+msgstr "radije pokušajte odgovoriti na pitanje, nego se uključivati u raspravu"
 
 #: templates/widgets/ask_button.html:9
 msgid "Ask the Group"
@@ -7306,7 +7328,7 @@ msgstr ""
 
 #: templates/widgets/contributors.html:3
 msgid "Contributors"
-msgstr "Aktivni korisnici"
+msgstr "Doprinositelji"
 
 #: templates/widgets/edit_post.html:33
 msgid ", one of these is required"
@@ -7318,7 +7340,7 @@ msgstr "oznake:"
 
 #: templates/widgets/edit_post.html:43
 msgid "(required)"
-msgstr "(nužno)"
+msgstr "(potrebno)"
 
 #: templates/widgets/edit_post.html:71
 msgid "Toggle the real time Markdown editor preview"
@@ -7333,7 +7355,7 @@ msgstr ""
 #: templates/widgets/footer.html:33
 #, python-format
 msgid "Content on this site is licensed under a %(license)s"
-msgstr "Sadržaj na ovoj stanici je pod %(license)s licencom"
+msgstr "Sadržaj ove stranice licenciran je pod %(license)s"
 
 #: templates/widgets/footer.html:38
 msgid "about"
@@ -7349,7 +7371,7 @@ msgstr "pravila o privatnosti"
 
 #: templates/widgets/footer.html:51
 msgid "give feedback"
-msgstr "povratna informacija"
+msgstr "pruži povratnu informaciju"
 
 #: templates/widgets/group_info.html:3
 msgid "Group info"
@@ -7384,47 +7406,51 @@ msgid "How users join this group?"
 msgstr ""
 
 #: templates/widgets/group_info.html:87
-msgid "Make group VIP"
+msgid "Can moderate site"
 msgstr ""
 
-#: templates/widgets/group_info.html:93
+#: templates/widgets/group_info.html:97
+msgid "Allow only read access"
+msgstr ""
+
+#: templates/widgets/group_info.html:102
 msgid "list of email addresses of pre-approved users"
 msgstr ""
 
-#: templates/widgets/group_info.html:98
+#: templates/widgets/group_info.html:107
 msgid "List of preapproved email addresses"
 msgstr ""
 
-#: templates/widgets/group_info.html:99
+#: templates/widgets/group_info.html:108
 msgid ""
 "Users with these email adderesses will be added to the group automatically."
 msgstr ""
 
-#: templates/widgets/group_info.html:100
+#: templates/widgets/group_info.html:109
 msgid "edit preapproved emails"
 msgstr ""
 
-#: templates/widgets/group_info.html:104
+#: templates/widgets/group_info.html:113
 msgid "list of preapproved email address domain names"
 msgstr ""
 
-#: templates/widgets/group_info.html:109
+#: templates/widgets/group_info.html:118
 msgid "List of preapproved email domain names"
 msgstr ""
 
-#: templates/widgets/group_info.html:110
+#: templates/widgets/group_info.html:119
 msgid ""
 "Users whose email adderesses belong to these domains will be added to the "
 "group automatically."
 msgstr ""
 
-#: templates/widgets/group_info.html:111
+#: templates/widgets/group_info.html:120
 msgid "edit preapproved email domains"
 msgstr ""
 
 #: templates/widgets/logo.html:3
 msgid "back to home page"
-msgstr "nazad na početnu stranicu"
+msgstr "natrag na naslovnicu"
 
 #: templates/widgets/logo.html:4
 #, python-format
@@ -7437,19 +7463,19 @@ msgstr "Markdown osnove"
 
 #: templates/widgets/markdown_help.html:6
 msgid "*italic*"
-msgstr "*kurziv*"
+msgstr "*ukošeno*"
 
 #: templates/widgets/markdown_help.html:9
 msgid "**bold**"
-msgstr "**podebljano**"
+msgstr "**boldirano**"
 
 #: templates/widgets/markdown_help.html:13
 msgid "*italic* or _italic_"
-msgstr "*kurziv* ili _kurziv_"
+msgstr "*ukošeno* ili _ukošeno_"
 
 #: templates/widgets/markdown_help.html:16
 msgid "**bold** or __bold__"
-msgstr "**podebljano** ili __podebljano__"
+msgstr "**boldirano** ili __boldirano__"
 
 #: templates/widgets/markdown_help.html:20
 #: templates/widgets/markdown_help.html:24
@@ -7462,15 +7488,15 @@ msgstr "slika"
 
 #: templates/widgets/markdown_help.html:28
 msgid "numbered list:"
-msgstr "brojčana lista:"
+msgstr "numerirana lista:"
 
 #: templates/widgets/markdown_help.html:33
 msgid "basic HTML tags are also supported"
-msgstr "podržane su osnovne HTML oznake"
+msgstr "podržani su i tagovi u osnovnom HTML-u"
 
 #: templates/widgets/markdown_help.html:38
 msgid "learn more about Markdown"
-msgstr "naučite više o Markdownu"
+msgstr "nauči više o Markdownu"
 
 #: templates/widgets/meta_nav.html:12
 msgid "people & groups"
@@ -7478,7 +7504,7 @@ msgstr ""
 
 #: templates/widgets/meta_nav.html:20
 msgid "users"
-msgstr "people"
+msgstr "korisnici"
 
 #: templates/widgets/meta_nav.html:27
 msgid "badges"
@@ -7491,55 +7517,55 @@ msgstr "postavi pitanje zanimljivo ovoj zajednici"
 #: templates/widgets/question_summary.html:12
 msgid "view"
 msgid_plural "views"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "pogled"
+msgstr[1] "pogleda"
+msgstr[2] "pogleda"
 
 #: templates/widgets/question_summary.html:30
 msgid "answer"
 msgid_plural "answers"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "odgovor"
+msgstr[1] "odgovora"
+msgstr[2] "odgovora"
 
 #: templates/widgets/question_summary.html:41
 msgid "vote"
 msgid_plural "votes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "ocjena"
+msgstr[1] "ocjene"
+msgstr[2] "ocijena"
 
 #: templates/widgets/scope_nav.html:17
 msgid "ALL"
-msgstr "SVA"
+msgstr "SVE"
 
 #: templates/widgets/scope_nav.html:22
 msgid "see unanswered questions"
-msgstr "ne odgovorena pitanja"
+msgstr "pogledajte neodgovorena pitanja"
 
 #: templates/widgets/scope_nav.html:22
 msgid "UNANSWERED"
-msgstr "BEZ ODGOVORA"
+msgstr "NEODGOVORENO"
 
 #: templates/widgets/scope_nav.html:27
 msgid "see your followed questions"
-msgstr "moja praćena pitanja"
+msgstr "pogledajte pitanja koja pratite"
 
 #: templates/widgets/scope_nav.html:27
 msgid "FOLLOWED"
-msgstr "PRATIM"
+msgstr "PRAĆENO"
 
 #: templates/widgets/scope_nav.html:30
 msgid "Please ask your question here"
-msgstr "Postavi pitanje ovdje"
+msgstr "Ovdje postavite pitanje"
 
 #: templates/widgets/tag_selector.html:4
 msgid "Interesting tags"
-msgstr "Zanimljive oznake"
+msgstr "Zanimljivi tagovi"
 
 #: templates/widgets/tag_selector.html:22
 msgid "Ignored tags"
-msgstr "Ignorirane oznake"
+msgstr "Zanemareni tagove"
 
 #: templates/widgets/tag_selector.html:40
 msgid "Subscribed tags"
@@ -7574,11 +7600,15 @@ msgstr ""
 msgid "(edit categories)"
 msgstr ""
 
-#: templates/widgets/user_long_score_and_badge_summary.html:7
+#: templates/widgets/user_long_score_and_badge_summary.html:3
+msgid "read only access"
+msgstr ""
+
+#: templates/widgets/user_long_score_and_badge_summary.html:10
 msgid "karma:"
 msgstr "karma:"
 
-#: templates/widgets/user_long_score_and_badge_summary.html:12
+#: templates/widgets/user_long_score_and_badge_summary.html:15
 msgid "badges:"
 msgstr "značke:"
 
@@ -7632,15 +7662,15 @@ msgstr "0"
 
 #: utils/decorators.py:104 views/commands.py:146
 msgid "Oops, apologies - there was some error"
-msgstr "Uups, oprostite - došlo je do greške"
+msgstr "Ups, ispričavamo se - došlo je do greške"
 
 #: utils/decorators.py:123
 msgid "Please login to post"
-msgstr "Prijavite se za objavu posta"
+msgstr "Prijavite se kako biste mogli objavljivati"
 
 #: utils/decorators.py:219
 msgid "Spam was detected on your post, sorry for if this is a mistake"
-msgstr "Neželjen sadržaj otkriven je u vašem postu, ispričavamo se ako je ovo greška"
+msgstr "Na vašem je postu otkriven spam, ispričavamo se ako je to pogreška"
 
 #: utils/decorators.py:243
 msgid "This function is limited to moderators and administrators"
@@ -7648,7 +7678,7 @@ msgstr ""
 
 #: utils/forms.py:66
 msgid "this field is required"
-msgstr "ovo polje je nužno"
+msgstr "ovo je polje nužno"
 
 #: utils/forms.py:93
 msgid "Choose a screen name"
@@ -7656,31 +7686,31 @@ msgstr "Odaberite prikazno ime"
 
 #: utils/forms.py:103
 msgid "user name is required"
-msgstr "Korisničko ime je nužno"
+msgstr "korisničko ime je nužno"
 
 #: utils/forms.py:104
 msgid "sorry, this name is taken, please choose another"
-msgstr "ovo ime je zauzeto, odaberite drugo"
+msgstr "ovo je ime zauzeto, odaberite drugo"
 
 #: utils/forms.py:105
 msgid "sorry, this name is not allowed, please choose another"
-msgstr "ovo ime nije dozvoljeno, odaberite drugo"
+msgstr "ovo ime nije dopušteno, odaberite drugo"
 
 #: utils/forms.py:106
 msgid "sorry, there is no user with this name"
-msgstr "ne postoji korisnik s tim imenom"
+msgstr "ispričavamo se, ne postoji korisnik pod tim imenom"
 
 #: utils/forms.py:107
 msgid "sorry, we have a serious error - user name is taken by several users"
-msgstr "oprostite, nastala je velika greška - više korisnika ima isto korisničko ime"
+msgstr "ispričavamo se, imamo ozbiljan problem - isto korisničko ime koristi već nekoliko korisnika"
 
 #: utils/forms.py:108
 msgid "user name can only consist of letters, empty space and underscore"
-msgstr "korisničko ime može sadržavati samo slova, razmake i znakove podvlačenja"
+msgstr "korisnička se imena mogu sastojati samo od slova, razmaka i donje crtice"
 
 #: utils/forms.py:109
 msgid "please use at least some alphabetic characters in the user name"
-msgstr "koristite najmanje nekoliko slova u korisničkom imenu"
+msgstr "koristite barem neko slovo u korisničkom imenu"
 
 #: utils/forms.py:110
 msgid "symbol \"@\" is not allowed"
@@ -7692,15 +7722,15 @@ msgstr "Vaša email adresa"
 
 #: utils/forms.py:224
 msgid "email address is required"
-msgstr "email adresa je nužna"
+msgstr "adrese elektroničke pošte je nužna"
 
 #: utils/forms.py:225
 msgid "please enter a valid email address"
-msgstr "unesite ispravnu email adresu"
+msgstr "unesite valjanu adresu elektroničke pošte"
 
 #: utils/forms.py:226
 msgid "this email is already used by someone else, please choose another"
-msgstr "ovaj email adresa se već koristi, odaberite drugu"
+msgstr "ovu adresu elektroničke pošte netko već koristi, odaberite drugu"
 
 #: utils/forms.py:227
 msgid "this email address is not authorized"
@@ -7708,7 +7738,7 @@ msgstr ""
 
 #: utils/forms.py:265
 msgid "password is required"
-msgstr "lozinka je obvezna"
+msgstr "lozinka je nužna"
 
 #: utils/forms.py:268
 msgid "Password <i>(please retype)</i>"
@@ -7716,11 +7746,11 @@ msgstr "Lozinka <i>(ponovo)</i>"
 
 #: utils/forms.py:269
 msgid "please, retype your password"
-msgstr "ponovo napišite vašu lozinku"
+msgstr "ponovno unesite lozinku"
 
 #: utils/forms.py:270
 msgid "sorry, entered passwords did not match, please try again"
-msgstr "lozinke ne odgovaraju, pokušajte ponovo"
+msgstr "unesene lozinke se ne podudaraju, pokušajte ponovno"
 
 #: utils/functions.py:102
 msgid "2 days ago"
@@ -7734,29 +7764,29 @@ msgstr "jučer"
 #, python-format
 msgid "%(hr)d hour ago"
 msgid_plural "%(hr)d hours ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "prije %(hr)d sata"
+msgstr[1] "prije %(hr)d sata"
+msgstr[2] "prije %(hr)d sati"
 
 #: utils/functions.py:113
 #, python-format
 msgid "%(min)d min ago"
 msgid_plural "%(min)d mins ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "prije %(min)d min"
+msgstr[1] "prije %(min)d min"
+msgstr[2] "prije %(min)d min"
 
 #: views/avatar_views.py:103
 msgid "Successfully uploaded a new avatar."
-msgstr "Uspješno ste poslali novi avatar."
+msgstr "Novi je avatar uspješno učitan."
 
 #: views/avatar_views.py:144
 msgid "Successfully updated your avatar."
-msgstr "Uspješno ste ažurirali vaš avatar."
+msgstr "Vaš je avatar uspješno ažuriran."
 
 #: views/avatar_views.py:184
 msgid "Successfully deleted the requested avatars."
-msgstr "Uspješno ste obrisali zatražene avatare."
+msgstr "Zatraženi avatar je uspješno obrisan."
 
 #: views/commands.py:123
 msgid "your post was not accepted"
@@ -7764,7 +7794,7 @@ msgstr ""
 
 #: views/commands.py:136
 msgid "Sorry, but anonymous users cannot access the inbox"
-msgstr "Anonimni korisnici nemaju pravo pristupa sandučiću"
+msgstr "Ispričavamo se, ali anonimni korisnici ne mogu pristupiti porukama"
 
 #: views/commands.py:165
 msgid "Sorry, anonymous users cannot vote"
@@ -7772,20 +7802,20 @@ msgstr "Anonimni korisnici ne mogu glasati"
 
 #: views/commands.py:182
 msgid "Sorry you ran out of votes for today"
-msgstr "Ostali ste bez glasova danas"
+msgstr "Danas, nažalost, više ne možete ocjenjivati"
 
 #: views/commands.py:188
 #, python-format
 msgid "You have %(votes_left)s votes left for today"
-msgstr "Ostalo vam je %(votes_left)s glasova za danas"
+msgstr "Za danas vam je ostalo %(votes_left)s ocjena"
 
 #: views/commands.py:263
 msgid "Sorry, something is not right here..."
-msgstr "Nešto nije u redu ..."
+msgstr "Ispričavamo se, ali nešto ovdje nije u redu..."
 
 #: views/commands.py:286
 msgid "Sorry, but anonymous users cannot accept answers"
-msgstr "Anonimni korisnici ne mogu prihvaćati odgovore"
+msgstr "Ispričavamo se, ali anonimni korisnici ne mogu prihvaćati odgovore"
 
 #: views/commands.py:396
 #, python-format
@@ -7796,7 +7826,7 @@ msgstr "Vaša pretplata je sačuvana, ali email adresa %(email)s mora biti potvr
 
 #: views/commands.py:405
 msgid "email update frequency has been set to daily"
-msgstr "učestalost email dopune je postavljena na dnevno"
+msgstr "učestalost ažuriranja elektroničkom poštom postavljeno je na dnevno"
 
 #: views/commands.py:628
 msgid "Sorry, could not delete tag"
@@ -7805,12 +7835,12 @@ msgstr ""
 #: views/commands.py:701
 #, python-format
 msgid "Tag subscription was canceled (<a href=\"%(url)s\">undo</a>)."
-msgstr "Pretplata na oznaku je otkazana (<a href=\"%(url)s\">vrati</a>)."
+msgstr "Pretplata na tag je otkazana (<a href=\"%(url)s\">poništi</a>)."
 
 #: views/commands.py:710
 #, python-format
 msgid "Please sign in to subscribe for: %(tags)s"
-msgstr "Prijavite se za pretplatu na: %(tags)s"
+msgstr "Prijavite se kako biste se pretplatitli na: %(tags)s"
 
 #: views/commands.py:729
 msgid "Create"
@@ -7818,7 +7848,7 @@ msgstr ""
 
 #: views/commands.py:959
 msgid "Please sign in to vote"
-msgstr "Prijavite se za glasanje"
+msgstr "Prijavite se kako biste mogli ocjenjivati"
 
 #: views/commands.py:980
 msgid "Please sign in to delete/restore posts"
@@ -7829,24 +7859,24 @@ msgstr "Prijavite se za brisanje/obnovu postova"
 msgid "Group %(name)s does not exist"
 msgstr ""
 
-#: views/commands.py:1407 views/commands.py:1440
+#: views/commands.py:1408 views/commands.py:1441
 msgid "Sorry, looks like sharing request was invalid"
 msgstr ""
 
-#: views/commands.py:1463
+#: views/commands.py:1464
 #, python-format
 msgid "%(user)s, welcome to group %(group)s!"
 msgstr ""
 
-#: views/commands.py:1520
+#: views/commands.py:1521
 msgid "Sorry, only thread moderators can use this function"
 msgstr ""
 
-#: views/commands.py:1535
+#: views/commands.py:1536
 msgid "The answer is now unpublished"
 msgstr ""
 
-#: views/commands.py:1539
+#: views/commands.py:1540
 msgid "The answer is now published"
 msgstr ""
 
@@ -7865,11 +7895,11 @@ msgstr "P&O forum povratna informacija"
 
 #: views/meta.py:122
 msgid "Thanks for the feedback!"
-msgstr "Hvala na povratnoj informaciji!"
+msgstr "Zahvaljujemo na povratnim informacijama!"
 
 #: views/meta.py:131
 msgid "We look forward to hearing your feedback! Please, give it next time :)"
-msgstr "Zanima nas vaše mišljenje! Dajte ga sljedeći put :)"
+msgstr "Unaprijed se radujemo vašim povratnim informacijama! Podijelite ih s nama sljedećeg puta :)"
 
 #: views/meta.py:135
 msgid "Privacy policy"
@@ -7879,109 +7909,116 @@ msgstr "Pravila o privatnosti"
 msgid "Suggested tags"
 msgstr ""
 
-#: views/readers.py:402
+#: views/readers.py:256
+#, python-format
+msgid ""
+"Please go to <a href=\"%s\">\"settings->URLs, keywords and greetings\"</a> "
+"and set the base url for your site to function properly"
+msgstr ""
+
+#: views/readers.py:421
 msgid ""
 "Sorry, the comment you are looking for has been deleted and is no longer "
 "accessible"
-msgstr "Komentar koji tražite je obrisan i više nije dostupan"
+msgstr "Komentar koji tražite je obrisan ili više nije dostupan"
 
-#: views/users.py:285
+#: views/users.py:287
 msgid "moderate user"
-msgstr "uredi korisnika"
+msgstr "moderiraj korisnika"
 
-#: views/users.py:503
+#: views/users.py:529
 msgid "user profile"
 msgstr "korisnički profil"
 
-#: views/users.py:504
+#: views/users.py:530
 msgid "user profile overview"
 msgstr "pregled korisničkog profila"
 
-#: views/users.py:705
+#: views/users.py:650
 msgid "recent user activity"
-msgstr "zadnje aktivnosti korisnika"
+msgstr "nedavne aktivnosti korisnika"
 
-#: views/users.py:706
+#: views/users.py:651
 msgid "profile - recent activity"
-msgstr "profil - zadnje aktivnosti"
+msgstr "profil - nedavne aktivnosti"
 
-#: views/users.py:737
+#: views/users.py:682
 msgid "group joining requests"
 msgstr ""
 
-#: views/users.py:738
+#: views/users.py:683
 msgid "profile - moderation"
 msgstr ""
 
-#: views/users.py:794
+#: views/users.py:739
 msgid "private messages"
 msgstr ""
 
-#: views/users.py:795
+#: views/users.py:740
 msgid "profile - messages"
 msgstr ""
 
-#: views/users.py:875
+#: views/users.py:820
 msgid "profile - responses"
-msgstr "profil - odazivi"
+msgstr "profil - odgovori"
 
-#: views/users.py:917
+#: views/users.py:862
 msgid "profile - votes"
-msgstr "profil - glasovi"
+msgstr "profil - ocjene"
 
-#: views/users.py:938
+#: views/users.py:883
 msgid "user karma"
 msgstr "korisnikova karma"
 
-#: views/users.py:939
+#: views/users.py:884
 msgid "Profile - User's Karma"
 msgstr "Profil - Korisnikova Karma"
 
-#: views/users.py:957
+#: views/users.py:902
 msgid "users favorite questions"
-msgstr "omiljena pitanja korisnika"
+msgstr "korisnikova najdraža pitanja"
 
-#: views/users.py:958
+#: views/users.py:903
 msgid "profile - favorite questions"
-msgstr "profil - omiljena pitanja"
+msgstr "profil - najdraža pitanja"
 
-#: views/users.py:999 views/users.py:1003
+#: views/users.py:944 views/users.py:948
 msgid "changes saved"
-msgstr "promjene sačuvane"
+msgstr "promjene su spremljene"
 
-#: views/users.py:1009
+#: views/users.py:954
 msgid "email updates canceled"
-msgstr "email dopune opozvane"
+msgstr "otkazana su ažuriranja elektroničkom poštom"
 
-#: views/users.py:1029
+#: views/users.py:974
 msgid "profile - email subscriptions"
-msgstr "profil - email pretplate"
+msgstr "profil - pretplata elektroničkom poštom"
 
-#: views/users.py:1050
+#: views/users.py:995
 #, python-format
 msgid "profile - %(section)s"
 msgstr ""
 
-#: views/writers.py:72
+#: views/writers.py:73
 msgid "Sorry, anonymous users cannot upload files"
-msgstr "Anonimni korisnici ne mogu postati datoteke"
+msgstr "Anonimni korisnici ne mogu učitavati datoteke"
 
-#: views/writers.py:90
+#: views/writers.py:91
 #, python-format
 msgid "allowed file types are '%(file_types)s'"
 msgstr "dopušteni tipovi datoteka su '%(file_types)s'"
 
-#: views/writers.py:103
+#: views/writers.py:104
 #, python-format
 msgid "maximum upload file size is %(file_size)sK"
 msgstr "maksimalna veličina poslane datoteke je %(file_size)sK"
 
-#: views/writers.py:111
+#: views/writers.py:112
 msgid ""
 "Error uploading file. Please contact the site administrator. Thank you."
-msgstr "Nastala je greška prilikom slanja datoteke. Kontaktirajte administratora. Hvala."
+msgstr "Dogodila se greška pri prenošenju datoteke. Kontaktirajte administratora stranice. Zahvaljujemo."
 
-#: views/writers.py:208
+#: views/writers.py:209
 msgid ""
 "<span class=\"strong big\">You are welcome to start submitting your question"
 " anonymously</span>. When you submit the post, you will be redirected to the"
@@ -7990,45 +8027,45 @@ msgid ""
 "Login takes about 30 seconds, initial signup takes a minute or less."
 msgstr "<span class=\\\"strong big\\\">Možete početi postavljati pitanja anonimno</span>. Nakon što predate post biti ćete preusmjereni na stranicu za prijavu/upis. Vaše pitanje biti će privremeno sačuvano i objavljeno nakon prijave. Proces prijave/upisa je jednostavan. Prijava traje oko 30 sekundi, a prvi upis oko minute."
 
-#: views/writers.py:575
+#: views/writers.py:582
 msgid "Please log in to answer questions"
-msgstr "Prijavite se za odgovaranje na pitanja"
+msgstr "Prijavite se kako biste mogli odgovoriti na pitanje"
 
-#: views/writers.py:701
+#: views/writers.py:708
 msgid "This content is forbidden"
 msgstr ""
 
-#: views/writers.py:710
+#: views/writers.py:717
 msgid "Post not found"
 msgstr ""
 
-#: views/writers.py:718
+#: views/writers.py:725
 #, python-format
 msgid ""
 "Sorry, you appear to be logged out and cannot post comments. Please <a "
 "href=\"%(sign_in_url)s\">sign in</a>."
-msgstr "Niste prijavljeni stoga ne možete objavljivati komentare. <a href=\"%(sign_in_url)s\">Prijavite se</a>."
+msgstr "Ispričavamo se, čini se da niste prijavljeni te stoga ne možete objavljivati komentare. <a href=\"%(sign_in_url)s\">Prijavite se</a>."
 
-#: views/writers.py:742
+#: views/writers.py:749
 msgid "Sorry, anonymous users cannot edit comments"
-msgstr "Anonimni korisnici ne mogu uređivati komentare"
+msgstr "Ispričavamo se, ali anonimni korisnici ne mogu uređivati komentare"
 
-#: views/writers.py:791
+#: views/writers.py:798
 #, python-format
 msgid ""
 "Sorry, you appear to be logged out and cannot delete comments. Please <a "
 "href=\"%(sign_in_url)s\">sign in</a>."
-msgstr "Niste prijavljeni stoga ne možete brisati komentare. <a href=\"%(sign_in_url)s\">Prijavite se</a>."
+msgstr "Ispričavamo se, čini se da niste prijavljeni te stoga ne možete brisati komentare. <a href=\"%(sign_in_url)s\">Prijavite se</a>."
 
-#: views/writers.py:817
+#: views/writers.py:824
 msgid "sorry, we seem to have some technical difficulties"
-msgstr "Oprostite, imamo tehničkih poteškoća"
+msgstr "ispričavamo se, čini se da imamo tehničih poteškoća"
 
-#: views/writers.py:881
+#: views/writers.py:888
 msgid "Error - could not find the destination post"
 msgstr ""
 
-#: views/writers.py:905
+#: views/writers.py:912
 #, python-format
 msgid ""
 "Cannot convert, because text has more characters than %(max_chars)s - "

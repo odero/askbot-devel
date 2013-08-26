@@ -502,6 +502,71 @@ WaitIcon.prototype.createDom = function() {
 };
 
 /**
+ * makes images never take more spaces then they can take
+ * @param {<Array>} breakPoints
+ * @param {number} maxWidth
+ * an array of array values like (min-width, width-offset) 
+ * where min-width is screen minimum width
+ * width-offset - difference between the actual screen width and
+ * max-width of the image.
+ * width-offset may be undefined - this way we know that this is
+ * the widest breakpoint and we apply the default max-width
+ * instead.
+ * We use this offset to calculate max-width in order to
+ * have the images fit the layout no matter the size of the image
+ */
+var LimitedWidthImage = function(breakPoints, maxWidth) {
+    /**
+     * breakPoints must be sorted in decreasing
+     * order of min-width
+     */
+    this._breakPoints = breakPoints;
+    /**
+     * this is width for the fully stretched
+     * window, above the first widest breakpoint
+     */
+    this._maxWidth = maxWidth;
+    WrappedElement.call(this);
+};
+inherits(LimitedWidthImage, WrappedElement);
+
+LimitedWidthImage.prototype.getImageWidthOffset = function(width) {
+    var numBreaks = this._breakPoints.length;
+    var offset = this._breakPoints[0][1];
+    for (var i = 0; i < numBreaks; i++) {
+        var point = this._breakPoints[i];
+        var minWidth = point[0];
+        if (width >= minWidth) {
+            break;
+        } else {
+            offset = point[1];
+        }
+    }
+    return offset;
+};
+
+LimitedWidthImage.prototype.autoResize = function() {
+    var windowWidth = $(window).width();
+    //1) find the offset for the nearest breakpoint
+    var widthOffset = this.getImageWidthOffset(windowWidth);
+    var maxWidth = '100%';
+    if (widthOffset !== undefined) {
+        maxWidth = windowWidth - widthOffset;
+    } else {
+        maxWidth = this._maxWidth;
+    }
+    this._element.css('max-width', maxWidth);
+    this._element.css('height', 'auto');
+};
+
+LimitedWidthImage.prototype.decorate = function(element) {
+    this._element = element;
+    this.autoResize();
+    var me = this;
+    $(window).resize(function() { me.autoResize(); });
+};
+
+/**
  * @contsructor
  * a form helper that disables submit button
  * after it is submitted the first time
@@ -964,6 +1029,7 @@ var ModalDialog = function() {
     this._reject_handler = function() { me.hide(); };
     this._content_element = undefined;
     this._headerEnabled = true;
+    this._className = undefined;
 };
 inherits(ModalDialog, WrappedElement);
 
@@ -1024,6 +1090,9 @@ ModalDialog.prototype.createDom = function() {
     var element = this._element;
 
     element.addClass('modal');
+    if (this._className) {
+        element.addClass(this._className);
+    }
 
     //1) create header
     if (this._headerEnabled) {
@@ -1085,6 +1154,7 @@ ModalDialog.prototype.createDom = function() {
  */
 var FileUploadDialog = function() {
     ModalDialog.call(this);
+    this._className = 'file-upload-dialog';
     this._post_upload_handler = undefined;
     this._fileType = 'image';
     this._headerEnabled = false;

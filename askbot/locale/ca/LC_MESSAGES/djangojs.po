@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: askbot\n"
 "Report-Msgid-Bugs-To: http://askbot.org/\n"
-"POT-Creation-Date: 2013-06-27 03:53-0500\n"
-"PO-Revision-Date: 2013-06-27 08:56+0000\n"
+"POT-Creation-Date: 2013-07-13 14:07-0500\n"
+"PO-Revision-Date: 2013-08-02 04:08+0000\n"
 "Last-Translator: evgeny <evgeny.fadeev@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/askbot/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -20,17 +20,17 @@ msgstr ""
 #: media/jquery-openid/jquery.openid.js:73
 #, c-format
 msgid "Are you sure you want to remove your %s login?"
-msgstr "Vol eliminar l'entrada %s?"
+msgstr "Esteu segur de voler suprimir l'inici de sessió %s?"
 
 #: media/jquery-openid/jquery.openid.js:90
 msgid "Please add one or more login methods."
-msgstr "Afegir un o més mètodes d'entrada."
+msgstr "Afegiu un o més mètodes d'iniciar sessió."
 
 #: media/jquery-openid/jquery.openid.js:93
 msgid ""
 "You don't have a method to log in right now, please add one or more by "
 "clicking any of the icons below."
-msgstr "Actualment no teniu cap mètode d'entrada, afegiu-ne un clicant una de les icones."
+msgstr "No teniu cap mètode per iniciar sessió, afegiu un o més fent clic a qualsevol de les icones inferiors."
 
 #: media/jquery-openid/jquery.openid.js:135
 msgid "passwords do not match"
@@ -38,38 +38,38 @@ msgstr "les contrasenyes no coincideixen"
 
 #: media/jquery-openid/jquery.openid.js:162
 msgid "Show/change current login methods"
-msgstr "Mostrar/canviar els mètodes d'entrada actuals"
+msgstr "Mostra/canvia els mètodes d'inici de sessió"
 
 #: media/jquery-openid/jquery.openid.js:227
 #, c-format
 msgid "Please enter your %s, then proceed"
-msgstr "Entrar el vostre %s per continuar"
+msgstr "Introduïu el vostre %s i procediu"
 
 #: media/jquery-openid/jquery.openid.js:229
 msgid "Connect your %(provider_name)s account to %(site)s"
-msgstr "Connectar el compte %(provider_name)s a %(site)s"
+msgstr "Connecteu el vostre compte de %(provider_name)s al %(site)s"
 
 #: media/jquery-openid/jquery.openid.js:323
 #, c-format
 msgid "Change your %s password"
-msgstr "Canviar la contrasenya %s"
+msgstr "Canvieu la contrasenya de l'%s"
 
 #: media/jquery-openid/jquery.openid.js:324
 msgid "Change password"
-msgstr "Canviar contrasenya"
+msgstr "Canvia la contrasenya"
 
 #: media/jquery-openid/jquery.openid.js:327
 #, c-format
 msgid "Create a password for %s"
-msgstr "Crear una contrasenya per %s"
+msgstr "Crea una contrasenya per a l'%s"
 
 #: media/jquery-openid/jquery.openid.js:328
 msgid "Create password"
-msgstr "Crear contrasenya"
+msgstr "Crea una contrasenya"
 
 #: media/jquery-openid/jquery.openid.js:344
 msgid "Create a password-protected account"
-msgstr "Crear un compte protegit amb contrasenya"
+msgstr "Crea un compte protegit amb contrasenya"
 
 #: media/js/group_messaging.js:102 media/js/group_messaging.js.c:293
 msgid "required"
@@ -84,9 +84,9 @@ msgid "send"
 msgstr ""
 
 #: media/js/group_messaging.js:164 media/js/post.js:1809
-#: media/js/post.js.c:3077 media/js/post.js.c:4586 media/js/user.js:888
+#: media/js/post.js.c:3081 media/js/post.js.c:4598 media/js/user.js:888
 msgid "cancel"
-msgstr ""
+msgstr "cancel·la"
 
 #: media/js/group_messaging.js:227
 msgid "Reply"
@@ -130,7 +130,7 @@ msgstr ""
 
 #: media/js/post.js:28
 msgid "loading..."
-msgstr "càrrega..."
+msgstr "s'està carregant..."
 
 #: media/js/post.js:100
 msgid "must be shorter than %(max_chars)s character"
@@ -140,7 +140,7 @@ msgstr[1] ""
 
 #: media/js/post.js:154 media/js/post.js.c:1269
 msgid "tags cannot be empty"
-msgstr ""
+msgstr "les etiquetes no poden ser buides"
 
 #: media/js/post.js:160
 msgid "details are required"
@@ -166,7 +166,7 @@ msgstr[1] ""
 
 #: media/js/post.js:193
 msgid "content cannot be empty"
-msgstr ""
+msgstr "el contingut no pot ser buit"
 
 #: media/js/post.js:196
 #, c-format
@@ -185,31 +185,31 @@ msgstr ""
 
 #: media/js/post.js:548
 msgid "insufficient privilege"
-msgstr "permisos insuficients "
+msgstr "permissos insuficients"
 
 #: media/js/post.js:549
 msgid "cannot pick own answer as best"
-msgstr "no es pot escollir resp. pròpia com a millor"
+msgstr "no podeu escollir la vostra pròpia resposta com a la millor"
 
 #: media/js/post.js:552 media/js/post.js.c:1416
 msgid "please login"
-msgstr "entrar"
+msgstr "inicieu la sessió"
 
 #: media/js/post.js:554
 msgid "anonymous users cannot follow questions"
-msgstr "usuaris anònims no poden seguir preguntes"
+msgstr "els usuaris anònims no poden seguir preguntes"
 
 #: media/js/post.js:555
 msgid "anonymous users cannot subscribe to questions"
-msgstr "usuaris anònims no poden subscriures a preguntes"
+msgstr "els usuaris anònims no es poden subscriure a les preguntes"
 
 #: media/js/post.js:556 media/js/post.js.c:1426
 msgid "anonymous users cannot vote"
-msgstr "usuaris anònims no poden votar"
+msgstr "els usuaris anònims no poden votar"
 
 #: media/js/post.js:558
 msgid "please confirm offensive"
-msgstr "confirmar com ofensiu"
+msgstr "confirmeu que és ofensiu"
 
 #: media/js/post.js:559
 msgid "please confirm removal of offensive flag"
@@ -217,15 +217,15 @@ msgstr ""
 
 #: media/js/post.js:560
 msgid "anonymous users cannot flag offensive posts"
-msgstr "usuaris anònims no poden senyalar entrades com ofensives"
+msgstr "els usuaris anònims no poden marcar les entrades com ofensives"
 
 #: media/js/post.js:561
 msgid "confirm delete"
-msgstr "confirmar eliminar"
+msgstr "confirmeu la supressió"
 
 #: media/js/post.js:562
 msgid "anonymous users cannot delete/undelete"
-msgstr "usuaris anònims no poden eliminar/recuperar"
+msgstr "els usuaris anònims no poden suprimir ni recuperar"
 
 #: media/js/post.js:563
 msgid "post recovered"
@@ -233,22 +233,22 @@ msgstr "entrada recuperada"
 
 #: media/js/post.js:564
 msgid "post deleted"
-msgstr "entrada eliminada"
+msgstr "entrada suprimida"
 
 #: media/js/post.js:831
 msgid "Follow"
-msgstr ""
+msgstr "Segueix"
 
 #: media/js/post.js:840 media/js/post.js.c:849
 #, c-format
 msgid "%s follower"
 msgid_plural "%s followers"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s seguidor"
+msgstr[1] "%s seguidors"
 
 #: media/js/post.js:845
 msgid "<div>Following</div><div class=\"unfollow\">Unfollow</div>"
-msgstr ""
+msgstr "<div>Seguint</div><div class=\"unfollow\">Deixa de seguir</div>"
 
 #: media/js/post.js:901
 msgid "remove flag"
@@ -260,11 +260,11 @@ msgstr ""
 
 #: media/js/post.js:990 media/js/post.js.c:1497
 msgid "undelete"
-msgstr ""
+msgstr "recupera"
 
 #: media/js/post.js:995 media/js/post.js.c:1501
 msgid "delete"
-msgstr ""
+msgstr "suprimeix"
 
 #: media/js/post.js:1218 media/js/post.js.c:1445
 msgid "sorry, something is not right here"
@@ -272,11 +272,11 @@ msgstr ""
 
 #: media/js/post.js:1665
 msgid "add comment"
-msgstr "afegir comentari"
+msgstr "afegeix un comentari"
 
 #: media/js/post.js:1671
 msgid "save comment"
-msgstr "desar comentari"
+msgstr "desa el comentari"
 
 #: media/js/post.js:1711
 #, c-format
@@ -291,7 +291,7 @@ msgstr ""
 #: media/js/post.js:1723
 #, c-format
 msgid "%s characters left"
-msgstr ""
+msgstr "queden %s caràcters"
 
 #: media/js/post.js:1823
 msgid "minor edit (don't send alerts)"
@@ -301,17 +301,17 @@ msgstr ""
 msgid "Are you sure you don't want to post this comment?"
 msgstr ""
 
-#: media/js/post.js:1890 media/js/utils.js:3352 media/js/utils.js.c:3507
+#: media/js/post.js:1890 media/js/utils.js:3360 media/js/utils.js.c:3515
 msgid "just now"
 msgstr ""
 
 #: media/js/post.js:1956
 msgid "delete this comment"
-msgstr ""
+msgstr "suprimeix aquest comentari"
 
 #: media/js/post.js:2271
 msgid "confirm delete comment"
-msgstr ""
+msgstr "confirmeu eliminar comentari"
 
 #: media/js/post.js:2409
 msgid "please sign in or register to post comments"
@@ -319,98 +319,102 @@ msgstr ""
 
 #: media/js/post.js:2560
 msgid "Please enter question title (>10 characters)"
-msgstr "Títol de la pregunta (més de 10 caràcters)"
+msgstr "Introduïu el títol de la pregunta (més de 10 caràcters)"
 
-#: media/js/post.js:3071 media/js/post.js.c:3857 media/js/post.js.c:4046
+#: media/js/post.js:2612 media/js/post.js.c:4626
+msgid "Sorry, you have only read access"
+msgstr ""
+
+#: media/js/post.js:3075 media/js/post.js.c:3869 media/js/post.js.c:4058
 msgid "save"
 msgstr ""
 
-#: media/js/post.js:3195
+#: media/js/post.js:3199
 msgid "Enter the logo url or upload an image"
 msgstr ""
 
-#: media/js/post.js:3221
+#: media/js/post.js:3225
 msgid "Do you really want to remove the image?"
 msgstr ""
 
-#: media/js/post.js:3329
+#: media/js/post.js:3341
 msgid "change logo"
 msgstr ""
 
-#: media/js/post.js:3330
+#: media/js/post.js:3342
 msgid "add logo"
 msgstr ""
 
-#: media/js/post.js:3432
+#: media/js/post.js:3444
 #, c-format
 msgid "tag \"%s\" was already added, no need to repeat (press \"escape\" to delete)"
 msgstr ""
 
-#: media/js/post.js:3441
+#: media/js/post.js:3453
 #, c-format
 msgid "a maximum of %s tag is allowed"
 msgid_plural "a maximum of %s tags are allowed"
 msgstr[0] ""
 msgstr[1] ""
 
-#: media/js/post.js:3787
+#: media/js/post.js:3799
 msgid "Delete category?"
 msgstr ""
 
-#: media/js/post.js:3876 media/js/utils.js:875
+#: media/js/post.js:3888 media/js/utils.js:881
 msgid "edit"
-msgstr ""
+msgstr "edita"
 
-#: media/js/post.js:3963
+#: media/js/post.js:3975
 msgid "category name cannot be empty"
 msgstr ""
 
-#: media/js/post.js:3999
+#: media/js/post.js:4011
 msgid "already exists at the current level!"
 msgstr ""
 
-#: media/js/post.js:4035
+#: media/js/post.js:4047
 msgid "add category"
 msgstr ""
 
-#: media/js/post.js:4582
+#: media/js/post.js:4594
 msgid "save tags"
 msgstr ""
 
-#: media/js/post.js:4664 media/js/post.js.c:4698
+#: media/js/post.js:4689 media/js/post.js.c:4723
 msgid "User name:"
 msgstr ""
 
-#: media/js/post.js:4685
+#: media/js/post.js:4710
 msgid "Group name:"
 msgstr ""
 
-#: media/js/post.js:4711
+#: media/js/post.js:4736
 msgid "Shared with the following users:"
 msgstr ""
 
-#: media/js/post.js:4717
+#: media/js/post.js:4742
 msgid "Shared with the following groups:"
 msgstr ""
 
 #: media/js/tag_selector.js:14
 msgid "Tag \"<span></span>\" matches:"
-msgstr "Coincidències de la etiqueta:"
+msgstr "Coincidències de l'etiqueta \"<span></span>\" amb:"
 
 #: media/js/tag_selector.js:84
 #, c-format
 msgid "and %s more, not shown..."
-msgstr "i %s més què no es mostren ..."
+msgstr "i %s més què no es mostren..."
 
 #: media/js/user.js:15
 msgid "Please select at least one item"
-msgstr "Seleccinar com a mínim un ítem"
+msgstr "Seleccioneu com a mínim un element"
 
 #: media/js/user.js:59
 msgid "Delete this notification?"
 msgid_plural "Delete these notifications?"
-msgstr[0] "Eliminar aquesta notificació?"
-msgstr[1] "Eliminar aquestes notificacions"
+msgstr[0] "Voleu suprimir aquesta notificació?"
+msgstr[1] "Voleu suprimir aquestes notificacions?"
 
 #: media/js/user.js:66
 msgid "Close this entry?"
@@ -466,22 +470,22 @@ msgstr ""
 
 #: media/js/user.js:708
 msgid "Please <a href=\"%(signin_url)s\">signin</a> to follow %(username)s"
-msgstr "<a href=\"%(signin_url)s\">Entrar</a> per seguir a %(username)s"
+msgstr "<a href=\"%(signin_url)s\">Inicieu sessió</a> per seguir a %(username)s"
 
 #: media/js/user.js:740
 #, c-format
 msgid "unfollow %s"
-msgstr "deixar de seguir a %s"
+msgstr "deixa de seguir a %s"
 
 #: media/js/user.js:743
 #, c-format
 msgid "following %s"
-msgstr "seguint a %s"
+msgstr "esteu seguint a %s"
 
 #: media/js/user.js:749
 #, c-format
 msgid "follow %s"
-msgstr "seguir a %s"
+msgstr "segueix a %s"
 
 #: media/js/user.js:883
 msgid "add group"
@@ -497,204 +501,204 @@ msgstr ""
 
 #: media/js/utils.js:117
 msgid "click to close"
-msgstr "clicar per tancar"
+msgstr "feu clic per tancar"
 
-#: media/js/utils.js:874
+#: media/js/utils.js:880
 msgid "click to edit this comment"
-msgstr ""
+msgstr "feu clic per modificar aquest comentari"
 
-#: media/js/utils.js:899
+#: media/js/utils.js:905
 msgid "convert to answer"
 msgstr ""
 
-#: media/js/utils.js:952
+#: media/js/utils.js:958
 msgid "Ok"
 msgstr ""
 
-#: media/js/utils.js:953 media/js/utils.js.c:1401
+#: media/js/utils.js:959 media/js/utils.js.c:1407
 msgid "Cancel"
 msgstr ""
 
-#: media/js/utils.js:1213
+#: media/js/utils.js:1219
 #, c-format
 msgid "Uploaded file: %s"
 msgstr ""
 
-#: media/js/utils.js:1228
+#: media/js/utils.js:1234
 msgid "Choose a different image"
 msgstr ""
 
-#: media/js/utils.js:1230
+#: media/js/utils.js:1236
 msgid "Choose a different file"
 msgstr ""
 
-#: media/js/utils.js:1244
+#: media/js/utils.js:1250
 msgid "Oops, looks like we had an error. Sorry."
 msgstr ""
 
-#: media/js/utils.js:1305
+#: media/js/utils.js:1311
 msgid "Choose an image to insert"
 msgstr ""
 
-#: media/js/utils.js:1307
+#: media/js/utils.js:1313
 msgid "Choose a file to insert"
 msgstr ""
 
-#: media/js/utils.js:1320
+#: media/js/utils.js:1326
 msgid "Allowed file types are:"
 msgstr ""
 
-#: media/js/utils.js:1326
+#: media/js/utils.js:1332
 #: media/js/tinymce/plugins/askbot_attachment/editor_plugin.js:35
 msgid "Or paste file url here"
 msgstr ""
 
-#: media/js/utils.js:1400
+#: media/js/utils.js:1406
 msgid "Save"
 msgstr ""
 
-#: media/js/utils.js:1472
+#: media/js/utils.js:1478
 msgid "saved"
 msgstr ""
 
-#: media/js/utils.js:1596
+#: media/js/utils.js:1602
 msgid "enabled"
 msgstr ""
 
-#: media/js/utils.js:1598
+#: media/js/utils.js:1604
 msgid "disabled"
 msgstr ""
 
-#: media/js/utils.js:2030
+#: media/js/utils.js:2038
 msgid "group name"
 msgstr ""
 
-#: media/js/utils.js:2038
+#: media/js/utils.js:2046
 msgid "add new group"
 msgstr ""
 
-#: media/js/utils.js:2130
+#: media/js/utils.js:2138
 msgid "Group %(name)s already exists. Group names are case-insensitive."
 msgstr ""
 
-#: media/js/utils.js:2303
+#: media/js/utils.js:2311
 #, c-format
 msgid "see questions tagged '%s'"
-msgstr ""
+msgstr "veure les preguntes etiquetades amb '%s'"
 
-#: media/js/utils.js:3350
+#: media/js/utils.js:3358
 msgid "ago"
 msgstr ""
 
-#: media/js/utils.js:3351
+#: media/js/utils.js:3359
 msgid "from now"
 msgstr ""
 
-#: media/js/utils.js:3353
-msgid "about a minute"
-msgstr ""
-
-#: media/js/utils.js:3354
-#, c-format
-msgid "%d minutes"
-msgstr ""
-
-#: media/js/utils.js:3355
-msgid "about an hour"
-msgstr ""
-
-#: media/js/utils.js:3356
-#, c-format
-msgid "%d hours"
-msgstr ""
-
-#: media/js/utils.js:3357 media/js/utils.js.c:3485
-msgid "yesterday"
-msgstr ""
-
-#: media/js/utils.js:3358
-#, c-format
-msgid "%d days"
-msgstr ""
-
-#: media/js/utils.js:3359
-msgid "about a month"
-msgstr ""
-
-#: media/js/utils.js:3360
-#, c-format
-msgid "%d months"
-msgstr ""
-
 #: media/js/utils.js:3361
-msgid "about a year"
+msgid "about a minute"
 msgstr ""
 
 #: media/js/utils.js:3362
 #, c-format
+msgid "%d minutes"
+msgstr ""
+
+#: media/js/utils.js:3363
+msgid "about an hour"
+msgstr ""
+
+#: media/js/utils.js:3364
+#, c-format
+msgid "%d hours"
+msgstr ""
+
+#: media/js/utils.js:3365 media/js/utils.js.c:3493
+msgid "yesterday"
+msgstr ""
+
+#: media/js/utils.js:3366
+#, c-format
+msgid "%d days"
+msgstr ""
+
+#: media/js/utils.js:3367
+msgid "about a month"
+msgstr ""
+
+#: media/js/utils.js:3368
+#, c-format
+msgid "%d months"
+msgstr ""
+
+#: media/js/utils.js:3369
+msgid "about a year"
+msgstr ""
+
+#: media/js/utils.js:3370
+#, c-format
 msgid "%d years"
 msgstr ""
 
-#: media/js/utils.js:3460
+#: media/js/utils.js:3468
 msgid "Jan"
 msgstr ""
 
-#: media/js/utils.js:3461
+#: media/js/utils.js:3469
 msgid "Feb"
 msgstr ""
 
-#: media/js/utils.js:3462
+#: media/js/utils.js:3470
 msgid "Mar"
 msgstr ""
 
-#: media/js/utils.js:3463
+#: media/js/utils.js:3471
 msgid "Apr"
 msgstr ""
 
-#: media/js/utils.js:3464
+#: media/js/utils.js:3472
 msgid "May"
 msgstr ""
 
-#: media/js/utils.js:3465
+#: media/js/utils.js:3473
 msgid "Jun"
 msgstr ""
 
-#: media/js/utils.js:3466
+#: media/js/utils.js:3474
 msgid "Jul"
 msgstr ""
 
-#: media/js/utils.js:3467
+#: media/js/utils.js:3475
 msgid "Aug"
 msgstr ""
 
-#: media/js/utils.js:3468
+#: media/js/utils.js:3476
 msgid "Sep"
 msgstr ""
 
-#: media/js/utils.js:3469
+#: media/js/utils.js:3477
 msgid "Oct"
 msgstr ""
 
-#: media/js/utils.js:3470
+#: media/js/utils.js:3478
 msgid "Nov"
 msgstr ""
 
-#: media/js/utils.js:3471
+#: media/js/utils.js:3479
 msgid "Dec"
 msgstr ""
 
-#: media/js/utils.js:3483
+#: media/js/utils.js:3491
 msgid "2 days ago"
 msgstr ""
 
-#: media/js/utils.js:3490
+#: media/js/utils.js:3498
 #, c-format
 msgid "%s hour ago"
 msgid_plural "%s hours ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: media/js/utils.js:3500
+#: media/js/utils.js:3508
 #, c-format
 msgid "%s min ago"
 msgid_plural "%s mins ago"
@@ -723,11 +727,11 @@ msgstr "enllaç"
 
 #: media/js/wmd/wmd.js:34
 msgid "quote"
-msgstr "citar"
+msgstr "cita"
 
 #: media/js/wmd/wmd.js:35
 msgid "preformatted text"
-msgstr "format predefinit "
+msgstr "text preformatat"
 
 #: media/js/wmd/wmd.js:36
 msgid "image"
@@ -755,35 +759,35 @@ msgstr "barra horitzontal"
 
 #: media/js/wmd/wmd.js:42
 msgid "undo"
-msgstr "desfer"
+msgstr "desfés"
 
 #: media/js/wmd/wmd.js:43 media/js/wmd/wmd.js.c:1169
 msgid "redo"
-msgstr "refer"
+msgstr "refés"
 
 #: media/js/wmd/wmd.js:54
 msgid "enter image url"
-msgstr "entrar url de la imatge"
+msgstr "introduïu l'enllaç de la imatge"
 
 #: media/js/wmd/wmd.js:55
 msgid "enter url"
-msgstr "entrar l'url"
+msgstr "introduïu l'enllaç"
 
 #: media/js/wmd/wmd.js:56
 msgid "upload file attachment"
-msgstr "pujar arxiu adjunt"
+msgstr "puja el fitxer adjunt"
 
 #: media/js/wmd/wmd.js:1836
 msgid "image description"
-msgstr ""
+msgstr "descripció de la imatge"
 
 #: media/js/wmd/wmd.js:1839
 msgid "file name"
-msgstr ""
+msgstr "nom del fitxer"
 
 #: media/js/wmd/wmd.js:1843
 msgid "link text"
-msgstr ""
+msgstr "text de l'enllaç"
 
 #~ msgid "post a comment"
 #~ msgstr "save comment"
