@@ -14,13 +14,13 @@
     </div>
     <div class="post-content">
         <div class="post-body">
-            <div class="post-update-info-container">
-                {% include "question/answer_author_info.html" %}
-            </div>
             {% if answer.id in published_answer_ids %}
                 <p><strong>{% trans %}This response is published{% endtrans %}</strong></p>
             {% endif %}
             {{ answer.html }}
+            <div class="post-update-info-container">
+                {% include "question/answer_author_info.html" %}
+            </div>
         </div>
         <div class="answer-controls post-controls">
             {% include "question/answer_controls.html" %}

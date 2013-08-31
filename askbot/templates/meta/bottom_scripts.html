@@ -60,6 +60,7 @@
     /*<![CDATA[*/
     $('.mceStatusbar').remove();//a hack to remove the tinyMCE status bar
     $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip({placement: 'bottom'});
         // focus input on the search bar endcomment
         var activeTab = askbot['data']['activeTab'];
         if (inArray(activeTab, ['users', 'questions', 'tags', 'badges'])) {

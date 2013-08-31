@@ -3,13 +3,14 @@
   id="navTags"
   href="{% url tags %}"
   {% if active_tab == 'tags' %}class="on"{% endif %}
->{% trans %}tags{% endtrans %}</a>
+><i class="icon-tags"></i> {% trans %}tags{% endtrans %}</a>
 {% if settings.GROUPS_ENABLED %}
 <span class="dropdown">
 <a
   id="navGroups" 
   {% if active_tab == 'groups' %}class="on"{% endif %}
   href="{% url groups %}" data-target="#" >
+  <i class="icon-group"></i>
   {% trans %}people & groups{% endtrans %}
 </a>
 </span>
@@ -17,13 +18,15 @@
 <a 
   id="navUsers"
   href="{% url users %}"
-  {% if active_tab == 'users' %}class="on"{% endif %}
->{% trans %}users{% endtrans %}</a>
+  {% if active_tab == 'users' %}class="on"{% endif %}>
+  <i class="icon-user"></i>
+{% trans %}users{% endtrans %}</a>
 {% endif %}
 {% if settings.BADGES_MODE == 'public' %}
 <a 
   id="navBadges"
   href="{% url badges %}"
-  {% if active_tab == 'badges' %}class="on"{% endif %}
->{% trans %}badges{% endtrans %}</a>
+  {% if active_tab == 'badges' %}class="on"{% endif %}>
+  <i class="icon-cog"></i> 
+{% trans %}badges{% endtrans %}</a>
 {% endif %}
