@@ -12,7 +12,8 @@
     {% endif %}
 {% endblock %}
 {% block content %}
-    <div class="question-instructions">
+    <!-- <div class="question-instructions"> -->
+    <div class="alert alert-block">
         {% if settings.QUESTION_INSTRUCTIONS %}
             {{ settings.QUESTION_INSTRUCTIONS|safe }}
         {% else %}

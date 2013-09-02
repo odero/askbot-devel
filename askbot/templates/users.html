@@ -18,7 +18,8 @@
         {% trans %}Users{% endtrans %}
     {% endif %}
     </h1>
-    <div class="tabBar">
+    <!-- <div class="tabBar"> -->
+    <div>
         <div class="tabsA">
         {#% if settings.GROUPS_ENABLED and user_groups %}
             <span class="label">{% trans %}Select/Sort by &raquo;{% endtrans %}</span>
@@ -61,6 +62,7 @@
         </div>
     </div>
     <div class="clearfix"></div>
+    <hr style="margin-top: -5px; width: 100%;">
 </div>
 {% if search_query %}
     <p>{% trans search_query=search_query|escape %}users matching query {{search_query}}:{% endtrans %}</p>

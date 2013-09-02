@@ -25,18 +25,25 @@
                 {% endspaceless %}
             </div>
             {% if request.user.is_anonymous() %}
-                <div class="message">{% trans %}<span class='strong big'>Please start posting your answer anonymously</span> - your answer will be saved within the current session and published after you log in or create a new account. Please try to give a <strong>substantial answer</strong>, for discussions, <strong>please use comments</strong> and <strong>please do remember to vote</strong> (after you log in)!{% endtrans %}</div>
+                <div class="message alert">{% trans %}<strong>Please start posting your answer anonymously</strong> - your answer will be saved within the current session and published after you log in or create a new account. Please try to give a <strong>substantial answer</strong>, for discussions, <strong>please use comments</strong> and <strong>please do remember to vote</strong> (after you log in)!{% endtrans %}</div>
             {% else %}
-                <p class="message">
+                <div class=" alert alert-block">
                     {% if request.user==question.author  %}
-                        {% trans %}<span class='big strong'>You are welcome to answer your own question</span>, but please make sure to give an <strong>answer</strong>. Remember that you can always <strong>revise your original question</strong>. Please <strong>use comments for discussions</strong>  and <strong>please don't forget to vote :)</strong> for the answers that you liked (or perhaps did not like)!{% endtrans %}
+                        {# {% trans %}<strong>You are welcome to answer your own question</strong>, but please make sure to give an <strong>answer</strong>. Remember that you can always <strong>revise your original question</strong>. Please <strong>use comments for discussions</strong>  and <strong>please don't forget to vote :)</strong> for the answers that you liked (or perhaps did not like)!{% endtrans %} #}
+
+                        {% trans %}<strong>You are welcome to answer your own question</strong>, but please <strong>use comments to discuss answers already provided.</strong> {% endtrans %}
                     {% else %}
-                        {% trans %}<span class='big strong'>Please try to give a substantial answer</span>. If you wanted to comment on the question or answer, just <strong>use the commenting tool</strong>. Please remember that you can always <strong>revise your answers</strong> - no need to answer the same question twice. Also, please <strong>don't forget to vote</strong> - it really helps to select the best questions and answers!{% endtrans %}
+                        {# {% trans %}<span class='big strong'>Please try to give a substantial answer</span>. If you wanted to comment on the question or answer, just <strong>use the commenting tool</strong>. Please remember that you can always <strong>revise your answers</strong> - no need to answer the same question twice. Also, please <strong>don't forget to vote</strong> - it really helps to select the best questions and answers!{% endtrans %} #}
+                        <ul>
+                            <li>{% trans %}Use the form below to provide an <strong>answer</strong> to the above question.
+                                For feedback on a question or answer, use the 'add a comment' button.{% endtrans %}</li>
+                            <li>{% trans %}Don't forget to vote for the <strong>best</strong> questions and answers{% endtrans %}</li>
+                        </ul>
                     {% endif %}
-                </p>
+                </div>
             {% endif %}
-            <div class="folded-editor{% if editor_is_unfolded %}unfolded{% endif %}" tabindex="6">
-                <p class="prompt"><a>{% trans %}Add answer{% endtrans %}</a></p>
+            <div class="folded-editor unfolded" tabindex="6">
+                <!-- <p class="prompt"><a>{% trans %}Add answer{% endtrans %}</a></p> -->
                 <div class="editor-proper">
                     {{ macros.edit_post(
                             answer,
