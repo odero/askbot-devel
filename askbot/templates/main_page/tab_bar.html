@@ -24,7 +24,7 @@
             <a id="by_relevance"
                 {% if sort == "relevance-desc" %}
                     href="{{ search_state.change_sort('relevance-desc').full_url() }}"
-                    class="on"
+                    class="on" data-toggle="tooltip"
                     title="{{asc_relevance_tooltip}}"><span>{{relevance_label}} &#9660;</span>
                 {% else %}
                     href="{{ search_state.change_sort('relevance-desc').full_url() }}"

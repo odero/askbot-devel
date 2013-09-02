@@ -2500,7 +2500,8 @@ def user_get_karma_summary(self):
     """returns human readable sentence about
     status of user's karma"""
     return _("%(username)s karma is %(reputation)s") % \
-            {'username': self.username, 'reputation': self.reputation}
+            {'username': self.userprofile.username, 'reputation': self.reputation}
+            # {'username': self.username, 'reputation': self.reputation}
 
 def user_get_badge_summary(self):
     """returns human readable sentence about
@@ -2539,7 +2540,8 @@ def user_get_badge_summary(self):
         badge_str = ', '.join(badge_bits)
         badge_str = _('%(item1)s and %(item2)s') % \
                     {'item1': badge_str, 'item2': last_bit}
-    return _("%(user)s has %(badges)s") % {'user': self.username, 'badges':badge_str}
+    # return _("%(user)s has %(badges)s") % {'user': self.username, 'badges':badge_str}
+    return _("%(user)s has %(badges)s") % {'user': self.userprofile.username, 'badges': badge_str}
 
 #series of methods for user vote-type commands
 #same call signature func(self, post, timestamp=None, cancel=None)
@@ -3186,7 +3188,8 @@ def format_instant_notification_email(
     post_url = site_url(post.get_absolute_url())
     user_url = site_url(from_user.get_absolute_url())
     user_action = user_action % {
-        'user': '<a href="%s">%s</a>' % (user_url, from_user.username),
+        # 'user': '<a href="%s">%s</a>' % (user_url, from_user.username),
+        'user': '<a href="%s">%s</a>' % (user_url, from_user.userprofile.username),
         'post_link': '<a href="%s">%s</a>' % (post_url, _(post.post_type))
         #'post_link': '%s <a href="%s">>>></a>' % (_(post.post_type), post_url)
     }
@@ -3217,14 +3220,14 @@ def format_instant_notification_email(
                                     'user_subscriptions',
                                     kwargs = {
                                         'id': to_user.id,
-                                        'slug': slugify(to_user.username)
+                                        'slug': slugify(to_user.userprofile.username)
                                     }
                                 )
     update_data = {
         'admin_email': askbot_settings.ADMIN_EMAIL,
         'recipient_user': to_user,
-        'update_author_name': from_user.username,
-        'receiving_user_name': to_user.username,
+        'update_author_name': from_user.userprofile.username,
+        'receiving_user_name': to_user.userprofile.username,
         'receiving_user_karma': to_user.reputation,
         'reply_by_email_karma_threshold': askbot_settings.MIN_REP_TO_POST_BY_EMAIL,
         'can_reply': can_reply,

@@ -26,7 +26,7 @@
             {% for a_group in user_groups %}
                 <a 
                     href="{% url users_by_group group_id=a_group.id, group_slug=a_group.name|slugify %}"
-                    {% if group.name == a_group.name  %}class="on"{% endif %}
+                    {% if group.name == a_group.name  %}class="on"{% endif %} data-toggle="tooltip"
                     title="{% trans name=a_group.name|escape %}people in group {{name}}{% endtrans %}"
                 ><span>{{ a_group.name|replace('-',' ')|escape }}</span></a>
             {% endfor %}
@@ -37,26 +37,26 @@
             <a 
                 id="sort_reputation"
                 href="{{ request.path|escape }}?sort=reputation"
-                {% if tab_id == 'reputation' %}class="on"{% endif %}
+                {% if tab_id == 'reputation' %}class="on"{% endif %} data-toggle="tooltip"
                 title="{% trans %}see people with the highest reputation{% endtrans %}"
             ><span>{% trans %}karma{% endtrans %}</span></a>
             {% endif %}
             <a 
                 id="sort_newest"
                 href="{{ request.path|escape }}?sort=newest"
-                {% if tab_id == 'newest' %}class="on"{% endif %}
+                {% if tab_id == 'newest' %}class="on"{% endif %} data-toggle="tooltip"
                 class="off" title="{% trans %}see people who joined most recently{% endtrans %}"
             ><span>{% trans %}recent{% endtrans %}</span></a>
             <a 
                 id="sort_last"
                 href="{{ request.path|escape }}?sort=last"
-                {% if tab_id == 'last' %}class="on"{% endif %}
+                {% if tab_id == 'last' %}class="on"{% endif %} data-toggle="tooltip"
                 class="off" title="{% trans %}see people who joined the site first{% endtrans %}"
             ><span>{% trans %}oldest{% endtrans %}<span></a>
             <a 
                 id="sort_user"
                 href="{{ request.path|escape }}?sort=user"
-                {% if tab_id == 'user' %}class="on"{% endif %}
+                {% if tab_id == 'user' %}class="on"{% endif %} data-toggle="tooltip"
                 title="{% trans %}see people sorted by name{% endtrans %}"
             ><span>{% trans %}by username{% endtrans %}</span></a>
         </div>

@@ -9,21 +9,22 @@
             <h1 class="section-title">{% trans %}Tags{% endtrans %}</h1>
         {% endif %}
     {% endif %}
-    <div class="tabBar tabBar-tags">
+    <!-- <div class="tabBar tabBar-tags"> -->
+    <div class="tabBar-tags">
         <div class="tabsA">
             <span class="label">{% trans %}Sort by &raquo;{% endtrans %}</span>
             <a
-                id="sort_name"
+                id="sort_name" data-toggle="tooltip"
                 href="{% url tags %}?sort=name{% if tag_query %}&query={{ tag_query }}{% endif %}"
                 {% if tab_id == 'name' %}class="on"{% endif %}
                 title="{% trans %}sorted alphabetically{% endtrans %}"
-            ><span>{% trans %}by name{% endtrans %}</span></a>
+            ><span>{% trans %}Name{% endtrans %}</span></a>
             <a
-                id="sort_used"
+                id="sort_used" data-toggle="tooltip"
                 href="{% url tags %}?sort=used{% if tag_query %}&query={{ tag_query }}{% endif %}"
                 {% if tab_id == 'used' %}class="on"{% endif %}
                 title="{% trans %}sorted by frequency of tag use{% endtrans %}"
-            ><span>{% trans %}by popularity{% endtrans %}</span></a>
+            ><span>{% trans %}Popularity{% endtrans %}</span></a>
             {% if settings.ENABLE_TAG_MODERATION 
                 and request.user.is_authenticated()
                 and request.user.is_administrator_or_moderator()
