@@ -23,7 +23,7 @@
     {% elif settings.MIN_QUESTION_BODY_LENGTH == 0 %}
         <label for="editor">{% trans %}Add details (optional){% endtrans %}</label>
     {% else %}
-        <label for="editor">{% trans %}Add details{% endtrans %}</label>
+        <label for="editor">{% trans %}Add details (required) - [providing more details makes it easier to get a good answer]{% endtrans %}</label>
     {% endif %}
 
     <div class="folded-editor{% if editor_is_folded == False %} unfolded{% endif %}">

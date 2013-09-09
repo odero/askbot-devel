@@ -246,7 +246,7 @@ class TitleField(forms.CharField):
         self.max_length = 255
         self.label = _('title')
         self.help_text = _(
-            'Please enter your question'
+            'Please enter your question (let this be a quick summary)'
         )
         self.initial = ''
 
