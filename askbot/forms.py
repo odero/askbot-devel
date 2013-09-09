@@ -246,7 +246,7 @@ class TitleField(forms.CharField):
         self.max_length = 255
         self.label = _('title')
         self.help_text = _(
-            'Please enter your question (let this be a quick summary)'
+            'Please enter your question (required) - [let this be a quick summary]'
         )
         self.initial = ''
 
@@ -409,10 +409,10 @@ class TagNamesField(forms.CharField):
                         )
         self.label = kwargs.get('label') or _('tags')
         self.help_text = kwargs.get('help_text') or ungettext_lazy(
-            'Tags are short keywords, with no spaces within. '
-            'Up to %(max_tags)d tag can be used.',
-            'Tags are short keywords, with no spaces within. '
-            'Up to %(max_tags)d tags can be used.',
+            'Select some topics that define your question. '
+            'Up to %(max_tags)d topics can be specified. (Use a space to separate each topic.) ',
+            'Select some topics that define your question. '
+            'Up to %(max_tags)d topics can be specified. (Use a space to separate each topic.) ',
             askbot_settings.MAX_TAGS_PER_POST
         ) % {'max_tags': askbot_settings.MAX_TAGS_PER_POST}
         self.initial = ''
