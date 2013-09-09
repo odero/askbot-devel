@@ -215,7 +215,7 @@ SearchDropMenu.prototype.createDom = function() {
         footer.addClass('footer');
         var button = this.makeElement('button');
         button.addClass('btn btn-inverse submit');
-        button.html(gettext('Ask Your Question'))
+        button.html(gettext('No answer? Ask it as a Question'));
         footer.append(button);
         var handler = this._askHandler;
         setupButtonEventHandlers(button, handler);
@@ -310,7 +310,8 @@ TagWarningBox.prototype.showWarning = function(){
  */
 var InputToolTip = function() {
     WrappedElement.call(this);
-    this._promptText = gettext('search or ask your question');
+    // this._promptText = gettext('search or ask your question');
+    this._promptText = gettext('Search');
 };
 inherits(InputToolTip, WrappedElement);
 
