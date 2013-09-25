@@ -1,9 +1,9 @@
 <!-- template header.html -->
 {% import "macros.html" as macros %}
+{#
 <div 
     id="header"
-    class="{% if settings.SHOW_LOGO %}with-logo{% else %}without-logo{% endif %}"
->
+    class="{% if settings.SHOW_LOGO %}with-logo{% else %}without-logo{% endif %}">
     <div class="content-wrapper">
         <div id="userToolsNav">
             {% include "widgets/user_navigation.html" %}
@@ -17,4 +17,93 @@
         <div class="clean"></div>
     </div>
 </div>
+#}
+{% load jinja2_thumbnail %}
+
+{% load url from future %}
+
+<header>
+    <div class="navbar navbar-static-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <!-- logo -->
+                <a class="brand logo forum-logo" href="{% url 'home' %}">
+                <img src="{{ STATIC_URL }}img/ideasafrica.png" alt="" height="50" />
+                </a>
+                <!-- end logo -->
+                <!-- top menu -->
+                <div>
+                    <nav>
+                    <ul class="nav topnav visible-desktop">
+                        <li class="success ">
+                           <a href="{% url 'home' %}"><i class="icon-home icon-white"></i> Home</a>
+                        </li>
+                        <li class="danger ">
+                            <a href="{% url 'startup_list' %}"><i class="icon-star icon-white"></i> Startups</a>
+                        </li>
+                        <li class="warning">
+                           <a href="{% url 'questions' %}"><i class="icon-fire icon-white"></i> Fireside</a>
+                        </li>
+                        {% if user.is_authenticated() %}
+                            <li class="dropdown info">
+                                <a href="#"><i class="icon-user icon-white"></i> Me&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="{{ profile.get_absolute_url() }}">
+                                        {% set im = jinja2_thumbnail(profile.avatar or profile.gravatar, "30x40") %}
+                                        <img class="tiny-thumb" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                                        {{ fullname|truncatechars(20) }}
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    {% for c in profile.founders.all() %}
+                                    <li><a href="{{ c.get_absolute_url() }}">{{ c.name|truncatechars(20) }}</a></li>
+                                    {% endfor %}
+                                    <li><a id="create_company" href="#" data-toggle="modal" data-target="#new_company">Add your startup</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="{% url 'incubation:my_applications' %}">My Applications</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="{% url 'auth_password_change' %}">Change Password</a></li>
+                                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li class="info">
+                               <a href="{% url 'signup' %}"><i class="icon-user icon-white"></i> Signup</a>
+                            </li>
+                            <li class="inverse">
+                               <a href="{% url 'login' %}"><i class="icon-off icon-white"></i> Login</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                    </nav>
+                </div>
+                <div class="forum-user-nav visible-desktop pull-right">
+                {% include "widgets/user_navigation.html" %}
+                </div>
+                <!-- end menu -->
+            </div>
+        </div>
+    </div>
+    <div id="new_company" class="modal hide fade">
+      <div class="modal-body">
+        <form method="POST" class="form-validate modal-form" action="{% url 'create_company' %}">
+          {% csrf_token %}
+          <fieldset>
+            <legend><h3>Add your startup profile</h3></legend>
+              <div class="controls">
+                <input type="hidden" name="next" value="{{ request.path }}">
+                {{ create_company_form.name }}
+              </div>
+              <div class="controls">
+                {{ create_company_form.role.label_tag }}
+                {{ create_company_form.role }}
+              </div>
+          </fieldset>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Create</button>
+          </div>
+        </form>
+      </div>
+    </div> 
+    </header>
 <!-- end template header.html -->
