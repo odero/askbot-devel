@@ -27,7 +27,7 @@ def ask_for_signature(user, footer_code = None):
     the message will ask to make a simple response
     """
     return {
-        'username': user.username,
+        'username': user.userprofile.username,
         'site_name': askbot_settings.APP_SHORT_NAME,
         'footer_code': footer_code
     }
@@ -56,7 +56,7 @@ def insufficient_reputation(user):
         askbot_settings.APP_SHORT_NAME
     )
     return {
-        'username': user.username,
+        'username': user.userprofile.username,
         'site_name': askbot_settings.APP_SHORT_NAME,
         'site_link': site_link,
         'min_upvotes': min_upvotes

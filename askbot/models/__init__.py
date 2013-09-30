@@ -674,7 +674,7 @@ def user_assert_can_unaccept_best_answer(self, answer = None):
         error_message = _(
             'Sorry, only moderators or original author of the question '
             ' - %(username)s - can accept or unaccept the best answer'
-        ) % {'username': question_owner.username}
+        ) % {'username': question_owner.userprofile.username}
 
     raise django_exceptions.PermissionDenied(error_message)
 

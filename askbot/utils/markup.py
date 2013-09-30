@@ -70,7 +70,7 @@ def get_parser():
 def format_mention_in_html(mentioned_user):
     """formats mention as url to the user profile"""
     url = mentioned_user.get_profile_url()
-    username = mentioned_user.username
+    username = mentioned_user.userprofile.username
     return '<a href="%s">@%s</a>' % (url, username)
 
 def extract_first_matching_mentioned_author(text, anticipated_authors):
@@ -83,8 +83,8 @@ def extract_first_matching_mentioned_author(text, anticipated_authors):
         return None, ''
 
     for author in anticipated_authors:
-        if text.lower().startswith(author.username.lower()):
-            ulen = len(author.username)
+        if text.lower().startswith(author.userprofile.username.lower()):
+            ulen = len(author.userprofile.username)
             if len(text) == ulen:
                 text = ''
             elif text[ulen] in const.TWITTER_STYLE_MENTION_TERMINATION_CHARS:

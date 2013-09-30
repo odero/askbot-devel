@@ -455,7 +455,8 @@ class Post(models.Model):
             extra_authors = set()
             for name_seed in extra_name_seeds:
                 extra_authors.update(
-                    User.objects.filter(username__istartswith = name_seed)
+                    # User.objects.filter(username__istartswith = name_seed)
+                    User.objects.filter(userprofile__slug__istartswith=name_seed)
                 )
 
             #it is important to preserve order here so that authors of post

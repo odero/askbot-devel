@@ -468,7 +468,7 @@ class Command(NoArgsCommand):
                 text = template.render({
                     'recipient_user': user,
                     'questions': questions_data,
-                    'name': user.username,
+                    'name': user.userprofile.username,
                     'admin_email': askbot_settings.ADMIN_EMAIL,
                     'site_name': askbot_settings.APP_SHORT_NAME,
                     'is_multilingual': django_settings.ASKBOT_MULTILINGUAL

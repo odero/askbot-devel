@@ -221,7 +221,7 @@ class Activity(models.Model):
     responses_and_mentions = ResponseAndMentionActivityManager()
 
     def __unicode__(self):
-        return u'[%s] was active at %s' % (self.user.username, self.active_at)
+        return u'[%s] was active at %s' % (self.user.userprofile.username, self.active_at)
 
     class Meta:
         app_label = 'askbot'
