@@ -19,7 +19,7 @@ def get_user_data(user):
     return {
         'id': user.id,
         'avatar': avatar_url,
-        'username': user.username,
+        'username': user.userprofile.username,
         'joined_at': user.date_joined.strftime('%s'),
         'last_seen_at': user.last_seen.strftime('%s'),
         'reputation': user.reputation,
@@ -40,11 +40,11 @@ def get_question_data(thread):
     }
     datum['author'] = {
         'id': thread._question_post().author.id,
-        'username': thread._question_post().author.username
+        'username': thread._question_post().author.userprofile.username
     }
     datum['last_activity_by'] = {
         'id': thread.last_activity_by.id,
-        'username': thread.last_activity_by.username
+        'username': thread.last_activity_by.userprofile.username
     }
     return datum
 
@@ -101,7 +101,7 @@ def users(request):
         elif order_by == 'recent':
             users = models.User.objects.exclude(status='b').order_by('-date_joined')
         elif order_by == 'username':
-            users = models.User.objects.exclude(status='b').order_by('username')
+            users = models.User.objects.exclude(status='b').order_by('userprofile__username')
         else:
             raise Exception("Order by method not allowed")
 

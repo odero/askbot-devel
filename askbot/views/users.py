@@ -949,7 +949,7 @@ def user_select_languages(request, id=None, slug=None):
 
     redirect_url = reverse(
         'user_subscriptions',
-        kwargs={'id': user.id, 'slug': slugify(user.username)}
+        kwargs={'id': user.id, 'slug': user.userprofile.username}
     )
     return HttpResponseRedirect(redirect_url)
 

@@ -95,19 +95,19 @@ class NewThread(InboxView):
         """
         usernames = request.POST['to_usernames']
         usernames = map(lambda v: v.strip(), usernames.split(','))
-        users = User.objects.filter(username__in=usernames)
+        users = User.objects.filter(userprofile__slug__in=usernames)
 
         missing = copy.copy(usernames)
         for user in users:
-            if user.username in missing:
-                missing.remove(user.username)
+            if user.userprofile.username in missing:
+                missing.remove(user.userprofile.username)
 
         result = dict()
         if missing:
             result['success'] = False
             result['missing_users'] = missing
 
-        if request.user.username in usernames:
+        if request.user.userprofile.username in usernames:
             result['success'] = False
             result['self_message'] = True
 
@@ -183,8 +183,8 @@ class ThreadsList(InboxView):
             thread_data['status'] = 'new'
             #determine the senders info
             senders_names = thread.senders_info.split(',')
-            if request.user.username in senders_names:
-                senders_names.remove(request.user.username)
+            if request.user.userprofile.username in senders_names:
+                senders_names.remove(request.user.userprofile.username)
             thread_data['senders_info'] = ', '.join(senders_names)
             thread_data['thread'] = thread
             threads_data[thread.id] = thread_data
@@ -262,7 +262,7 @@ class SendersList(InboxView):
     def get_context(self, request):
         """get data about senders for the user"""
         senders = SenderList.objects.get_senders_for_user(request.user)
-        senders = senders.values('id', 'username')
+        senders = senders.values('id', 'userprofile__username')
         return {'senders': senders, 'request_user_id': request.user.id}
 
 

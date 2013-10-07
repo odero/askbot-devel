@@ -919,7 +919,7 @@ def reopen(request, id):#re-open question
         else:
             request.user.assert_can_reopen_question(question)
             closed_by_profile_url = question.thread.closed_by.get_profile_url()
-            closed_by_username = question.thread.closed_by.username
+            closed_by_username = question.thread.closed_by.userprofile.username
             data = {
                 'question' : question,
                 'closed_by_profile_url': closed_by_profile_url,
@@ -1349,12 +1349,12 @@ def get_users_info(request):
     limit = IntegerField().clean(request.GET['limit'])
 
     users = models.User.objects
-    user_info_list = users.filter(username__istartswith=query)
+    user_info_list = users.filter(userprofile__username__istartswith=query)
 
     if request.user.is_administrator_or_moderator():
-        user_info_list = user_info_list.values_list('username', 'email')
+        user_info_list = user_info_list.values_list('userprofile__username', 'email')
     else:
-        user_info_list = user_info_list.values_list('username')
+        user_info_list = user_info_list.values_list('userprofile__username')
 
     result_list = ['|'.join(info) for info in user_info_list[:limit]]
     return HttpResponse('\n'.join(result_list), mimetype = 'text/plain')
@@ -1419,7 +1419,7 @@ def share_question_with_user(request):
             username = form.cleaned_data['recipient_name']
 
             thread = models.Thread.objects.get(id=thread_id)
-            user = models.User.objects.get(username=username)
+            user = models.User.objects.get(userprofile__username=username)
             group = user.get_personal_group()
             thread.add_to_groups([group], recursive=True)
             #notify the person
@@ -1460,7 +1460,7 @@ def moderate_group_join_request(request):
         if action == 'approve':
             group_membership.level = models.GroupMembership.FULL
             group_membership.save()
-            msg_data = {'user': applicant.username, 'group': group.name}
+            msg_data = {'user': applicant.userprofile.username, 'group': group.name}
             message = _('%(user)s, welcome to group %(group)s!') % msg_data
             applicant.message_set.create(message=message)
         else:

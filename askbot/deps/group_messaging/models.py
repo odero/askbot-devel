@@ -29,7 +29,7 @@ def get_recipient_names(recipient_groups):
     names = set()
     for group in recipient_groups:
         if group.name.startswith('_personal_'):
-            names.add(group.user_set.all()[0].username)
+            names.add(group.user_set.all()[0].userprofile.username)
         else:
             names.add(group.name)
     return names
@@ -215,7 +215,7 @@ class MessageManager(models.Manager):
         message = self.create(
                     message_type=Message.STORED,
                     sender=sender,
-                    senders_info=sender.username,
+                    senders_info=sender.userprofile.username,
                     text=text,
                 )
         now = datetime.datetime.now()
@@ -408,9 +408,9 @@ class Message(models.Model):
         """
         senders_names = self.senders_info.split(',')
 
-        if self.sender.username in senders_names:
-            senders_names.remove(self.sender.username)
-        senders_names.insert(0, self.sender.username)
+        if self.sender.userprofile.username in senders_names:
+            senders_names.remove(self.sender.userprofile.username)
+        senders_names.insert(0, self.sender.userprofile.username)
 
         self.senders_info = (','.join(senders_names))[:64]
         self.save()

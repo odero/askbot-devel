@@ -699,7 +699,7 @@ class ChangeUserStatusForm(forms.Form):
                 msg = _(
                         'If you wish to change %(username)s\'s status, '
                         'please make a meaningful selection.'
-                    ) % {'username': self.subject.username}
+                    ) % {'username': self.subject.userprofile.username}
                 raise forms.ValidationError(msg)
 
         return self.cleaned_data
@@ -1642,7 +1642,7 @@ class SimpleEmailSubscribeForm(forms.Form):
         if self.is_bound and self.cleaned_data['subscribe'] == 'y':
             email_settings_form = EFF()
             email_settings_form.set_initial_values(user)
-            logging.debug('%s wants to subscribe' % user.username)
+            logging.debug('%s wants to subscribe' % user.userprofile.username)
         else:
             email_settings_form = EFF(initial=EFF.NO_EMAIL_INITIAL)
         email_settings_form.save(user, save_unbound=True)

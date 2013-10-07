@@ -198,5 +198,5 @@ def delete(request, extra_context=None, next_override=None, *args, **kwargs):
 
 def render_primary(request, user_id = None, *args, **kwargs):
     user = models.User.objects.get(id = user_id)
-    kwargs['user'] = user.username
+    kwargs['user'] = user.userprofile.username
     return django_avatar_render_primary(request, *args, **kwargs)

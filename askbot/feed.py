@@ -125,7 +125,7 @@ class RssLastestQuestionsFeed(Feed):
     def item_author_name(self, item):
         """get name of author
         """
-        return item.author.username
+        return item.author.userprofile.username
 
     def item_author_link(self, item):
         """get url of the author's profile

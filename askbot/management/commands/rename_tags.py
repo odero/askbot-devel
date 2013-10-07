@@ -21,11 +21,11 @@ def get_admin(seed_user_id = None):
         if seed_user_id is None:
             prompt = """You have not provided user id for the moderator
 who to assign as the performer this operation, the default moderator is
-%s, id=%s. Will that work?""" % (admin.username, admin.id)
+%s, id=%s. Will that work?""" % (admin.userprofile.username, admin.id)
         else:
             prompt = """User with id=%s is not a moderator
 would you like to select default moderator %s, id=%d
-to run this operation?""" % (seed_user_id, admin.username, admin.id)
+to run this operation?""" % (seed_user_id, admin.userprofile.username admin.id)
         choice = console.choice_dialog(prompt, choices = ('yes', 'no'))
         if choice == 'no':
             print 'Canceled'

@@ -287,7 +287,8 @@ class ThreadManager(BaseQuerySetManager):
         #search user names if @user is added to search string
         #or if user name exists in the search state
         if search_state.query_users:
-            query_users = User.objects.filter(username__in=search_state.query_users)
+            # query_users = User.objects.filter(username__in=search_state.query_users)
+            query_users = User.objects.filter(userprofile__slug__in=search_state.query_users)
             if query_users:
                 qs = qs.filter(
                     posts__post_type='question',
@@ -370,7 +371,7 @@ class ThreadManager(BaseQuerySetManager):
                 meta_data['author_name'] = None
             else:
                 qs = qs.filter(posts__post_type='question', posts__author=u, posts__deleted=False)
-                meta_data['author_name'] = u.username
+                meta_data['author_name'] = u.userprofile.username
 
         #get users tag filters
         if request_user and request_user.is_authenticated():

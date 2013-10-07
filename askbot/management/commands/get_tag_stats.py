@@ -149,7 +149,7 @@ class Command(BaseCommand):
             follow = '*'
             if user.email_tag_filter_strategy == const.INCLUDE_INTERESTING:
                 follow = ''
-            user_string = '%s (%d)%s' % (user.username, user.id, follow)
+            user_string = '%s (%d)%s' % (user.userprofile.username, user.id, follow)
             output_lines = format_table_row(
                                 [user_string,], 
                                 followed_lines,

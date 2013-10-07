@@ -197,7 +197,7 @@ def check_spam(field):
                 comment = smart_str(request.POST[field])
                 data = {'user_ip': request.META["REMOTE_ADDR"],
                         'user_agent': request.environ['HTTP_USER_AGENT'],
-                        'comment_author': smart_str(request.user.username),
+                        'comment_author': smart_str(request.user.userprofile.username),
                         }
                 if request.user.is_authenticated():
                     data.update({'comment_author_email': request.user.email})
@@ -212,7 +212,7 @@ def check_spam(field):
                 if api.comment_check(comment, data, build_data=False):
                     logging.debug(
                         'Spam detected in %s post at: %s',
-                        request.user.username,
+                        request.user.userprofile.username,
                         datetime.datetime.now()
                     )
                     spam_message = _(

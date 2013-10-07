@@ -405,7 +405,7 @@ class Command(NoArgsCommand):
                 if DEBUG_THIS_COMMAND == False:
                     update_info.save() #save question email update activity 
         #q_list is actually an ordered dictionary
-        #print 'user %s gets %d' % (user.username, len(q_list.keys()))
+        #print 'user %s gets %d' % (user.userprofile.username, len(q_list.keys()))
         #todo: sort question list by update time
         return q_list 
 

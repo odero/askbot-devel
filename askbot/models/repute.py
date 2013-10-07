@@ -135,7 +135,7 @@ class Award(models.Model):
     notified   = models.BooleanField(default=False)
 
     def __unicode__(self):
-        return u'[%s] is awarded a badge [%s] at %s' % (self.user.username, self.badge.get_name(), self.awarded_at)
+        return u'[%s] is awarded a badge [%s] at %s' % (self.user.userprofile.username, self.badge.get_name(), self.awarded_at)
 
     class Meta:
         app_label = 'askbot'
@@ -188,7 +188,7 @@ class Repute(models.Model):
     objects = ReputeManager()
 
     def __unicode__(self):
-        return u'[%s]\' reputation changed at %s' % (self.user.username, self.reputed_at)
+        return u'[%s]\' reputation changed at %s' % (self.user.userprofile.username, self.reputed_at)
 
     class Meta:
         app_label = 'askbot'
@@ -210,7 +210,7 @@ class Repute(models.Model):
             delta = self.positive + self.negative#.negative is < 0 so we add!
             link_title_data = {
                                 'points': abs(delta),
-                                'username': self.user.username,
+                                'username': self.user.userprofile.username,
                                 'question_title': self.question.thread.title
                             }
             if delta > 0:

@@ -25,7 +25,7 @@ class Command(NoArgsCommand):
         u = self.user
         print ''
         prompt = 'Do you really wish to REMOVE user (id=%d, name=%s) from the list of site admins? yes/no: ' \
-                % (u.id, u.username)
+                % (u.id, u.userprofile.username)
         str = raw_input(prompt)
         if str != 'yes':
             print 'action canceled'
