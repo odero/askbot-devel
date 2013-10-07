@@ -191,8 +191,10 @@
                 ) {
                     removeNode(deleteBtn);
                 }
+
+                var canFlagPosts = data['userReputation'] >= {{ settings.MIN_REP_TO_FLAG_OFFENSIVE }};
                 var flags = findChildrenByClassName(controls, 'question-flag');
-                if (flags.length > 0) {
+                if (flags.length > 0 && !canFlagPosts) {
                     removeNode(flags[0]);
                 }
                 var closeBtn = findChildrenByClassName(controls, 'question-close');
@@ -242,12 +244,12 @@
                         add_answer_btn.className += ' answer-own-question';
                         add_answer_btn.setAttribute(
                             'value',
-                            '{% trans %}Answer Your Own Question{% endtrans %}'
+                            '{% if settings.ANSWER_OWN_QUESTION_BUTTON_TEXT %}{{ settings.ANSWER_OWN_QUESTION_BUTTON_TEXT|escape }}{% else %}{% trans %}Answer Your Own Question{% endtrans %}{% endif %}'
                         )
                     } else {
                         add_answer_btn.setAttribute(
                            'value',
-                            '{% trans %}Post Your Answer{% endtrans %}'
+                           '{% if settings.ANSWER_BUTTON_TEXT %}{{ settings.ANSWER_BUTTON_TEXT|escape }}{% else %}{% trans %}Post Your Answer{% endtrans %}{% endif %}'
                         )
                     }
                 } else {
@@ -341,13 +343,11 @@
         askbot['settings']['enableEmailAlerts'] = {{ settings.ENABLE_EMAIL_ALERTS|as_js_bool }};
     </script>
     {% include "meta/editor_data.html" %}
-    {% compress js %}
     {% include "question/javascript.html" %}
     {% if settings.TAG_SOURCE == 'category-tree' %}
         {% include "meta/category_tree_js.html" %}
     {% endif %}
     {% include "question/custom_javascript.html" ignore missing %}
-    {% endcompress %}
     {#
     <script type="text/javascript">
         var messages = askbot['messages'];

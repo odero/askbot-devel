@@ -52,7 +52,7 @@ class ThreadQuerySet(models.query.QuerySet):
         if getattr(django_settings, 'ENABLE_HAYSTACK_SEARCH', False):
             from askbot.search.haystack.searchquery import AskbotSearchQuerySet
             hs_qs = AskbotSearchQuerySet().filter(content=search_query).models(self.model)
-            return hs_qs.get_django_queryset()
+            return self & hs_qs.get_django_queryset()
         else:
             db_engine_name = askbot.get_database_engine_name()
             filter_parameters = {'deleted': False}
@@ -369,7 +369,7 @@ class ThreadManager(BaseQuerySetManager):
             except User.DoesNotExist:
                 meta_data['author_name'] = None
             else:
-                qs = qs.filter(posts__post_type__in=('question', 'answer'), posts__author=u, posts__deleted=False)
+                qs = qs.filter(posts__post_type='question', posts__author=u, posts__deleted=False)
                 meta_data['author_name'] = u.username
 
         #get users tag filters
@@ -686,6 +686,12 @@ class Thread(models.Model):
         if len(answers) > 0:
             return answers[0].id
         return None
+
+    def get_latest_post(self):
+        """returns latest non-deleted post"""
+        if askbot_settings.GROUPS_ENABLED:
+            raise NotImplementedError()
+        return self.posts.filter(deleted=False).order_by('-added_at')[0]
 
     def get_sharing_info(self, visitor=None):
         """returns a dictionary with abbreviated thread sharing info:

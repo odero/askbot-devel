@@ -19,6 +19,7 @@ import uuid
 from celery import states
 from celery.task import task
 from django.core.urlresolvers import reverse, NoReverseMatch
+from django.core.paginator import Paginator
 from django.db.models import signals as django_signals
 from django.template import Context
 from django.template.loader import get_template
@@ -308,6 +309,21 @@ def user_get_avatar_url(self, size=48):
         else:
             return self.get_default_avatar_url(size)
 
+def user_get_top_answers_paginator(self, visitor=None):
+    """get paginator for top answers by the user for a
+    specific visitor"""
+    answers = self.posts.get_answers(
+                                visitor
+                            ).filter(
+                                deleted=False,
+                                thread__deleted=False
+                            ).select_related(
+                                'thread'
+                            ).order_by(
+                                '-points', '-added_at'
+                            )
+    return Paginator(answers, const.USER_POSTS_PAGE_SIZE)
+
 def user_update_avatar_type(self):
     """counts number of custom avatars
     and if zero, sets avatar_type to False,
@@ -463,10 +479,15 @@ def user_can_have_strong_url(self):
 def user_can_post_by_email(self):
     """True, if reply by email is enabled
     and user has sufficient reputatiton"""
-    if self.is_administrator_or_moderator():
-        return True
-    return askbot_settings.REPLY_BY_EMAIL and \
-        self.reputation >= askbot_settings.MIN_REP_TO_POST_BY_EMAIL
+
+    if askbot_settings.REPLY_BY_EMAIL:
+        if self.is_administrator_or_moderator():
+            return True
+        else:
+            return self.reputation >= askbot_settings.MIN_REP_TO_POST_BY_EMAIL
+    else:
+        return False
+
 
 def user_get_social_sharing_mode(self):
     """returns what user wants to share on his/her channels"""
@@ -1516,6 +1537,34 @@ def user_retag_question(
         context_object = question,
         timestamp = timestamp
     )
+
+
+def user_repost_comment_as_answer(self, comment):
+    """converts comment to answer under the
+    parent question"""
+
+    #todo: add assertion
+    #self.assert_can_repost_comment_as_answer(comment)
+
+    comment.post_type = 'answer'
+    old_parent = comment.parent
+
+    comment.parent = comment.thread._question_post()
+    comment.save()
+
+    comment.thread.update_answer_count()
+
+    comment.parent.comment_count += 1
+    comment.parent.save()
+
+    #to avoid db constraint error
+    if old_parent.comment_count >= 1:
+        old_parent.comment_count -= 1
+    else:
+        old_parent.comment_count = 0
+
+    old_parent.save()
+    comment.thread.invalidate_cached_data()
 
 @auto_now_timestamp
 def user_accept_best_answer(
@@ -2960,6 +3009,10 @@ User.add_to_class(
     user_get_followed_question_alert_frequency
 )
 User.add_to_class(
+    'get_top_answers_paginator',
+    user_get_top_answers_paginator
+)
+User.add_to_class(
     'subscribe_for_followed_question_alerts',
     user_subscribe_for_followed_question_alerts
 )
@@ -2985,6 +3038,7 @@ User.add_to_class('update_avatar_type', user_update_avatar_type)
 User.add_to_class('post_question', user_post_question)
 User.add_to_class('edit_question', user_edit_question)
 User.add_to_class('retag_question', user_retag_question)
+User.add_to_class('repost_comment_as_answer', user_repost_comment_as_answer)
 User.add_to_class('post_answer', user_post_answer)
 User.add_to_class('edit_answer', user_edit_answer)
 User.add_to_class('edit_post', user_edit_post)

@@ -15,13 +15,16 @@
         });
     })();
 </script>
+{% compress js %}
 <script type='text/javascript' src='{{"/js/editor.js"|media}}'></script>
 <script type="text/javascript" src='{{"/bootstrap/js/bootstrap.js"|media}}'></script>
 {% include "meta/markdown_javascript.html" %}
 <script type='text/javascript' src='{{"/js/jquery.validate.min.js"|media}}'></script>
 <script type='text/javascript' src='{{"/js/post.js"|media}}'></script>
+{% endcompress %}
 <script type="text/javascript">
     // define reputation needs for comments
+    askbot['urls']['getPostHtml'] = '{% url get_post_html %}';
     $(document).ready(function(){
         $("#nav_questions").attr('className',"on");
         $("#" + askbot['data']['answersSortTab']).attr('className',"on");
@@ -61,6 +64,17 @@
             draftHandler.setThreadId({{ thread.id }});
             draftHandler.decorate($(document));
         }
+
+        var expanders = $('.expander');
+        expanders.each(function(idx, item) {
+            var expanderElement = $(item);
+            var post = expanderElement.closest('.post,.comment');
+            if (post.length === 1) {
+                var expander = new PostExpander();
+                expander.setPostId(post.data('postId'));
+                expander.decorate(expanderElement);
+            }
+        });
     });
 
     $(window).bind('hashchange', animate_hashes);

@@ -106,7 +106,7 @@ class RssLastestQuestionsFeed(Feed):
 
     def title(self):
         return askbot_settings.APP_TITLE + _(' - ') + \
-                _('Individual question feed')
+                _('Latest question feed')
 
     def feed_copyright(self):
         return askbot_settings.APP_COPYRIGHT
@@ -143,6 +143,9 @@ class RssLastestQuestionsFeed(Feed):
         """
         return site_url(item.get_absolute_url(no_slug = True))
 
+    def item_title(self, item):
+        return item.thread.title
+
     def item_description(self, item):
         """returns the description for the item
         """
@@ -177,11 +180,3 @@ class RssLastestQuestionsFeed(Feed):
     def get_feed(self, obj, request):
         self.request = request
         return super(RssLastestQuestionsFeed, self).get_feed(obj, request)
-
-def main():
-    """main function for use as a script
-    """
-    pass
-
-if __name__ == '__main__':
-    main()
