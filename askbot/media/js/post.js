@@ -524,8 +524,8 @@ var Vote = function(){
     var answerContainerIdPrefix = 'post-id-';
     var voteContainerId = 'vote-buttons';
     var imgIdPrefixAccept = 'answer-img-accept-';
-    var classPrefixFollow= 'button follow';
-    var classPrefixFollowed= 'button followed';
+    var classPrefixFollow= 'btn btn-inverse button follow';
+    var classPrefixFollowed= 'btn btn-inverse button followed';
     var imgIdPrefixQuestionVoteup = 'question-img-upvote-';
     var imgIdPrefixQuestionVotedown = 'question-img-downvote-';
     var imgIdPrefixAnswerVoteup = 'answer-img-upvote-';
@@ -997,7 +997,7 @@ var Vote = function(){
             }
         }
         else {
-            showMessage(object, data.message)
+            showMessage(object, data.message);
         }
     };
 
@@ -1017,6 +1017,7 @@ var Vote = function(){
         },
         //mark question as favorite
         favorite: function(object){
+            console.log('favorite');
             if (!currentUserId || currentUserId.toUpperCase() == "NONE"){
                 showMessage(
                     object,
@@ -1035,6 +1036,7 @@ var Vote = function(){
         },
 
         vote: function(object, voteType){
+            console.log('Voting');
             if (!currentUserId || currentUserId.toUpperCase() == "NONE") {
                 if (voteType == VoteType.questionSubscribeUpdates || voteType == VoteType.questionUnsubscribeUpdates){
                     getquestionSubscribeSidebarCheckbox().removeAttr('checked');
@@ -1803,9 +1805,9 @@ EditCommentForm.prototype.createDom = function(){
     this._text_counter = $('<span></span>').attr('class', 'counter');
     this._controlsBox.append(this._text_counter);
 
-    this._submit_btn = $('<button class="submit"></button>');
+    this._submit_btn = $('<button class="btn btn-inverse submit"></button>');
     this._controlsBox.append(this._submit_btn);
-    this._cancel_btn = $('<button class="submit cancel"></button>');
+    this._cancel_btn = $('<button class="btn btn-inverse submit cancel"></button>');
     this._cancel_btn.html(gettext('cancel'));
     this._controlsBox.append(this._cancel_btn);
 

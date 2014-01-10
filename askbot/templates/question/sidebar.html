@@ -7,14 +7,14 @@
 <div class="box vote-buttons">
     <h2 >{% trans %}Question tools{% endtrans %}</h2>
     {% if favorited %}
-        <a class="button btn-inverse followed" 
-            alt="{% trans %}click to unfollow this question{% endtrans %}">
+        <a class="btn btn-inverse button followed" 
+            alt="{% trans %}click to unfollow{% endtrans %}">
             <div>{% trans %}Following{% endtrans %}</div>
             <div class='unfollow'>{% trans %}Unfollow{% endtrans %}</div>
         </a>
     {% else %}
-        <a class="button btn-inverse followed"
-            alt="{% trans %}click to follow this question{% endtrans %}">
+        <a class="btn btn-inverse button followed"
+            alt="{% trans %}click to follow{% endtrans %}">
             {%trans %}Follow{%endtrans%}
         </a>
     {% endif %}
