@@ -36,17 +36,17 @@
                     <nav>
                     <ul class="nav topnav visible-desktop">
                         <li class="success ">
-                           <a href="{% url 'home' %}"><i class="icon-home icon-white"></i> Home</a>
+                           <a href="{% url 'home' %}"><i class="icon-home"></i> Home</a>
                         </li>
                         <li class="danger ">
-                            <a href="{% url 'startup_list' %}"><i class="icon-star icon-white"></i> Startups</a>
+                            <a href="{% url 'startup_list' %}"><i class="icon-star"></i> Startups</a>
                         </li>
                         <li class="warning">
-                           <a href="{% url 'questions' %}"><i class="icon-fire icon-white"></i> Fireside</a>
+                           <a href="{% url 'questions' %}" class="active"><i class="icon-fire icon-white"></i> Fireside</a>
                         </li>
                         {% if user.is_authenticated() %}
                             <li class="dropdown info">
-                                <a href="#"><i class="icon-user icon-white"></i> Me&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                <a href="#"><i class="icon-user"></i> Me&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                                 <ul class="dropdown-menu pull-right">
                                     <li><a href="{{ profile.get_absolute_url() }}">
                                         {% set im = jinja2_thumbnail(profile.avatar or profile.gravatar, "30x40") %}
@@ -68,10 +68,10 @@
                             </li>
                         {% else %}
                             <li class="info">
-                               <a href="{% url 'signup' %}"><i class="icon-user icon-white"></i> Signup</a>
+                               <a href="{% url 'signup' %}"><i class="icon-user"></i> Signup</a>
                             </li>
                             <li class="inverse">
-                               <a href="{% url 'login' %}"><i class="icon-off icon-white"></i> Login</a>
+                               <a href="{% url 'login' %}"><i class="icon-off"></i> Login</a>
                             </li>
                         {% endif %}
                     </ul>
