@@ -14,8 +14,15 @@
     {# <link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:700&amp;subset=cyrillic-ext' rel='stylesheet' type='text/css'> #}
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/validationEngine.jquery.min.css">
+
     <link href="{{ STATIC_URL }}css/custom-discuss.min.css" rel="stylesheet" type="text/css" />
     <link href="{{ STATIC_URL }}css/all.css" rel="stylesheet">
     <link href="{{ STATIC_URL }}css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
+    {# The startup creation modal completely drop down when in the fireside screen #}
+    <style type="text/css">
+        .modal.fade.in {
+            top: 50%;
+        }
+    </style>
 {% endif %}
