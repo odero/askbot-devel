@@ -9,14 +9,14 @@ import platform
 
 VERSION = (0, 7, 49)
 
-#keys are module names used by python imports,
-#values - the package qualifier to use for pip
+# keys are module names used by python imports,
+# values - the package qualifier to use for pip
 REQUIREMENTS = {
     'akismet': 'akismet',
     'django': 'django>=1.3.1,<=1.5',
     'compressor': 'django-compressor==1.2',
     'jinja2': 'Jinja2',
-    'coffin': 'Coffin>=0.3',
+    'coffin': 'Coffin==0.4',
     'south': 'South>=0.7.1',
     'oauth2': 'oauth2',
     'markdown2': 'markdown2',
@@ -43,7 +43,7 @@ REQUIREMENTS = {
 if platform.system() != 'Windows':
     REQUIREMENTS['lamson'] = 'Lamson'
 
-#necessary for interoperability of django and coffin
+# necessary for interoperability of django and coffin
 try:
     from askbot import patches
     from askbot.deployment.assertions import assert_package_compatibility
