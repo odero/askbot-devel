@@ -123,9 +123,9 @@
             {{view_user.about|linebreaks}}
         {% endif %}
     #}
-    {% if user.userprofile.resume and (not view_user.is_blocked()) %}
-        {{user.userprofile.resume|linebreaks}}
-        <p><a href="{{ user.userprofile.get_absolute_url() }}">Learn more...</a></p>
+    {% if view_user.userprofile.resume and (not view_user.is_blocked()) %}
+        {{ view_user.userprofile.resume|linebreaks }}
+        <p><a href="{{ view_user.userprofile.get_absolute_url() }}">Learn more...</a></p>
     {% endif %}
     </div>
 </div>
