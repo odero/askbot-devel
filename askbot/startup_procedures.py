@@ -10,11 +10,11 @@ the main function is run_startup_tests
 import askbot
 import django
 import os
+import pkg_resources
 import re
-import south
 import sys
 import urllib
-from django.db import transaction, connection
+from django.db import connection
 from django.conf import settings as django_settings
 from django.core.cache import cache
 from django.core.exceptions import ImproperlyConfigured
@@ -162,6 +162,7 @@ def test_middleware():
     required_middleware.extend([
         'askbot.middleware.view_log.ViewLogMiddleware',
         'askbot.middleware.spaceless.SpacelessMiddleware',
+        'askbot.middleware.csrf.CsrfViewMiddleware'
     ])
     found_middleware = [x for x in django_settings.MIDDLEWARE_CLASSES
                             if x in required_middleware]
@@ -211,11 +212,76 @@ def try_import(module_name, pypi_package_name, short_message = False):
         message += '\n\nType ^C to quit.'
         raise AskbotConfigError(message)
 
+
+def unparse_requirement(req):
+    line = req.name
+    if req.specs:
+        specs = ['%s%s' % spec for spec in req.specs]
+        line += ','.join(specs) 
+    if req.extras:
+        line += ' [%s]' % ','.join(req.extras)
+    return line
+
+
+def test_specs(req):
+    if not req.specs:
+        return
+    mod_ver = pkg_resources.get_distribution(req.name).version
+    mod_ver = mod_ver.split('.')
+    try:
+        for spec in req.specs:
+            op = spec[0]
+            spec_ver = spec[1].split('.')
+            if op == '==':
+                assert mod_ver == spec_ver
+            elif op == '>':
+                assert mod_ver > spec_ver
+            elif op == '<':
+                assert mod_ver < spec_ver
+            elif op == '<=':
+                assert mod_ver <= spec_ver
+            elif op == '>=':
+                assert mod_ver >= spec_ver
+            else:
+                raise ValueError('Unsupported pip dependency version operator %s' % op)
+    except AssertionError:
+        data = {
+            'name': req.name,
+            'need_spec': unparse_requirement(req),
+            'mod_ver': '.'.join(mod_ver)
+        }
+        message = """Unsupported version of module {name},
+found version {mod_ver}, {need_spec} required.
+please run:
+> pip uninstall '{name}' && pip install '{need_spec}'""".format(**data)
+        raise AskbotConfigError(message)
+
+
+def get_req_name_from_spec(spec):
+    spec = spec.replace('>', '=').replace('>', '=')
+    bits = spec.split('=')
+    return bits[0]
+
+
+def find_mod_name(req_name):
+    from askbot import REQUIREMENTS
+    req2mod = dict([(get_req_name_from_spec(v), k) for (k, v) in REQUIREMENTS.items()])
+    return req2mod[req_name]
+
+
 def test_modules():
     """tests presence of required modules"""
     from askbot import REQUIREMENTS
-    for module_name, pip_path in REQUIREMENTS.items():
-        try_import(module_name, pip_path)
+    #flatten requirements into file-like string
+    req_text = '\n'.join(REQUIREMENTS.values())
+    import requirements
+    parsed_requirements = requirements.parse(req_text)
+    for req in parsed_requirements:
+        pip_path = unparse_requirement(req)
+        mod_name = find_mod_name(req.name)
+        try_import(mod_name, pip_path)
+        test_specs(req)
+
 
 def test_postgres():
     """Checks for the postgres buggy driver, version 2.4.2"""
@@ -248,12 +314,31 @@ def test_template_loader():
     current_loader = 'askbot.skins.loaders.Loader'
     if current_loader not in django_settings.TEMPLATE_LOADERS:
         errors.append(
-            'add "%s" to the beginning of the TEMPLATE_LOADERS' % current_loader
+            'add "%s", to the beginning of the TEMPLATE_LOADERS' % current_loader
         )
     elif django_settings.TEMPLATE_LOADERS[0] != current_loader:
         errors.append(
-            '"%s" must be the first element of TEMPLATE_LOADERS' % current_loader
+            '"%s", must be the first element of TEMPLATE_LOADERS' % current_loader
+        ) 
+
+    app_dir_loader = 'askbot.skins.loaders.JinjaAppDirectoryLoader'
+    if app_dir_loader not in django_settings.TEMPLATE_LOADERS:
+        errors.append(
+            'add "%s", as second item of the TEMPLATE_LOADERS' % app_dir_loader
         )
+    elif django_settings.TEMPLATE_LOADERS.index(app_dir_loader) != 1:
+        errors.append(
+            'move "%s", to the second place in the TEMPLATE_LOADERS' % app_dir_loader
+        )
+
+    try:
+        jinja2_apps = getattr(django_settings, 'JINJA2_TEMPLATES')
+    except AttributeError:
+        errors.append("add to settings.py:\nJINJA2_TEMPLATES = ('captcha',)")
+    else:
+        if 'captcha' not in jinja2_apps:
+            errors.append("add to JINJA2_TEMPLATES in settings.py\n    'captcha',")
+
 
     print_errors(errors)
 
@@ -313,23 +398,6 @@ def test_celery():
 def test_compressor():
     """test settings for django compressor"""
     errors = list()
-
-    if getattr(django_settings, 'ASKBOT_CSS_DEVEL', False):
-        precompilers = getattr(django_settings, 'COMPRESS_PRECOMPILERS', None)
-        lessc_item = ('text/less', 'lessc {infile} {outfile}')
-        if precompilers is None:
-            errors.append(
-                'Please add to your settings.py file: \n'
-                'COMPRESS_PRECOMPILERS = (\n'
-                "    ('%s', '%s'),\n"
-                ')' % lessc_item
-            )
-        else:
-            if lessc_item not in precompilers:
-                errors.append(
-                    'Please add to the COMPRESS_PRECOMPILERS the following item:\n'
-                    "('%s', '%s')," % lessc_item
-                )
 
     js_filters = getattr(django_settings, 'COMPRESS_JS_FILTERS', [])
     if len(js_filters) > 0:
@@ -413,6 +481,8 @@ def test_new_skins():
     because we've moved skin files a few levels up"""
     askbot_root = askbot.get_install_directory()
     for item in os.listdir(os.path.join(askbot_root, 'skins')):
+        if item == '__pycache__':
+            continue
         item_path = os.path.join(askbot_root, 'skins', item)
         if os.path.isdir(item_path):
             raise AskbotConfigError(
@@ -617,12 +687,7 @@ def test_avatar():
     """if "avatar" is in the installed apps,
     checks that the module is actually installed"""
     if 'avatar' in django_settings.INSTALLED_APPS:
-        try_import('Image', 'PIL', short_message = True)
-        try_import(
-            'avatar',
-            '-e git+git://github.com/ericflo/django-avatar.git#egg=avatar',
-            short_message = True
-        )
+        try_import('avatar', 'django-avatar', short_message=True)
 
 def test_haystack():
     if 'haystack' in django_settings.INSTALLED_APPS:
@@ -638,7 +703,7 @@ def test_haystack():
                     }"""
                 errors.append(message)
 
-            if getattr(django_settings, 'ASKBOT_MULTILINGUAL'):
+            if askbot.is_multilingual():
                 if not hasattr(django_settings, "HAYSTACK_ROUTERS"):
                     message = "Please add HAYSTACK_ROUTERS = ['askbot.search.haystack.routers.LanguageRouter',] to settings.py"
                     errors.append(message)
@@ -749,8 +814,8 @@ def test_tinymce():
     #check js root setting - before version 0.7.44 we used to have
     #"common" skin and after we combined it into the default
     js_root = getattr(django_settings, 'TINYMCE_JS_ROOT', '')
-    old_relative_js_path = 'common/media/js/tinymce/'
-    relative_js_path = 'default/media/js/tinymce/'
+    old_relative_js_path = 'common/media/tinymce/'
+    relative_js_path = 'default/media/tinymce/'
     expected_js_root = os.path.join(django_settings.STATIC_ROOT, relative_js_path)
     old_expected_js_root = os.path.join(django_settings.STATIC_ROOT, old_relative_js_path)
     if os.path.normpath(js_root) != os.path.normpath(expected_js_root):
@@ -793,6 +858,7 @@ def test_template_context_processors():
         'askbot.context.application_settings',
         'askbot.user_messages.context_processors.user_messages',
         'django.core.context_processors.csrf',
+        'askbot.deps.group_messaging.context.group_messaging_context',
     ]
     old_auth_processor = 'django.core.context_processors.auth'
     new_auth_processor = 'django.contrib.auth.context_processors.auth'
@@ -907,12 +973,11 @@ def test_secret_key():
         ])
 
 def test_locale_middlewares():
-    is_multilang = getattr(django_settings, 'ASKBOT_MULTILINGUAL', False)
     django_locale_middleware = 'django.middleware.locale.LocaleMiddleware'
     askbot_locale_middleware = 'askbot.middleware.locale.LocaleMiddleware'
     errors = list()
 
-    if is_multilang:
+    if askbot.is_multilingual():
         if askbot_locale_middleware in django_settings.MIDDLEWARE_CLASSES:
             errors.append("Please remove '%s' from your MIDDLEWARE_CLASSES" % askbot_locale_middleware)
         if django_locale_middleware not in django_settings.MIDDLEWARE_CLASSES:
@@ -920,16 +985,42 @@ def test_locale_middlewares():
 
     print_errors(errors)
 
-def test_multilingual():
-    is_multilang = getattr(django_settings, 'ASKBOT_MULTILINGUAL', False)
 
+def test_recaptcha():
     errors = list()
+    if 'captcha' not in django_settings.INSTALLED_APPS:
+        errors.append("Please add to the INSTALLED_APPS:\n    'captcha',")
 
-    django_version = django.VERSION
-    if is_multilang and django_version[0] == 1 and django_version[1] < 4:
-        errors.append('ASKBOT_MULTILINGUAL=True works only with django >= 1.4')
+    try:
+        nocaptcha = getattr(django_settings, 'NOCAPTCHA')
+    except AttributeError:
+        errors.append('Please add to settings.py:\nNOCAPTCHA = True')
+    else:
+        if nocaptcha != True:
+            errors.append('Please modify settings.py with:\nNOCAPTCHA = True')
+    print_errors(errors)
 
-    if is_multilang:
+
+def test_lang_mode():
+    legacy_multilang = getattr(django_settings, 'ASKBOT_MULTILINGUAL', None)
+    errors = list()
+    if legacy_multilang == True:
+        errors.append("""replace ASKBOT_MULTILINGUAL = True with either:
+ASKBOT_LANGUAGE_MODE = 'url-lang' or 
+ASKBOT_LANGUAGE_MODE = 'user-lang'""")
+    if legacy_multilang == False:
+        errors.append("""replace ASKBOT_MULTILINGUAL = True with either:
+ASKBOT_LANGUAGE_MODE = 'single-lang' or just delete the setting""")
+
+    if legacy_multilang in (True, False):
+        print_errors(errors)
+
+    mode = getattr(django_settings, 'ASKBOT_LANGUAGE_MODE', None)
+    if mode and mode not in ('single-lang', 'url-lang', 'user-lang'):
+        errors.append("""ASKBOT_LANGUAGE_MODE must be one of:
+'single-lang', 'url-lang', 'user-lang'""")
+
+    if mode == 'url-lang':
         middleware = 'django.middleware.locale.LocaleMiddleware'
         if middleware not in django_settings.MIDDLEWARE_CLASSES:
             errors.append(
@@ -938,7 +1029,7 @@ def test_multilingual():
             )
 
     trans_url = getattr(django_settings, 'ASKBOT_TRANSLATE_URL', False)
-    if is_multilang and trans_url:
+    if mode in ('url-lang', 'user-lang') and trans_url == True:
         errors.append(
             'Please set ASKBOT_TRANSLATE_URL to False, the "True" option '
             'is currently not supported due to a bug in django'
@@ -970,18 +1061,18 @@ def test_versions():
             'the latest release of Python 2.x'
         )
 
-    #if django version is >= 1.5, require python 2.6.5 or higher
+    upgrade_msg = 'About upgrades, please read http://askbot.org/doc/upgrade.html'
     dj_ver = django.VERSION
-    if dj_ver[:2] > (1, 5):
+    if dj_ver[:2] >= (1, 7):
         errors.append(
-            'Highest major version of django supported is 1.5 '
-            'if you would like to try newer version add setting.'
+            'Highest major version of django supported is 1.6. ' +
+            upgrade_msg
         )
-    elif dj_ver[0:2] == (1, 5) and py_ver[:3] < (2, 6, 4):
+    elif dj_ver[0:2] in ((1, 5), (1,6)) and py_ver[:3] < (2, 6, 5):
         errors.append(
-            'Django 1.5 and higher requires Python '
-            'version 2.6.4 or higher, please see release notes.\n'
-            'https://docs.djangoproject.com/en/dev/releases/1.5/'
+            'Django 1.5 and 1.6 higher require Python '
+            'version 2.6.5 or higher, please see release notes.\n'
+            'https://docs.djangoproject.com/en/dev/releases/1.6/'
         )
 
     print_errors(errors)
@@ -991,10 +1082,12 @@ def run_startup_tests():
     all startup tests, mainly checking settings config so far
     """
     #this is first because it gives good info on what to install
+    try_import('requirements', 'requirements-parser')
     test_modules()
 
     #todo: refactor this when another test arrives
     test_versions()
+    test_lang_mode()
     test_askbot_url()
     test_avatar()
     test_cache_backend()
@@ -1010,9 +1103,9 @@ def run_startup_tests():
     #test_postgres()
     test_messages_framework()
     test_middleware()
-    test_multilingual()
     test_locale_middlewares()
     #test_csrf_cookie_domain()
+    test_recaptcha()
     test_secret_key()
     test_service_url_prefix()
     test_staticfiles()
@@ -1045,29 +1138,23 @@ def run_startup_tests():
             'message': 'Please replace setting ASKBOT_UPLOADED_FILES_URL ',
             'replace_hint': "with MEDIA_URL = '/%s'"
         },
-        'RECAPTCHA_USE_SSL': {
+        'NOCAPTCHA': {
             'value': True,
-            'message': 'Please add: RECAPTCHA_USE_SSL = True'
+            'message': 'Please add: NOCAPTCHA = True'
         },
     })
     settings_tester.run()
     if 'manage.py test' in ' '.join(sys.argv):
         test_settings_for_test_runner()
 
-@transaction.commit_manually
 def run():
-    """runs all the startup procedures"""
     try:
         if getattr(django_settings, 'ASKBOT_SELF_TEST', True):
             run_startup_tests()
     except AskbotConfigError, error:
-        transaction.rollback()
         print error
         sys.exit(1)
-    try:
-        from askbot.models import badges
-        badges.init_badges()
-        transaction.commit()
-    except Exception, error:
-        print error
-        transaction.rollback()
+    # close DB and cache connections to prevent issues in prefork mode
+    connection.close()
+    if hasattr(cache, 'close'):
+        cache.close()

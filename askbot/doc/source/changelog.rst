@@ -1,6 +1,86 @@
 Changes in Askbot
 =================
 
+Development version
+-------------------
+* Added ASKBOT_LANGUAGE_MODE setting, which can be one of
+  'single-lang', 'url-lang', 'user-lang'. The 'user-lang'
+  option allows users to see posts of several user-selected
+  languages in the single listing of questions. The 'url-lang'
+  option shows questions in one listing per language.
+
+0.7.55 (Nov 30, 2015)
+---------------------
+* Added option to close new account registrations
+* Added support of CAS protocol
+
+0.7.54 (Oct 14, 2015)
+----------------------------------
+* Added management command `askbot_rebuild_avatars`
+* Added option to choose gravatar or default avatar for new users
+* Message on the feedback page is editable
+* Added support for the NoCaptcha recaptcha
+
+0.7.53 (Apr 22, 2015)
+---------------------
+* Use prompt placeholders on all registration forms
+* Disable Google login by default because it is now OAuth2
+
+
+0.7.52 (Apr 19, 2015)
+---------------------
+* Added account recovery form to the "complete registration" page
+  to help prevent accidental creation of duplicate accounts
+* Support migration of Google OpenID accounts to G+
+* Added setting to allow comment updates show on the main page
+* Improved support of uploadable avatars
+* Added authentication via MediaWiki
+* Added option to specify `ASKBOT_QUESTION_TITLE_RENDERER` function
+* Added option to specify `ASKBOT_HTML_MODERATOR` function
+* Allowed reordering badges on the badges page via drag and drop
+* Added option to forbid commenting in closed questions
+* Added separate optional time limits to edit questions and answers
+* Added option to disable comments under questions or answers
+* Added management command `askbot_recount_badges`
+* Allowed adding custom badges via `ASKBOT_CUSTOM_BADGES` setting
+* Allowed enabling and disabling individual badges
+* Added "forbidden phrases" for the content moderation
+  Posts containing these will be rejected outright, without placement
+  on the moderation queue.
+* Added minimum reputation to delete own questions with answers
+* Added optional checkbox "accept terms of service"
+  which being enabled, requires users to read and agree
+  with the terms before signing up.
+* Added terms of service page
+* Allowed reverse ordering of comments
+
+0.7.51 (Dec 15, 2014)
+---------------------
+* Bug fixes
+
+0.7.50 (Nov 1, 2014)
+--------------------
+* Added email alert for moderators `askbot_send_moderation_alerts`
+* Implemented Google Plus login
+* Allowed localized site settings
+* Added management command `askbot_clear_moderation_queue`
+* Admins and Moderators can merge questions.
+* Improved moderation modes: flags, audit, premoderation. 
+  Watched user status, IP blocking, mass content removal.
+* Allow bulk deletion of user content simultaneously with blocking
+* Allow custom destination url under the logo
+* Option to allow asking without registration (Egil Moeller)
+* Implemented Mozilla Persona authentication
+* Allowed custom providers of gravatar service (michas2)
+* Allowed configurable custom OpenID login button
+* Allowed custom list of feedback recipients (Keto)
+* Added option to show user's emails to the moderators
+* Added Read-Only mode for the site in the "access control" section.
+* Added `askbot_add_osqa_content` management command.
+* Management command to add data from other Askbot site.
+* Allowed simple overrides of livesettings with `ASKBOT_...` prefixed 
+  variables in the `settings.py` file.
+
 0.7.49 (Sep 19, 2013)
 ---------------------
 * Support for Solr search backend (Adolfo)

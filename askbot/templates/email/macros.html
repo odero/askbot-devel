@@ -1,39 +1,50 @@
+{%- macro mailto_link(user) -%}
+    <a href="mailto:{{ user.email }}">{{ user.email }}</a>
+{%- endmacro -%}
+
+{%- macro emailed_user_info(recipient, user, is_anon) -%}
+    {% if recipient|can_see_private_user_data(user) %}
+        {{ user.get_profile_link() ~ '/(' ~ mailto_link(user) ~ ')' }}
+    {% elif is_anon %}
+        {{ user.get_name_of_anonymous_user()|escape }}
+    {% else %}
+        {{ user.get_profile_link() }}
+    {% endif %}
+{%- endmacro -%}
+
 {% macro quoted_post(
-        post = None,
-        quote_level = 0,
-        format = None,
-        is_leaf_post = False
+        post=None,
+        recipient=None,
+        quote_level=0,
+        format=None,
+        is_leaf_post=False
     )
 %}
     {% spaceless %}
-        {{ start_quote(quote_level) }}
-            {% set author = post.author.userprofile.username|escape %}
-            {% if post.post_type == 'question' %}
+    {{ start_quote(quote_level) }}
+
+        {% set author %}{{ emailed_user_info(recipient, post.author.userprofile.username, post.is_anonymous) }}{% endset %}
+
+        {% set post_url = post.get_absolute_url() %}
+
+        {% if post.post_type == 'question' %}
+            <p style="{{ info_text_style() }}">
+                {% if format == 'parent_subthread' %}
+                    {% set post_type=settings.WORDS_QUESTION_SINGULAR %}
+                    {% trans %}In reply to {{ author }}'s <a href="{{ post_url }}">{{ post_type }}</a>{% endtrans %}:
+                {% else %}
+                    {{ author }} {{ settings.WORDS_ASKED }}:
+                {% endif %}
+            </p>
+
             {% if quote_level > 0 %}
-            <p style="font-size:10px; font-weight: bold;">
+                <p style="{{ info_text_style() }}">
             {% else %}
-            <p style="font-size:20px; font-weight: bold; margin: 10px 0">
+                <p style="font-size:20px; font-weight: bold; margin: 10px 0">
             {% endif %}
-                    {% if format == 'parent_subthread' %}
-                        {% if is_leaf_post %}
-                            {% trans %}Question by {{ author }}:{% endtrans %}
-                        {% else %}
-                            {% trans -%}
-                                In reply to {{ author }}'s question:
-                            {%- endtrans %}
-                        {% endif %}
-                    {% else %}
-                        {% trans %}Question :{% endtrans %}
-                    {% endif %}
-                    {{ post.thread.title }}
-            </p>
-            {% if quote_level > 0 %}
-            <p style="font-size:10px; font-weight: bold;">
-                    {% if format != 'parent_subthread' %}
-                        {% trans %}Asked by {{ author }}:{% endtrans %}
-                    {% endif %}
-            </p>
-            {% endif %}
+                    <a href="{{ post_url }}">{{ post.thread.title }}</a>
+                </p>
+
             {% set tag_names = post.get_tag_names() %}
             {% if tag_names %}
             <p style="font-size:10px; font-style:italic;">
@@ -41,43 +52,26 @@
                 {{ tag_names|join(', ') }}.
             </p>
             {% endif %}
-            {% elif post.post_type == 'answer' %}
-                <p style="font-size:10px; font-weight: bold;">
-                    {% if format == 'parent_subthread' %}
-                        {% if is_leaf_post %}
-                            {% trans -%}
-                                {{ author }}'s answer:
-                            {%- endtrans %}
-                        {% else %}
-                            {% trans -%}
-                                In reply to {{ author }}'s answer:
-                            {%- endtrans %}
-                        {% endif %}
-                    {% else %}
-                        {% trans %}Answered by {{ author }}:{% endtrans %}
-                    {% endif %}
-                </p>
+        {% elif post.post_type in ('answer', 'comment') %}
+            {% if post.post_type == 'comment' %}
+                {% set post_type=gettext('comment') %}
+                {% set acted=gettext('commented') %}
             {% else %}
-                <p style="font-size:10px; font-weight: bold;">
-                    {% if format == 'parent_subthread' %}
-                        {% if is_leaf_post %}
-                            {% trans -%}
-                                {{ author }}'s comment:
-                            {%- endtrans %}
-                        {% else %}
-                            {% trans -%}
-                                In reply to {{ author }}'s comment:
-                            {%- endtrans %}
-                        {% endif %}
-                    {% else %}
-                        {% trans author -%}
-                            Commented by {{ author }}:
-                        {%- endtrans %}
-                    {% endif %}
-                </p>
+                {% set post_type=settings.WORDS_ANSWER_SINGULAR %}
+                {% set acted=settings.WORDS_ANSWERED %}
             {% endif %}
-            {{ post.html }}
-        {{ end_quote(quote_level) }}
+            <p style="{{ info_text_style() }}">
+                {% if format == 'parent_subthread' %}
+                    {% trans %}In reply to {{ author }}'s <a href="{{ post_url }}">{{ post_type }}</a>{% endtrans %}:
+                {% else %}
+                    {{ author }}&nbsp;<a href="{{ post_url }}">{{ acted }}</a>:
+                {% endif %}
+            </p>
+        {% endif %}
+
+        {{ post.html }}
+
+    {{ end_quote(quote_level) }}
     {% endspaceless %}
 {% endmacro %}
 
@@ -99,4 +93,8 @@ font-size:14px;font-weight:bold;margin-bottom:0px;
 
 {% macro fine_print_style() %}
 font-size:8px;color:#aaa;margin-bottom:0px;
+{% endmacro %}
+
+{% macro info_text_style() %}
+font-size: 10px;font-weight: bold;
 {% endmacro %}

@@ -7,7 +7,10 @@ from askbot.conf.super_groups import CONTENT_AND_UI
 from askbot.deps import livesettings
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings as django_settings
+from django.core.validators import ValidationError, validate_email
+import re
 from urlparse import urlparse
+
 
 QA_SITE_SETTINGS = livesettings.ConfigurationGroup(
                     'QA_SITE_SETTINGS',
@@ -19,7 +22,7 @@ settings.register(
     livesettings.StringValue(
         QA_SITE_SETTINGS,
         'APP_TITLE',
-        default=u'Askbot: Open Source Q&A Forum',
+        default=_('My site'),
         description=_('Site title for the Q&A forum')
     )
 )
@@ -82,7 +85,7 @@ def app_url_callback(old_value, new_value):
     site.save()
 
     return new_value
-        
+
 
 settings.register(
     livesettings.StringValue(
@@ -109,7 +112,8 @@ settings.register(
     livesettings.StringValue(
         QA_SITE_SETTINGS,
         'GREETING_FOR_ANONYMOUS_USER',
-        default='First time here? Check out the FAQ!',
+        default=_('First time here? Check out the FAQ!'),
+        localized=True,
         hidden=False,
         description=_(
                 'Text shown in the greeting message '
@@ -117,18 +121,6 @@ settings.register(
             ),
         help_text=_(
                 'Use HTML to format the message '
-            )
-    )
-)
-
-settings.register(
-    livesettings.StringValue(
-        QA_SITE_SETTINGS,
-        'FEEDBACK_SITE_URL',
-        description=_('Feedback site URL'),
-        help_text=_(
-                'If left empty, a simple internal feedback form '
-                'will be used instead'
             )
     )
 )

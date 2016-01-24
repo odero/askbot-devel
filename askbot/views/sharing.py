@@ -11,9 +11,8 @@ from django.utils import simplejson
 def start_sharing_twitter(request):
     #start oauth process to authorize tweeting
     #on behalf of user
-    callback_url = reverse('save_twitter_access_token')
-    connection = OAuthConnection('twitter', callback_url=callback_url)
-    connection.start()
+    connection = OAuthConnection('twitter')
+    connection.start(callback_url=reverse('save_twitter_access_token'))
     request.session['oauth_token'] = connection.get_token()
     oauth_url = connection.get_auth_url(login_only=False)
     return HttpResponseRedirect(oauth_url)
@@ -38,7 +37,7 @@ def save_twitter_access_token(request):
     #todo: save message that user can also login via twitter
     return HttpResponseRedirect(request.user.get_profile_url())
 
-@csrf.csrf_exempt
+@csrf.csrf_protect
 @decorators.ajax_only
 @decorators.post_only
 def change_social_sharing_mode(request):

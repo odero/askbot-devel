@@ -50,7 +50,7 @@ class Vote(models.Model):
         db_table = u'vote'
 
     def __unicode__(self):
-        return '[%s] voted at %s: %s' %(self.user, self.voted_at, self.vote)
+        return u'[%s] voted at %s: %s' %(self.user, self.voted_at, self.vote)
 
     def __int__(self):
         """1 if upvote -1 if downvote"""
@@ -94,12 +94,25 @@ class BadgeData(models.Model):
     awarded_to = models.ManyToManyField(
                     User, through='Award', related_name='badges'
                 )
+    #use this field if badges should be sorted
+    #on the badges page in some specific ordering
+    #and add setting ASKBOT_BADGE_ORDERING = 'custom'
+    display_order = models.PositiveIntegerField(default=0)
 
     def _get_meta_data(self):
         """retrieves badge metadata stored
         in a file"""
         from askbot.models import badges
         return badges.get_badge(self.slug)
+
+    def is_enabled(self):
+        return self._get_meta_data().is_enabled()
+
+    def is_multiple(self):
+        return self._get_meta_data().multiple
+
+    def get_level(self):
+        return self._get_meta_data().level
 
     def get_name(self):
         return self._get_meta_data().name
@@ -116,7 +129,7 @@ class BadgeData(models.Model):
 
     class Meta:
         app_label = 'askbot'
-        ordering = ('slug',)
+        ordering = ('display_order', 'slug')
 
     def __unicode__(self):
         return u'%s: %s' % (self.get_type_display(), self.slug)
@@ -213,21 +226,9 @@ class Repute(models.Model):
                                 'username': self.user.userprofile.username,
                                 'question_title': self.question.thread.title
                             }
-            if delta > 0:
-                link_title = _(
-                                '%(points)s points were added for %(username)s\'s '
-                                'contribution to question %(question_title)s'
-                            ) % link_title_data
-            else:
-                link_title = _(
-                                '%(points)s points were subtracted for %(username)s\'s '
-                                'contribution to question %(question_title)s'
-                            ) % link_title_data
 
-            return '<a href="%(url)s" title="%(link_title)s">%(question_title)s</a>' \
+            return '<a href="%(url)s">%(question_title)s</a>' \
                             % {
                                'url': self.question.get_absolute_url(),
                                'question_title': escape(self.question.thread.title),
-                               'link_title': escape(link_title)
                             }
-

@@ -9,8 +9,8 @@ import site
 ASKBOT_ROOT = os.path.abspath(os.path.dirname(askbot.__file__))
 site.addsitedir(os.path.join(ASKBOT_ROOT, 'deps'))
 
-DEBUG = True#set to True to enable debugging
-TEMPLATE_DEBUG = False#keep false when debugging jinja2 templates
+DEBUG = True  # set to True to enable debugging
+TEMPLATE_DEBUG = False  # keep false when debugging jinja2 templates
 INTERNAL_IPS = ('127.0.0.1',)
 ALLOWED_HOSTS = ['*',]#change this for better security on your site
 
@@ -68,6 +68,9 @@ SITE_ID = 1
 # to load the internationalization machinery.
 USE_I18N = True
 LANGUAGE_CODE = 'en'
+LANGUAGES = (('en', 'English'),)
+ASKBOT_LANGUAGE_MODE = 'single-lang' #'single-lang', 'url-lang' or 'user-lang'
+
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
@@ -118,6 +121,7 @@ MIDDLEWARE_CLASSES = (
     #'debug_toolbar.middleware.DebugToolbarMiddleware',
     'askbot.middleware.view_log.ViewLogMiddleware',
     'askbot.middleware.spaceless.SpacelessMiddleware',
+    'askbot.middleware.csrf.CsrfViewMiddleware',
 )
 
 JINJA2_EXTENSIONS = (
@@ -158,6 +162,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'askbot.user_messages.context_processors.user_messages',#must be before auth
     'django.contrib.auth.context_processors.auth', #this is required for admin
     'django.core.context_processors.csrf', #necessary for csrf protection
+    'askbot.deps.group_messaging.context.group_messaging_context',
 )
 
 
@@ -196,14 +201,22 @@ INSTALLED_APPS = (
 
 
 #setup memcached for production use!
-#see http://docs.djangoproject.com/en/1.1/topics/cache/ for details
-CACHE_BACKEND = 'locmem://'
-#needed for django-keyedcache
-CACHE_TIMEOUT = 6000
+# See http://docs.djangoproject.com/en/1.8/topics/cache/ for details.
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'askbot',
+        'TIMEOUT': 6000,
+        # Chose a unique KEY_PREFIX to avoid clashes with other applications
+        # using the same cache (e.g. a shared memcache instance).
+        'KEY_PREFIX': 'askbot',
+    }
+}
+
 #sets a special timeout for livesettings if you want to make them different
-LIVESETTINGS_CACHE_TIMEOUT = CACHE_TIMEOUT
-CACHE_PREFIX = 'askbot' #make this unique
+LIVESETTINGS_CACHE_TIMEOUT = CACHES['default']['TIMEOUT']
 CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True
+CACHE_MIDDLEWARE_SECONDS = 600
 #If you use memcache you may want to uncomment the following line to enable memcached based sessions
 #SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
@@ -307,14 +320,6 @@ GROUP_MESSAGING = {
     'BASE_URL_PARAMS': {'section': 'messages', 'sort': 'inbox'}
 }
 
-ASKBOT_MULTILINGUAL = False
-
-ASKBOT_CSS_DEVEL = False
-if 'ASKBOT_CSS_DEVEL' in locals() and ASKBOT_CSS_DEVEL == True:
-    COMPRESS_PRECOMPILERS = (
-        ('text/less', 'lessc {infile} {outfile}'),
-    )
-
 COMPRESS_JS_FILTERS = []
 COMPRESS_PARSER = 'compressor.parser.HtmlParser'
 JINJA2_EXTENSIONS = ('compressor.contrib.jinja2ext.CompressorExtension',)
@@ -324,3 +329,4 @@ JINJA2_EXTENSIONS = ('compressor.contrib.jinja2ext.CompressorExtension',)
 SOUTH_TESTS_MIGRATE = False
 
 VERIFIER_EXPIRE_DAYS = 3
+AVATAR_AUTO_GENERATE_SIZES = (16, 32, 48, 128)

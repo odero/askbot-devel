@@ -10,8 +10,8 @@ from askbot.deps.livesettings import ConfigurationGroup, IntegerValue
 from django.utils.translation import ugettext_lazy as _
 
 VOTE_RULES = ConfigurationGroup(
-                    'VOTE_RULES', 
-                    _('Vote and flag limits'), 
+                    'VOTE_RULES',
+                    _('Vote and flag limits'),
                     ordering = 1,
                     super_group = REP_AND_BADGES
                 )
@@ -48,7 +48,8 @@ settings.register(
         VOTE_RULES,
         'MAX_DAYS_TO_CANCEL_VOTE',
         default=1,
-        description=_('Number of days to allow canceling votes')
+        description=_('Number of days to allow canceling votes '
+            '(-1 for no limit)')
     )
 )
 

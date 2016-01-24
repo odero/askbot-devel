@@ -43,11 +43,14 @@ The bulk of the management commands fall into this group and will probably be th
 |                                 | The command does not create associations with               |
 |                                 | any of the external login providers.                        |
 +---------------------------------+-------------------------------------------------------------+
+| `askbot_clear_moderation_queue` | Clear all items from the moderation queue                   |
++---------------------------------+-------------------------------------------------------------+
+| `askbot_award_badges`           | Awards badges to users (only some badges are supported)     |
++---------------------------------+-------------------------------------------------------------+
+| `askbot_recount_badges`         | Fixes badge award counts, use when disabling/enabling badges|
++---------------------------------+-------------------------------------------------------------+
 | `merge_users <from_id>          | Merges user accounts and all related data from one user     |
 | <to_id>`                        | to another, the "from user" account is deleted.             |
-+---------------------------------+-------------------------------------------------------------+
-| `dump_forum [--dump-name        | Save forum contents into a file. `--dump-name` parameter is |
-| some_name]`                     | optional                                                    |
 +---------------------------------+-------------------------------------------------------------+
 | `get_tag_stats [-u|-t] [-e]`    | Print tag subscription statistics, per tag (option -t)      |
 |                                 | or per user (option -u), if option -e is given, empty       |
@@ -55,16 +58,6 @@ The bulk of the management commands fall into this group and will probably be th
 |                                 | are: --per-tag-subscription-counts for -t,                  |
 |                                 | --per-user-tag-subscription-counts for -u, and --print-empty|
 |                                 | for -e).                                                    |
-+---------------------------------+-------------------------------------------------------------+
-| `load_forum <file_name>`        | Load forum data from a file saved by the `dump_forum`       |
-|                                 | command                                                     |
-+---------------------------------+-------------------------------------------------------------+
-| `load_stackexchange <file.zip>` | Load SackExchange dump into Askbot. It is best to run this  |
-|                                 | command on empty database. Also - before running, make sure |
-|                                 | that `askbot.importers.stackexchange` is in the list of     |
-|                                 | installed apps within your settings.py file (it might also  |
-|                                 | be necessary to run `syncdb` command to initiate the        |
-|                                 | SE importer tables).                                        |
 +---------------------------------+-------------------------------------------------------------+
 | `rename_tags --from <from_tags> | Rename, merge or split tags. User ID is the id of the user  |
 | --to <to_tags> --user-id        | who will be assigned as the performer of the retag action.  |
@@ -88,6 +81,8 @@ The bulk of the management commands fall into this group and will probably be th
 |                                 | This data is used to display preferentially real faces      |
 |                                 | on the main page.                                           |
 +---------------------------------+-------------------------------------------------------------+
+| `askbot_rebuild_avatars`        | Rebuilds avatar urls and creates avatar thumbnails          |
++---------------------------------+-------------------------------------------------------------+
 | `build_thread_summary_cache`    | Rebuilds cache for the question summary snippet.            |
 +---------------------------------+-------------------------------------------------------------+
 | `build_livesettings_cache`      | Rebuilds cache for the live settings.                       |
@@ -99,6 +94,32 @@ The bulk of the management commands fall into this group and will probably be th
 | `delete_contextless_activities` | Same as above, but works in a broader sense - when the      |
 |                                 | related context object does not exist, but the generic      |
 |                                 | foreign key to that object is still present.                |
++---------------------------------+-------------------------------------------------------------+
+
+.. _data-import-commands:
+
+Data import commands
+====================
+
+These commands import or add data to the Askbot forum.
+
++---------------------------------+-------------------------------------------------------------+
+| command                         | purpose                                                     |
++=================================+=============================================================+
+| `load_stackexchange <file.zip>` | Load SackExchange dump into Askbot. It is best to run this  |
+|                                 | command on empty database. Also - before running, make sure |
+|                                 | that `askbot.importers.stackexchange` is in the list of     |
+|                                 | installed apps within your settings.py file (it might also  |
+|                                 | be necessary to run `syncdb` command to initiate the        |
+|                                 | SE importer tables).                                        |
++---------------------------------+-------------------------------------------------------------+
+| `askbot_add_xml_content         | Add xml Askbot data dumped with the Django command          |
+|  <file.xml>`                    | `dumpdata`                                                  |
++---------------------------------+-------------------------------------------------------------+
+| `askbot_add_osqa_content        | Add xml OSQA data dumped with the Django command            |
+|  <file.xml>`                    | `export_osqa`                                               |
++---------------------------------+-------------------------------------------------------------+
+| `askbot_import_jive <file.xml>  | Import xml Jive data                                        |
 +---------------------------------+-------------------------------------------------------------+
 
 .. _email-related-commands:
@@ -148,6 +169,9 @@ Any configurable options, related to these commands are accessible via "Email" s
 |                                     | This command may be disabled from the "email" section       |
 |                                     | of the live settings, as well as the appropriate delay      |
 |                                     | parameters may be set.                                      |
++-------------------------------------+-------------------------------------------------------------+
+| `askbot_send_moderation_alerts`     | Sends alerts to moderators when there are items on the      |
+|                                     | queue.                                                      |
 +-------------------------------------+-------------------------------------------------------------+
 
 Data repair commands

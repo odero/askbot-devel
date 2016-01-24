@@ -199,10 +199,10 @@ class DBApiTests(AskbotTestCase):
     def test_retag_tags_too_long_raises(self):
         tags = "aoaoesuouooeueooeuoaeuoeou aostoeuoaethoeastn oasoeoa nuhoasut oaeeots aoshootuheotuoehao asaoetoeatuoasu o  aoeuethut aoaoe uou uoetu uouuou ao aouosutoeh"
         question = self.post_question(user=self.user)
-        self.assertRaises(
-            exceptions.ValidationError,
-            self.user.retag_question,
-            question=question, tags=tags
+        self.user.retag_question(question=question, tags=tags)
+        self.assertEqual(
+            set(question.thread.tagnames.split()),
+            set('aoaoesuouooeueooeuoaeuoeou aostoeuoaethoeastn oasoeoa nuhoasut oaeeots aoshootuheotuoehao asaoetoeatuoasu o aoeuethut aoaoe'.split())
         )
 
     def test_search_with_apostrophe_works(self):
@@ -718,3 +718,16 @@ class LinkPostingTests(AskbotTestCase):
         self.assert_no_link(question.html)
         self.edit_question(user=admin, question=question, body_text=text + ' ok')
         self.assert_has_link(question.html, 'http://wikipedia.org')
+
+
+class ForbiddenTextPostingTests(AskbotTestCase):
+    @with_settings(
+        FORBIDDEN_PHRASES='bad\tstuff'
+    )
+    def test_spam_question_fails(self):
+        user = self.create_user()
+        self.assertRaises(
+            ValueError,
+            self.post_question,
+            body_text='there is bad\n stuff'
+        )

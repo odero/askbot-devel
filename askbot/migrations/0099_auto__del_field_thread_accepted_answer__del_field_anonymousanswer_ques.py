@@ -7,7 +7,7 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        
+
         # Removing unique constraint on 'PostRevision', fields ['question', 'revision']
         db.delete_unique('askbot_postrevision', ['question_id', 'revision'])
 
@@ -21,13 +21,13 @@ class Migration(SchemaMigration):
         db.delete_column('askbot_anonymousanswer', 'question_id')
 
         # Changing field 'AnonymousAnswer.question_post'
-        db.alter_column('askbot_anonymousanswer', 'question_post_id', self.gf('django.db.models.fields.related.ForeignKey')(default=0, to=orm['askbot.Post']))
+        db.alter_column('askbot_anonymousanswer', 'question_post_id', self.gf('django.db.models.fields.related.ForeignKey')(default=None, to=orm['askbot.Post']))
 
         # Deleting field 'QuestionView.question'
         db.delete_column('askbot_questionview', 'question_id')
 
         # Changing field 'QuestionView.question_post'
-        db.alter_column('askbot_questionview', 'question_post_id', self.gf('django.db.models.fields.related.ForeignKey')(default=0, to=orm['askbot.Post']))
+        db.alter_column('askbot_questionview', 'question_post_id', self.gf('django.db.models.fields.related.ForeignKey')(default=None, to=orm['askbot.Post']))
 
         # Deleting field 'PostRevision.question'
         db.delete_column('askbot_postrevision', 'question_id')
@@ -40,7 +40,7 @@ class Migration(SchemaMigration):
 
 
     def backwards(self, orm):
-        
+
         # Removing unique constraint on 'PostRevision', fields ['post', 'revision']
         db.delete_unique('askbot_postrevision', ['post_id', 'revision'])
 

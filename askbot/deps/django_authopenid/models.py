@@ -58,7 +58,11 @@ class UserAssociation(models.Model):
                             )
 
     def __unicode__(self):
-        return "Openid %s with user %s" % (self.openid_url, self.user)
+        return u"Openid %s with user %s" % (self.openid_url, self.user)
+
+    def update_timestamp(self):
+        self.last_used_timestamp = datetime.datetime.now()
+        self.save()
 
 class UserPasswordQueueManager(models.Manager):
     """ manager for UserPasswordQueue object """

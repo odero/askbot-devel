@@ -144,10 +144,8 @@ def process_reply(func):
         error = None
 
         try:
-            reply_address = ReplyAddress.objects.get(
-                                            address = address,
-                                            allowed_from_email = message.From
-                                        )
+            reply_address = ReplyAddress.objects.get(address = address)
+            #allowed_from_email = message.From <- used to have this filter too
 
             #here is the business part of this function
             parts = get_parts(message)
@@ -169,13 +167,9 @@ def process_reply(func):
             sys.stderr.write(unicode(traceback.format_exc()).encode('utf-8'))
 
         if error is not None:
-            template = get_template('email/reply_by_email_error.html')
-            body_text = template.render(Context({'error':error}))#todo: set lang
-            mail.send_mail(
-                subject_line = "Error posting your reply",
-                body_text = body_text,
-                recipient_list = [message.From],
-            )
+            from askbot.mail.messages import ReplyByEmailError
+            email = ReplyByEmailError({'error': error})
+            email.send([message.From])
 
     return wrapped
 
@@ -253,19 +247,10 @@ def VALIDATE_EMAIL(
         user.email_isvalid = True
         user.save()
 
-        data = {
-            'site_name': askbot_settings.APP_SHORT_NAME,
-            'site_url': site_url(reverse('questions')),
-            'ask_address': 'ask@' + askbot_settings.REPLY_BY_EMAIL_HOSTNAME,
-            'can_post_by_email': user.can_post_by_email()
-        }
-        template = get_template('email/re_welcome_lamson_on.html')
+        from askbot.mail.messages import ReWelcomeEmail
+        email = ReWelcomeEmail({'recipient_user': user})
+        email.send([from_address,])
 
-        mail.send_mail(
-            subject_line = _('Re: Welcome to %(site_name)s') % data,
-            body_text = template.render(Context(data)),#todo: set lang
-            recipient_list = [from_address,]
-        )
     except ValueError:
         raise ValueError(
             _(
@@ -306,7 +291,7 @@ def PROCESS(
     user.email_isvalid = True
     user.save()#todo: actually, saving is not necessary, if nothing changed
 
-    #here we might be in danger of chomping off some of the 
+    #here we might be in danger of chomping off some of the
     #message is body text ends with a legitimate text coinciding with
     #the user's email signature
     body_text = user.strip_email_signature(body_text)
@@ -325,19 +310,10 @@ def PROCESS(
             robj.create_reply(body_text)
     elif robj.reply_action == 'validate_email':
         #todo: this is copy-paste - factor it out to askbot.mail.messages
-        data = {
-            'site_name': askbot_settings.APP_SHORT_NAME,
-            'site_url': site_url(reverse('questions')),
-            'ask_address': 'ask@' + askbot_settings.REPLY_BY_EMAIL_HOSTNAME
-        }
-        template = get_template('email/re_welcome_lamson_on.html')
+        from askbot.mail.messages import ReWelcomeEmail
+        email = ReWelcomeEmail({'recipient_user': robj.user})
+        email.send([from_address,])
 
         if DEBUG_EMAIL:
             msg = u'Sending welcome mail to %s\n' % from_address
             sys.stderr.write(msg.encode('utf-8'))
-
-        mail.send_mail(
-            subject_line = _('Re: %s') % subject_line,
-            body_text = template.render(Context(data)),#todo: set lang
-            recipient_list = [from_address,]
-        )

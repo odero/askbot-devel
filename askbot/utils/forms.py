@@ -1,33 +1,35 @@
 import re
 from django import forms
 from django.contrib.auth.models import User
-from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.utils.translation import ugettext_lazy as _
-from django.utils.safestring import mark_safe
 from askbot.conf import settings as askbot_settings
 from askbot.utils.slug import slugify
-from askbot.utils.functions import split_list
+from askbot.utils.functions import split_list, mark_safe_lazy
 from askbot import const
 from longerusername import MAX_USERNAME_LENGTH
 import logging
 import urllib
 
-DEFAULT_NEXT = '/' + getattr(settings, 'ASKBOT_URL')
-def clean_next(next, default = None):
-    if next is None or not next.startswith('/'):
-        if default:
-            return default
-        else:
-            return DEFAULT_NEXT
-    if isinstance(next, str):
-        next = unicode(urllib.unquote(next), 'utf-8', 'replace')
-    next = next.strip()
-    logging.debug('next url is %s' % next)
-    return next
 
-def get_next_url(request, default = None):
+def clean_next(next_url, default=None):
+    if next_url is None or not next_url.startswith('/'):
+        return default or reverse('index')
+    if isinstance(next_url, str):
+        next_url = unicode(urllib.unquote(next_url), 'utf-8', 'replace')
+    return next_url.strip()
+
+def get_error_list(form_instance):
+    """return flat list of error values for the form"""
+    lists = form_instance.errors.values()
+    errors = list()
+    for error_list in lists:
+        errors.extend(list(error_list))
+    return errors
+
+def get_next_url(request, default=None):
     return clean_next(request.REQUEST.get('next'), default)
 
 def get_db_object_or_404(params):
@@ -96,7 +98,7 @@ class UserNameField(StrippedNonEmptyCharField):
     ):
         self.must_exist = must_exist
         self.skip_clean = skip_clean
-        self.db_model = db_model 
+        self.db_model = db_model
         self.db_field = db_field
         self.user_instance = None
         error_messages={
@@ -205,6 +207,27 @@ def email_is_allowed(
 
     return False
 
+
+def moderated_email_validator(email):
+    allowed_domains = askbot_settings.ALLOWED_EMAIL_DOMAINS.strip()
+    allowed_emails = askbot_settings.ALLOWED_EMAILS.strip()
+
+    error_msg = _('this email address is not authorized')
+
+    if allowed_emails or allowed_domains:
+        if not email_is_allowed(
+                email,
+                allowed_emails=allowed_emails,
+                allowed_email_domains=allowed_domains
+            ):
+            raise forms.ValidationError(error_msg)
+    else:
+        from askbot.deps.django_authopenid.util import email_is_blacklisted
+        blacklisting_on = askbot_settings.BLACKLISTED_EMAIL_PATTERNS_MODE != 'disabled'
+        if blacklisting_on and email_is_blacklisted(email):
+            raise forms.ValidationError(error_msg)
+
+
 class UserEmailField(forms.EmailField):
     def __init__(self, skip_clean=False, **kw):
         self.skip_clean = skip_clean
@@ -219,12 +242,11 @@ class UserEmailField(forms.EmailField):
             widget=widget_class(
                     attrs=dict(login_form_widget_attrs, maxlength=200)
                 ),
-            label=mark_safe(_('Your email <i>(never shared)</i>')),
+            label=mark_safe_lazy(_('Your email <i>(never shared)</i>')),
             error_messages={
                 'required':_('email address is required'),
                 'invalid':_('please enter a valid email address'),
                 'taken':_('this email is already used by someone else, please choose another'),
-                'unauthorized':_('this email address is not authorized')
             },
             **kw
         )
@@ -233,20 +255,15 @@ class UserEmailField(forms.EmailField):
         """ validate if email exist in database
         from legacy register
         return: raise error if it exist """
-        email = super(UserEmailField,self).clean(email.strip())
+        email = (email or '').strip()
+        if askbot_settings.BLANK_EMAIL_ALLOWED and email == '':
+            return ''
+
+        moderated_email_validator(email)
+
+        email = super(UserEmailField,self).clean(email)
         if self.skip_clean:
             return email
-        
-        allowed_domains = askbot_settings.ALLOWED_EMAIL_DOMAINS.strip()
-        allowed_emails = askbot_settings.ALLOWED_EMAILS.strip()
-
-        if allowed_emails or allowed_domains:
-            if not email_is_allowed(
-                    email,
-                    allowed_emails=allowed_emails,
-                    allowed_email_domains=allowed_domains
-                ):
-                raise forms.ValidationError(self.error_messages['unauthorized'])
 
         try:
             user = User.objects.get(email__iexact=email)
@@ -260,15 +277,23 @@ class UserEmailField(forms.EmailField):
             raise forms.ValidationError(self.error_messages['taken'])
 
 class SetPasswordForm(forms.Form):
-    password1 = forms.CharField(widget=forms.PasswordInput(attrs=login_form_widget_attrs),
-                                label=_('Password'),
-                                error_messages={'required':_('password is required')},
-                                )
-    password2 = forms.CharField(widget=forms.PasswordInput(attrs=login_form_widget_attrs),
-                                label=mark_safe(_('Password <i>(please retype)</i>')),
+    password1 = forms.CharField(
+                            widget=forms.PasswordInput(
+                                attrs=login_form_widget_attrs,
+                                render_value=True
+                            ),
+                            label=_('Password'),
+                            error_messages={'required':_('password is required')},
+                        )
+    password2 = forms.CharField(
+                                widget=forms.PasswordInput(
+                                    attrs=login_form_widget_attrs,
+                                    render_value=True
+                                ),
+                                label=_('Password retyped'),
                                 error_messages={'required':_('please, retype your password'),
                                                 'nomatch':_('entered passwords did not match, please try again')},
-                                )
+                            )
 
     def __init__(self, data=None, user=None, *args, **kwargs):
         super(SetPasswordForm, self).__init__(data, *args, **kwargs)
@@ -276,7 +301,7 @@ class SetPasswordForm(forms.Form):
     def clean_password2(self):
         """
         Validates that the two password inputs match.
-        
+
         """
         if 'password1' in self.cleaned_data:
             if self.cleaned_data['password1'] == self.cleaned_data['password2']:
@@ -288,4 +313,3 @@ class SetPasswordForm(forms.Form):
                 raise forms.ValidationError(self.fields['password2'].error_messages['nomatch'])
         else:
             return self.cleaned_data['password2']
-

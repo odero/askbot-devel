@@ -1,5 +1,7 @@
-<a id="logo" href="{% url home %}"><img 
-    src="{{ STATIC_URL }}img/ideasafrica.png" 
-    title="{% trans %}back to home page{% endtrans %}"
+<a 
+    id="logo" 
+    href="{% if settings.LOGO_DESTINATION_URL %}{{ settings.LOGO_DESTINATION_URL }}{% else %}{% url questions %}{% endif %}"
+><img
+    src="{{ STATIC_URL }}img/ideasafrica.png"
     alt="{% trans site=settings.APP_SHORT_NAME %}{{site}} logo{% endtrans %}"/>
 </a>

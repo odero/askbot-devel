@@ -1,3 +1,4 @@
+from askbot.deps.livesettings.compat import get_cache_timeout
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.db import models
@@ -41,7 +42,6 @@ def find_setting(group, key, site=None):
     elif use_db:
         try:
             setting = cache_get(ck)
-
         except NotCachedError, nce:
             if loading.app_cache_ready():
                 try:
@@ -134,8 +134,7 @@ class Setting(models.Model, CachedObjectMixin):
     def cache_set(self, *args, **kwargs):
         val = kwargs.pop('value', self)
         key = self.cache_key(*args, **kwargs)
-        #TODO: fix this with Django's > 1.3 CACHE dict setting support
-        length = getattr(settings, 'LIVESETTINGS_CACHE_TIMEOUT', settings.CACHE_TIMEOUT)
+        length = get_cache_timeout()
         cache_set(key, value=val, length=length)
 
     class Meta:
@@ -181,10 +180,8 @@ class LongSetting(models.Model, CachedObjectMixin):
     def cache_set(self, *args, **kwargs):
         val = kwargs.pop('value', self)
         key = self.cache_key(*args, **kwargs)
-        #TODO: fix this with Django's > 1.3 CACHE dict setting support
-        length = getattr(settings, 'LIVESETTINGS_CACHE_TIMEOUT', settings.CACHE_TIMEOUT)
+        length = get_cache_timeout()
         cache_set(key, value=val, length=length)
 
     class Meta:
         unique_together = ('site', 'group', 'key')
-

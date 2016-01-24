@@ -1,8 +1,8 @@
 {#<span class="action-link swap-qa">
-    <a id="swap-question-with-answer-{{answer.id}}">{% trans %}swap with question{% endtrans %}</a>
+  <a id="swap-question-with-answer-{{answer.id}}">{{ settings.WORDS_SWAP_WITH_QUESTION|escape }}</a>
 </span>uncomment if needed#}
 <span id='post-{{answer.id}}-edit' class="action-link">
-    <a class="question-edit" href="{% url edit_answer answer.id %}">{% trans %}edit{% endtrans %}</a>
+    <a class="question-edit js-edit" href="{% url edit_answer answer.id %}">{% trans %}edit{% endtrans %}</a>
 </span>
 {% if answer.offensive_flag_count > 0 %}
 <span 
@@ -32,6 +32,7 @@
     <a class="question-delete"
     >{% if answer.deleted %}{% trans %}undelete{% endtrans %}{% else %}{% trans %}delete{% endtrans %}{% endif %}</a>
 </span>
+{% if thread.is_moderated() %}
 <span 
     id="post-{{answer.id}}-publish"
     class="action-link"
@@ -48,6 +49,7 @@
         >{% trans %}publish{% endtrans %}</a>
     {% endif %}
 </span>
+{% endif %}
 <span class="action-link">
     <a  class="permant-link"
         href="{{ answer.get_absolute_url(question_post=question) }}"
@@ -64,11 +66,11 @@
             method="post"
         >
             {% csrf_token %}
-            <input type="hidden" name="answer_id" id="id_answer_id" value="{{answer.id}}"/>
+            <input type="hidden" name="answer_id" value="{{answer.id}}"/>
             <input 
                 type="submit"
                 class="link"
-                value="{% trans %}repost as a question comment{% endtrans %}"
+                value="{{ settings.WORDS_REPOST_AS_A_QUESTION_COMMENT|escape }}"
             />
         </form>
     </li>
@@ -82,7 +84,7 @@
             <input 
                 type="submit"
                 class="link"
-                value="{% trans %}repost as a comment under the older answer{% endtrans %}"
+                value="{{ settings.WORDS_REPOST_AS_A_COMMENT_UNDER_THE_OLDER_ANSWER|escape }}"
             />
         </form>
     </li>
@@ -91,5 +93,5 @@
 <script type="text/javascript">
     askbot['functions']['hideConvertAnswerLinks']('{{ answer.id }}');
     askbot['functions']['hidePublishAnswerLink']('{{ answer.id }}');
-    askbot['functions']['renderPostControls']('{{ answer.id }}');
+    askbot['functions']['renderPostControls']('{{ answer.id }}'{{ ', true' if answer.wiki }});
 </script>

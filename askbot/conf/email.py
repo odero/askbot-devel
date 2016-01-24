@@ -6,13 +6,14 @@ from askbot.conf.super_groups import LOGIN_USERS_COMMUNICATION
 from askbot.deps import livesettings
 from askbot import const
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import string_concat
 from django.conf import settings as django_settings
 
 EMAIL_SUBJECT_PREFIX = getattr(django_settings, 'EMAIL_SUBJECT_PREFIX', '')
 
 EMAIL = livesettings.ConfigurationGroup(
             'EMAIL',
-            _('Email and email alert settings'), 
+            _('Email and email alert settings'),
             super_group = LOGIN_USERS_COMMUNICATION
         )
 
@@ -49,8 +50,83 @@ settings.register(
     livesettings.BooleanValue(
         EMAIL,
         'ENABLE_EMAIL_ALERTS',
-        default = True,
-        description = _('Enable email alerts'),
+        default=True,
+        description=_('Enable email alerts'),
+    )
+)
+
+settings.register(
+    livesettings.BooleanValue(
+        EMAIL,
+        'INSTANT_EMAIL_ALERT_ENABLED',
+        description=_('Enable instant email alerts'),
+        default=True
+    )
+)
+
+settings.register(
+    livesettings.BooleanValue(
+        EMAIL,
+        'WELCOME_EMAIL_ENABLED',
+        description=_('Enable welcome email'),
+        default=True
+    )
+)
+
+settings.register(
+    livesettings.BooleanValue(
+        EMAIL,
+        'REJECTED_POST_EMAIL_ENABLED',
+        description=_('Enable rejected post alert'),
+        help_text=_('Also, premoderation mode must be enabled'),
+        default=True
+    )
+)
+
+settings.register(
+    livesettings.BooleanValue(
+        EMAIL,
+        'APPROVED_POST_NOTIFICATION_ENABLED',
+        description=_('Enable approved post alert'),
+        help_text=_('Also, premoderation mode must be enabled'),
+        default=True
+    )
+)
+
+settings.register(
+    livesettings.BooleanValue(
+        EMAIL,
+        'BATCH_EMAIL_ALERT_ENABLED',
+        description=_('Enable batch email alert'),
+        default=True
+    )
+)
+
+settings.register(
+    livesettings.BooleanValue(
+        EMAIL,
+        'GROUP_MESSAGING_EMAIL_ALERT_ENABLED',
+        description=_('Enable private messaging alerts'),
+        default=True
+    )
+)
+
+settings.register(
+    livesettings.BooleanValue(
+        EMAIL,
+        'MODERATION_QUEUE_NOTIFICATION_ENABLED',
+        description=_('Enable moderation queue alerts'),
+        default=True
+    )
+)
+
+settings.register(
+    livesettings.BooleanValue(
+        EMAIL,
+        'HTML_EMAIL_ENABLED',
+        default=True,
+        description=_('Enable HTML-formatted email'),
+        help_text=_('May not be supported by some email clients')
     )
 )
 
@@ -150,12 +226,27 @@ settings.register(
         EMAIL,
         'ENABLE_UNANSWERED_REMINDERS',
         default = False,
-        description = _('Send periodic reminders about unanswered questions'),
+        description = _('Enable reminders about unanswered questions'),
         help_text = _(
             'NOTE: in order to use this feature, it is necessary to '
             'run the management command "send_unanswered_question_reminders" '
             '(for example, via a cron job - with an appropriate frequency) '
         )
+    )
+)
+
+UNANSWERED_REMINDER_RECIPIENTS_CHOICES = (
+    ('everyone', _('everyone')),
+    ('admins', _('moderators & administrators'))
+)
+
+settings.register(
+    livesettings.StringValue(
+        EMAIL,
+        'UNANSWERED_REMINDER_RECIPIENTS',
+        default='everyone',
+        choices=UNANSWERED_REMINDER_RECIPIENTS_CHOICES,
+        description=_('Whom to remind about unanswered questions')
     )
 )
 
@@ -199,7 +290,7 @@ settings.register(
         EMAIL,
         'ENABLE_ACCEPT_ANSWER_REMINDERS',
         default = False,
-        description = _('Send periodic reminders to accept the best answer'),
+        description = _('Enable accept the best answer reminders'),
         help_text = _(
             'NOTE: in order to use this feature, it is necessary to '
             'run the management command "send_accept_answer_reminders" '
@@ -246,11 +337,16 @@ settings.register(
 settings.register(
     livesettings.BooleanValue(
         EMAIL,
-        'EMAIL_VALIDATION',
+        'BLANK_EMAIL_ALLOWED',
         default=False,
-        hidden=True,
-        description=_('Require email verification before allowing to post'),
-        help_text=_('Active email verification is done by sending a verification key in email')
+        description=_('Allow blank email'),
+        help_text=string_concat(
+            _('DANGER: makes impossible account recovery by email.'),
+            ' ',
+            settings.get_related_settings_info(
+                ('ACCESS_CONTROL', 'REQUIRE_VALID_EMAIL_FOR', True, _('Must be not be required')),
+            )
+        )
     )
 )
 
@@ -299,7 +395,7 @@ settings.register(
         #TODO give a better explanation depending on lamson startup procedure
         help_text=_(
             'To enable this feature make sure lamson is running'
-            
+
         )
     )
 )
@@ -308,11 +404,11 @@ settings.register(
     livesettings.StringValue(
         EMAIL,
         'SELF_NOTIFY_EMAILED_POST_AUTHOR_WHEN',
-        description = _(
+        description=_(
             'Emailed post: when to notify author about publishing'
         ),
-        choices = const.SELF_NOTIFY_EMAILED_POST_AUTHOR_WHEN_CHOICES,
-        default = const.NEVER
+        choices=const.SELF_NOTIFY_EMAILED_POST_AUTHOR_WHEN_CHOICES,
+        default=const.NEVER
     )
 )
 
@@ -336,7 +432,7 @@ settings.register(
         default = "",
         description=_('Reply by email hostname'),
         #TODO give a better explanation depending on lamson startup procedure
-        
+
     )
 )
 

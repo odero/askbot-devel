@@ -1,4 +1,5 @@
 {% extends "two_column_body.html" %}
+{% import "macros.html" as macros %}
 <!-- template feedback.html -->
 {% block title %}{% spaceless %}{% trans %}Feedback{% endtrans %}{% endspaceless %}{% endblock %}
 {% block content %}
@@ -9,20 +10,8 @@
 </span>
 {%endif%}
 <form method="post" action="{% url feedback %}" accept-charset="utf-8">{% csrf_token %}
-    {% if user.is_authenticated() %}
-        <p class="message">
-        {% trans user_name=user.userprofile.username|escape %}
-        <span class='big strong'>Dear {{user_name}}</span>, we look forward to hearing your feedback. 
-        Please type and send us your message below.
-        {% endtrans %}
-        <p>
-    {% else %}
-        <p class="message">
-        {% trans %}
-        <span class='big strong'>Dear visitor</span>, we look forward to hearing your feedback.
-        Please type and send us your message below.
-        {% endtrans %}
-        </p>
+    <div class="message">{{ settings.FEEDBACK_PAGE_MESSAGE|sub_vars(user)|convert_markdown }}</div>
+    {% if user.is_anonymous() %}
         <div class="form-row"><label>{{form.name.label}}</label><br/>{{form.name}}</div>
         <div class="form-row">
             <label>{{form.email.label}} 
@@ -51,15 +40,12 @@
     </div>
     {% if form.recaptcha %}
     <div class="form-row">
-        {% if form.errors.recaptcha%}
-        <span class="error">{% trans %}(Please solve the captcha){% endtrans %}</span>
-        </label>
-        {% endif %}
-      {{form.recaptcha}}
+        {{ macros.form_field_with_errors(form.recaptcha) }}
     </div>
     {% endif %}
     {{form.next}}
     <div class="submit-row">
+        {# <input type="submit" value="{% trans %}Send Feedback{% endtrans %}"/>&nbsp; #}
         <input type="submit" class="submit" value="{% trans %}Send Feedback{% endtrans %}"/>&nbsp;
         <input type="submit" class="submit cancel" name="cancel" value="{% trans %}Cancel{% endtrans %}"/>
     </div>

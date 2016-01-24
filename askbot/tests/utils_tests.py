@@ -7,7 +7,7 @@ from askbot.utils.html import get_text_from_html
 from askbot.conf import settings as askbot_settings
 
 class UrlUtilsTests(TestCase):
-    
+
     def tests_urls_equal(self):
         e = urls_equal
         self.assertTrue(e('', ''))
@@ -26,16 +26,16 @@ class ReplaceLinksWithTextTests(TestCase):
 
     def test_local_link_not_replaced(self):
         text = '<a href="/some-link">some link</a>'
-        self.assertEqual(replace_links_with_text(text), text) 
+        self.assertEqual(replace_links_with_text(text), text)
 
     def test_link_without_url_replaced(self):
         text = '<a>some link</a>'
-        self.assertEqual(replace_links_with_text(text), 'some link') 
+        self.assertEqual(replace_links_with_text(text), 'some link')
 
     def test_external_link_without_text_replaced(self):
         text = '<a href="https://example.com/"></a>'
         #in this case we delete the link
-        self.assertEqual(replace_links_with_text(text), '') 
+        self.assertEqual(replace_links_with_text(text), '')
 
     def test_external_link_with_text_replaced(self):
         text = '<a href="https://example.com/">some link</a>'
@@ -46,7 +46,7 @@ class ReplaceLinksWithTextTests(TestCase):
 
     def test_local_image_not_replaced(self):
         text = '<img src="/some-image.gif"/>'
-        self.assertEqual(replace_links_with_text(text), text) 
+        self.assertEqual(replace_links_with_text(text), text)
 
     def test_local_url_with_hotlinked_image_replaced(self):
         text = '<a href="/some-link"><img src="http://example.com/img.png" alt="picture""> some text</a>'
@@ -77,7 +77,7 @@ class HTMLUtilsTests(TestCase):
         #jinja register.filter decorator works in a weird way
         self.assertEqual(
             absolutize_urls(text),
-            '<img class="junk" src="http://example.com/some.gif" style="max-width:500px;"> <img class="junk" src="http://example.com/cat.gif" style="max-width:500px;"> <IMG SRC="http://example.com/some.png" style="max-width:500px;">'
+            '<img class="junk" src="http://example.com/some.gif"> <img class="junk" src="http://example.com/cat.gif"> <IMG SRC="http://example.com/some.png">'
         )
 
         text = """<a class="junk" href="/something">link</a> <A HREF='/something'>link</A>"""
@@ -90,19 +90,25 @@ class HTMLUtilsTests(TestCase):
         text = '<img src="/upfiles/13487900323638005.png" alt="" />'
         self.assertEqual(
             absolutize_urls(text),
-            '<img src="http://example.com/upfiles/13487900323638005.png" style="max-width:500px;" alt="" />'
+            '<img src="http://example.com/upfiles/13487900323638005.png" alt="" />'
         )
 
         text = 'ohaouhaosthoanstoahuaou<br /><img src="/upfiles/13487906221942257.png" alt="" /><img class="gravatar" title="Evgeny4" src="http://kp-dev.askbot.com/avatar/render_primary/5/32/" alt="Evgeny4 gravatar image" width="32" height="32" />'
         self.assertEqual(
             absolutize_urls(text),
-            'ohaouhaosthoanstoahuaou<br /><img src="http://example.com/upfiles/13487906221942257.png" style="max-width:500px;" alt="" /><img class="gravatar" title="Evgeny4" src="http://kp-dev.askbot.com/avatar/render_primary/5/32/" alt="Evgeny4 gravatar image" width="32" height="32" />'
+            'ohaouhaosthoanstoahuaou<br /><img src="http://example.com/upfiles/13487906221942257.png" alt="" /><img class="gravatar" title="Evgeny4" src="http://kp-dev.askbot.com/avatar/render_primary/5/32/" alt="Evgeny4 gravatar image" width="32" height="32" />'
         )
 
         text = '<a href="/upfiles/13487909784287052.png"><img src="/upfiles/13487909942351405.png" alt="" /></a><img src="http://i2.cdn.turner.com/cnn/dam/assets/120927033530-ryder-cup-captains-wall-4-tease.jpg" alt="" width="160" height="90" border="0" />and some text<br />aouaosutoaehut'
         self.assertEqual(
             absolutize_urls(text),
-            '<a href="http://example.com/upfiles/13487909784287052.png"><img src="http://example.com/upfiles/13487909942351405.png" style="max-width:500px;" alt="" /></a><img src="http://i2.cdn.turner.com/cnn/dam/assets/120927033530-ryder-cup-captains-wall-4-tease.jpg" alt="" width="160" height="90" border="0" />and some text<br />aouaosutoaehut'
+            '<a href="http://example.com/upfiles/13487909784287052.png"><img src="http://example.com/upfiles/13487909942351405.png" alt="" /></a><img src="http://i2.cdn.turner.com/cnn/dam/assets/120927033530-ryder-cup-captains-wall-4-tease.jpg" alt="" width="160" height="90" border="0" />and some text<br />aouaosutoaehut'
+        )
+
+    def test_get_text_from_html(self):
+        self.assertEqual(
+            get_text_from_html('ataoesa uau <a>link</a>aueaotuosu ao <a href="http://cnn.com">CNN!</a>\nnaouaouuau<img> <img src="http://cnn.com/1.png"/> <img src="http://cnn.com/2.png" alt="sometext">'),
+            u'ataoesa uau linkaueaotuosu ao http://cnn.com (CNN!)\n\nnaouaouuau http://cnn.com/1.png http://cnn.com/2.png (sometext)'
         )
 
     def test_get_text_from_html(self):

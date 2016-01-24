@@ -2,7 +2,21 @@ import os
 import urlparse
 from django.core.urlresolvers import reverse
 from django.conf import settings
-from django.conf.urls.defaults import url
+try:
+    from django.conf.urls import url
+except ImportError:
+    from django.conf.urls.defaults import url
+from django.utils import translation
+
+def reverse_i18n(lang, *args, **kwargs):
+    """reverses url in requested language"""
+    assert(lang != None)
+    current_lang = translation.get_language()
+    translation.activate(lang)
+    url = reverse(*args, **kwargs)
+    translation.activate(current_lang)
+    return url
+
 
 def service_url(*args, **kwargs):
     """adds the service prefix to the url"""
@@ -47,7 +61,7 @@ def urls_equal(url1, url2, ignore_trailing_slash=False):
 
     if purl1.netloc != purl2.netloc:
         return False
-    
+
     if ignore_trailing_slash is True:
         normfunc = append_trailing_slash
     else:
@@ -61,7 +75,7 @@ def urls_equal(url1, url2, ignore_trailing_slash=False):
 
 def get_login_url():
     """returns internal login url if
-    django_authopenid is used, or 
+    django_authopenid is used, or
     the corresponding django setting
     """
     if 'askbot.deps.django_authopenid' in settings.INSTALLED_APPS:

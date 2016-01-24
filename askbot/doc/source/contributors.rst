@@ -46,9 +46,24 @@ Programming, bug fixes and documentation
 * `Tyler Mandry <https://github.com/tmandry>`_
 * `Jorge López Pérez <https://github.com/adobo>`_
 * `Zafer Cakmak <https://github.com/xaph>`_
-* `Kevin Porterfield <http://www.shotgunsoftware.com>_`
-* `Robert Martin <https://github.com/bobbydavid>_`
+* `Kevin Porterfield <http://www.shotgunsoftware.com>`_
+* `Robert Martin <https://github.com/bobbydavid>`_
 * `Director <http://codeflow.co.kr>`_
+* `Stéphane Klein <http://stephane-klein.info>`_
+* `Andrew Chen <https://github.com/yongjhih>`_
+* `Benjamin Abel <https://github.com/BenjaminABEL>`_
+* `Pami Ketolainen <https://github.com/keto>`_
+* `Hamdi <https://github.com/Hamdy>`_
+* `michas2 <https://github.com/michas2>`_
+* `Francis Devereux <https://github.com/frankoid>`_
+* `Andrew Chen <https://github.com/yongjhih>`_
+* `Egil Moeller <https://github.com/redhog>`_
+* `Jerry Zhenlei Cai <https://github.com/jerryzhenleicai>`_
+* `Dmitry <https://github.com/dmzio>`_
+* `Ruslan Keba <https://github.com/rukeba>`_
+* `Vanessa Hänni <https://github.com/n3ssi3>`_
+* `Vadim Sikora <https://github.com/vxsx>`_
+* `Zhe Li <https://github.com/zheli>`_
 
 Translations
 ------------

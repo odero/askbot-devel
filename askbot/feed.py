@@ -16,11 +16,12 @@ from django.contrib.syndication.views import Feed
 
 import itertools
 
-from django.contrib.contenttypes.models import ContentType
-from django.core.urlresolvers import reverse
-from django.utils.translation import ugettext as _
+from django.conf import settings as django_settings
 from django.core.exceptions import ObjectDoesNotExist
+from django.core.urlresolvers import reverse
 from django.http import Http404
+from django.utils.translation import ugettext as _
+from askbot.utils.translation import get_language
 
 from askbot.conf import settings as askbot_settings
 from askbot.models import Post
@@ -32,7 +33,7 @@ class RssIndividualQuestionFeed(Feed):
 
     def title(self):
         return askbot_settings.APP_TITLE + _(' - ') + \
-                _('Individual question feed')
+                _('Individual %(question)s feed') % {'question': askbot_settings.WORDS_QUESTION_SINGULAR}
 
     def feed_copyright(self):
         return askbot_settings.APP_COPYRIGHT
@@ -85,13 +86,12 @@ class RssIndividualQuestionFeed(Feed):
     def item_title(self, item):
         """returns the title for the item
         """
-        title = item
         if item.post_type == "question":
-            self.title = item
+            title = item.thread.title
         elif item.post_type == "answer":
-            title = "Answer by %s for %s " % (item.author, self.title)
+            title = u'Answer by %s for %s ' % (item.author, item.thread._question_post().summary)
         elif item.post_type == "comment":
-            title = "Comment by %s for %s" % (item.author, self.title)
+            title = u'Comment by %s for %s' % (item.author, item.parent.summary)
         return title
 
     def item_description(self, item):
@@ -106,7 +106,7 @@ class RssLastestQuestionsFeed(Feed):
 
     def title(self):
         return askbot_settings.APP_TITLE + _(' - ') + \
-                _('Latest question feed')
+                _('Latest %(question)s feed') % {'question': askbot_settings.WORDS_QUESTION_SINGULAR}
 
     def feed_copyright(self):
         return askbot_settings.APP_COPYRIGHT
@@ -156,8 +156,12 @@ class RssLastestQuestionsFeed(Feed):
         """
         if askbot_settings.RSS_ENABLED is False:
             raise Http404
+
         #initial filtering
-        qs = Post.objects.get_questions().filter(deleted=False)
+        filters = {'deleted': False}
+        filters['language_code'] = get_language()
+            
+        qs = Post.objects.get_questions().filter(**filters)
 
         #get search string and tags from GET
         query = self.request.GET.get("q", None)

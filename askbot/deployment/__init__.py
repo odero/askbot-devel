@@ -202,6 +202,8 @@ def deploy_askbot(options):
 def collect_missing_options(options_dict):
     options_dict['secret_key'] = generate_random_key()
     if options_dict['database_engine'] == '2':#sqlite
+        if options_dict['database_name']:
+            return options_dict
         while True:
             value = console.simple_dialog(
                             'Please enter database file name'
@@ -225,7 +227,7 @@ def collect_missing_options(options_dict):
                 return options_dict
 
     else:#others
-        for key in ('database_name', 'database_user', 'database_password'): 
+        for key in ('database_name', 'database_user', 'database_password'):
             if options_dict[key] is None:
                 key_name = key.replace('_', ' ')
                 value = console.simple_dialog(

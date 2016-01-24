@@ -1,5 +1,5 @@
 """
-Settings for minimum reputation required for 
+Settings for minimum reputation required for
 a variety of actions on the askbot askbot
 """
 from askbot.conf.settings_wrapper import settings
@@ -8,10 +8,20 @@ from askbot.deps import livesettings
 from django.utils.translation import ugettext_lazy as _
 
 MIN_REP = livesettings.ConfigurationGroup(
-    'MIN_REP', 
+    'MIN_REP',
     _('Karma thresholds'),
     ordering=0,
     super_group = REP_AND_BADGES
+)
+
+settings.register(
+    livesettings.IntegerValue(
+        MIN_REP,
+        'MIN_REP_TO_AUTOAPPROVE_USER',
+        default=10,
+        description=_('Become approved'),
+        help_text=_('Approved users bypass moderation and skip recaptcha')
+    )
 )
 
 settings.register(
@@ -101,6 +111,15 @@ settings.register(
 settings.register(
     livesettings.IntegerValue(
         MIN_REP,
+        'MIN_REP_TO_DELETE_OWN_QUESTIONS',
+        default=1,
+        description=_('Delete own questions')
+    )
+)
+
+settings.register(
+    livesettings.IntegerValue(
+        MIN_REP,
         'MIN_REP_TO_UPLOAD_FILES',
         default=10,
         description=_('Upload files')
@@ -132,27 +151,9 @@ settings.register(
 settings.register(
     livesettings.IntegerValue(
         MIN_REP,
-        'MIN_REP_TO_CLOSE_OWN_QUESTIONS',
-        default=25,
-        description=_('Close own questions'),
-    )
-)
-
-settings.register(
-    livesettings.IntegerValue(
-        MIN_REP,
         'MIN_REP_TO_RETAG_OTHERS_QUESTIONS',
         default=50,
         description=_('Retag questions posted by other people')
-    )
-)
-
-settings.register(
-    livesettings.IntegerValue(
-        MIN_REP,
-        'MIN_REP_TO_REOPEN_OWN_QUESTIONS',
-        default=50,
-        description=_('Reopen own questions')
     )
 )
 
@@ -188,7 +189,7 @@ settings.register(
         MIN_REP,
         'MIN_REP_TO_CLOSE_OTHERS_QUESTIONS',
         default=200,
-        description=_('Close questions asked by others')
+        description=_('Close and reopen questions')
     )
 )
 

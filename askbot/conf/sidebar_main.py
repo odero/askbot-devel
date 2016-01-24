@@ -19,6 +19,7 @@ settings.register(
         'SIDEBAR_MAIN_HEADER',
         description = _('Custom sidebar header'),
         default = '',
+        localized = True,
         help_text = _(
                     'Use this area to enter content at the TOP of the sidebar'
                     'in HTML format.   When using this option '
@@ -34,7 +35,7 @@ settings.register(
         SIDEBAR_MAIN,
         'SIDEBAR_MAIN_HEADER_ANON_ONLY',
         description=_('Show above only to anonymous users'),
-        default=False
+        default=False,
     )
 )
 
@@ -45,7 +46,7 @@ settings.register(
         description = _('Show avatar block in sidebar'),
         help_text = _(
                     'Uncheck this if you want to hide the avatar '
-                    'block from the sidebar ' 
+                    'block from the sidebar '
                     ),
         default = True
     )
@@ -56,7 +57,7 @@ settings.register(
         SIDEBAR_MAIN,
         'SIDEBAR_MAIN_AVATAR_LIMIT',
         description = _('Limit how many avatars will be displayed on the sidebar'),
-        default = 16 
+        default = 16
     )
 )
 
@@ -65,12 +66,12 @@ settings.register(
     values.BooleanValue(
         SIDEBAR_MAIN,
         'SIDEBAR_MAIN_SHOW_TAG_SELECTOR',
-        description = _('Show tag selector in sidebar'),
-        help_text = _(
+        description=_('Show tag selector in sidebar'),
+        help_text=_(
                     'Uncheck this if you want to hide the options '
-                    'for choosing interesting and ignored tags ' 
+                    'for choosing interesting and ignored tags '
                     ),
-        default = True
+        default=True,
     )
 )
 
@@ -81,7 +82,7 @@ settings.register(
         description = _('Show tag list/cloud in sidebar'),
         help_text = _(
                     'Uncheck this if you want to hide the tag '
-                    'cloud or tag list from the sidebar ' 
+                    'cloud or tag list from the sidebar '
                     ),
         default = True
     )
@@ -91,9 +92,10 @@ settings.register(
     values.LongStringValue(
         SIDEBAR_MAIN,
         'SIDEBAR_MAIN_FOOTER',
-        description = _('Custom sidebar footer'),
-        default = '',
-        help_text = _(
+        description=_('Custom sidebar footer'),
+        default='',
+        localized=True,
+        help_text=_(
                     'Use this area to enter content at the BOTTOM of the sidebar'
                     'in HTML format.   When using this option '
                     '(as well as the sidebar header), please '
@@ -111,4 +113,3 @@ settings.register(
         description=_('Show above only to anonymous users')
     )
 )
-
